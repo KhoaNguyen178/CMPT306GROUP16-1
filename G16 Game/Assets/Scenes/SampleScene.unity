@@ -559,7 +559,7 @@ PrefabInstance:
     - target: {fileID: 1066004617, guid: 8f32712fc441df142abac3f339b119ef, type: 3}
       propertyPath: gem
       value: 
-      objectReference: {fileID: 6938895330431210606, guid: 64cc8a2f50658e44e8cfa7b0ff5760b1, type: 3}
+      objectReference: {fileID: 1785100447502755536, guid: 7089d0d00b458074bad288e60e01eb0c, type: 3}
     - target: {fileID: 1066004617, guid: 8f32712fc441df142abac3f339b119ef, type: 3}
       propertyPath: health
       value: 100
