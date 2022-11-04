@@ -9,10 +9,10 @@ public class PlayerController : MonoBehaviour
     public Animator Anime;
 
     public LayerMask Groud;
-    public float Jumpforce = 10.0f;
+    public float Jumpforce = 12.5f;
     public Transform GroundCheck;
     public bool isGround;
-    public int jumpTimes = 1;
+    public int extraJumpTimes = 1;
     public int jumpTimesLeft;
 
     void Update()
@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
 
         if (isGround)
         {
-            jumpTimesLeft = jumpTimes; //Reset jumping status when player on the ground.    
+            jumpTimesLeft = extraJumpTimes; //Reset jumping status when player on the ground.
         }
         if (Input.GetButtonDown("Jump") && jumpTimesLeft > 0) //Allow the player jump.
         {
@@ -75,7 +75,7 @@ public class PlayerController : MonoBehaviour
 
         if (Anime.GetBool("falling"))
         {
-            if (rb.velocity.y >= 0)
+            if (isGround)
             {
                 Anime.SetBool("falling", false);
                 Anime.SetBool("idle", true);
