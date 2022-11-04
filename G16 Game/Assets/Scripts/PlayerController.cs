@@ -6,11 +6,18 @@ public class PlayerController : MonoBehaviour
 {
     public Rigidbody2D rb;
     public float speed = 10.0f;
-    public float jumpforce = 10.0f;
     public Animator Anime;
+
+    public LayerMask Groud;
+    public float Jumpforce = 10.0f;
+    public Transform GroundCheck;
+    public bool isGround;
+    public int jumpTimes = 1;
+    public int jumpTimesLeft;
 
     void Update()
     {
+        isGround = Physics2D.OverlapCircle(GroundCheck.position, 0.2f, Groud);  //Check if the player is standing on the ground.
         SwitchAnime();
         Movement();
     }
@@ -30,9 +37,15 @@ public class PlayerController : MonoBehaviour
             transform.localScale = new Vector3(facedirection, 1, 1);
         }
 
-        if (Input.GetButtonDown("Jump")) //Allow the player jump.
+
+        if (isGround)
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpforce);
+            jumpTimesLeft = jumpTimes; //Reset jumping status when player on the ground.    
+        }
+        if (Input.GetButtonDown("Jump") && jumpTimesLeft > 0) //Allow the player jump.
+        {
+            rb.velocity = Vector2.up * Jumpforce;
+            jumpTimesLeft--;
             Anime.SetBool("jumping", true);
         }
 
