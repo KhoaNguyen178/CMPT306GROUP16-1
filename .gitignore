@@ -61,6 +61,6 @@ crashlytics-build.properties
 #My Imports
 *.meta
 *.png
-*.prefab
+Blackthornprod/
 *.anim
 *.controller
