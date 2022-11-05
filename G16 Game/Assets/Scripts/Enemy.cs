@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,9 +12,10 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float damage = 50.0f;
     [SerializeField] private float damageRate = 0.2f;
     [SerializeField] private float damageTime;
-    //public Slider slider;
-    public GameObject deathEffect;
+    public Slider slider;
+    //public GameObject deathEffect;
     public GameObject gem;
+    public GameObject HPCanvas;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +25,7 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //slider.value = health;
+        slider.value = health;
         /*if (Time.time > damageTime) //testing drop
         {
             this.TakeDamage(damageToSelf);
@@ -33,6 +35,7 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= damage;
+        HPCanvas.SetActive(true);
         if (health <= 0)
         {
             Destroy(this.gameObject);
