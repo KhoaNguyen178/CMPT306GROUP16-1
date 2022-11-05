@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     public float speed = 10.0f;
     public float jumpforce = 10.0f;
     public Animator Anime;
-    [SerializeField] private float damage = 50.0f;
+    public GameObject cam;//
 
     void Update()
     {
@@ -70,5 +70,4 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-
 }
