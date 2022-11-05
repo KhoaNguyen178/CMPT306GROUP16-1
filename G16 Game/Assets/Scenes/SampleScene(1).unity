@@ -273,7 +273,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &483843156
 RectTransform:
   m_ObjectHideFlags: 0
@@ -533,11 +533,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2083493427917525575, guid: f55c6c8355c6b27428d49fb56d34375e, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2083493427917525575, guid: f55c6c8355c6b27428d49fb56d34375e, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6623342434232721118, guid: f55c6c8355c6b27428d49fb56d34375e, type: 3}
       propertyPath: m_Pivot.x
@@ -643,7 +643,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slider
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7472833092788197419, guid: f55c6c8355c6b27428d49fb56d34375e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f55c6c8355c6b27428d49fb56d34375e, type: 3}
 --- !u!1 &1066004612 stripped
 GameObject:
@@ -811,6 +812,10 @@ PrefabInstance:
       propertyPath: slider
       value: 
       objectReference: {fileID: 562670724}
+    - target: {fileID: 1066004617, guid: 8f32712fc441df142abac3f339b119ef, type: 3}
+      propertyPath: HPCanvas
+      value: 
+      objectReference: {fileID: 483843155}
     - target: {fileID: 6382294909612813145, guid: 8f32712fc441df142abac3f339b119ef, type: 3}
       propertyPath: m_RootOrder
       value: 3
