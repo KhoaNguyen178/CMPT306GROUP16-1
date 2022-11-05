@@ -25,7 +25,6 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        slider.value = health;
         /*if (Time.time > damageTime) //testing drop
         {
             this.TakeDamage(damageToSelf);
@@ -35,7 +34,9 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= damage;
+        slider.value = health;
         HPCanvas.SetActive(true);
+
         if (health <= 0)
         {
             Destroy(this.gameObject);

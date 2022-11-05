@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 6858943799374099555}
   - component: {fileID: 3415481997368276381}
   - component: {fileID: 707969525962465535}
-  - component: {fileID: -2300123249899429342}
   - component: {fileID: 8059915751034169534}
   - component: {fileID: 7741816301278673713}
+  - component: {fileID: 4314287594102116924}
   m_Layer: 0
   m_Name: CoinGold3
   m_TagString: Untagged
@@ -114,18 +114,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.5630798}
   m_EdgeRadius: 0
---- !u!114 &-2300123249899429342
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1785100447502755536}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3834abf2680c6294fbe2387873b1cee9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &8059915751034169534
 Rigidbody2D:
   serializedVersion: 4
@@ -173,3 +161,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.44088954, y: 0.5521058}
   m_EdgeRadius: 0
+--- !u!114 &4314287594102116924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785100447502755536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e4369e557d3bac448fa45296ba25a0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
