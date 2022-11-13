@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D rb;
     public float speed = 10.0f;
     public Animator Anime;
+    public GameObject cam;//
 
     public LayerMask Groud;
     public float Jumpforce = 12.5f;
