@@ -108,7 +108,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!95 &842962337226128347
 Animator:
@@ -170,8 +170,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 842962337226128346}
   speed: 10
-  jumpforce: 15
   Anime: {fileID: 842962337226128347}
+  cam: {fileID: 0}
+  Groud:
+    serializedVersion: 2
+    m_Bits: 0
+  Jumpforce: 12.5
+  GroundCheck: {fileID: 0}
+  isGround: 0
+  extraJumpTimes: 1
+  jumpTimesLeft: 0
 --- !u!1 &5302377641315509675
 GameObject:
   m_ObjectHideFlags: 0
