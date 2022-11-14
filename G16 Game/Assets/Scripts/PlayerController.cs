@@ -49,18 +49,6 @@ public class PlayerController : MonoBehaviour
             jumpTimesLeft--;
             Anime.SetBool("jumping", true);
         }
-
-        if (Input.GetButtonDown("Fire1")) //Allow the player attack.(Just a testing animation now)
-        {
-            if (Anime.GetBool("attack1"))
-            {
-                Anime.SetBool("attack1", false);
-            }
-            else
-            {
-                Anime.SetBool("attack1", true);
-            }
-        }
     }
 
     void SwitchAnime()
