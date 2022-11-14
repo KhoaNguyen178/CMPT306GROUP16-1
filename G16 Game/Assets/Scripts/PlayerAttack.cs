@@ -10,7 +10,8 @@ public class PlayerAttack : MonoBehaviour
 
     public Animator Anime;
     public PolygonCollider2D poly2D;
-    public AudioSource AttackAudio;
+    public AudioSource AttackAudio1;
+    public AudioSource AttackAudio2;
 
     void Update()
     {
@@ -19,7 +20,7 @@ public class PlayerAttack : MonoBehaviour
 
     void PlayAttackAudio()
     {
-        AttackAudio.Play();
+        AttackAudio2.Play();
     }
 
     void Attack()
@@ -27,7 +28,8 @@ public class PlayerAttack : MonoBehaviour
         if (Input.GetButtonDown("Fire1") && !Anime.GetBool("Attacking"))
         {
             Anime.SetBool("Attacking", true);
-            PlayAttackAudio();
+            Anime.SetTrigger("Attack");
+            AttackAudio1.Play();
             StartCoroutine(EnableHitBox());
             Invoke("PlayAttackAudio", 0.55f);
         }
