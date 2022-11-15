@@ -20,6 +20,5 @@ public class FollowCamera : MonoBehaviour
     {
         GridGraph.astarData.gridGraph.center = new Vector3(player.transform.position.x + offset.x, GridGraph.astarData.gridGraph.center.y,
             GridGraph.astarData.gridGraph.center.z);
-        AstarPath.active.Scan();
     }
 }
