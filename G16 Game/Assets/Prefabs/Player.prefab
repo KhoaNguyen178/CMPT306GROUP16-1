@@ -171,3 +171,4 @@ MonoBehaviour:
   speed: 10
   jumpforce: 15
   Anime: {fileID: 842962337226128347}
+  cam: {fileID: 0}
