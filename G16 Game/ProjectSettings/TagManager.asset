@@ -6,6 +6,7 @@ TagManager:
   tags:
   - HPBar
   - Ground
+  - Spawn
   layers:
   - Default
   - TransparentFX
