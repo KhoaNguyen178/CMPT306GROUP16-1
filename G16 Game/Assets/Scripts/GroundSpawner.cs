@@ -14,7 +14,7 @@ public class GroundSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+       
     }
 
     // Update is called once per frame
@@ -25,7 +25,6 @@ public class GroundSpawner : MonoBehaviour
             SpawnGround();
             hasGround = true;
         }
-
     }
  
 
@@ -70,10 +69,17 @@ public class GroundSpawner : MonoBehaviour
 
         float horizontalMove = Input.GetAxis("Horizontal");
 
-        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("MoveGround"))
+        //if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("MoveGround"))
+        //{
+        //    hasGround = true;
+        //    isSpawned = true;
+        //    Debug.Log("has ground");
+        //}
+        
+        if(GameObject.Find("Ground") && horizontalMove != 0)
         {
             hasGround = true;
-            Debug.Log("has ground");
+            Debug.Log("has ground in right");
         }
 
     }
@@ -96,7 +102,7 @@ public class GroundSpawner : MonoBehaviour
         //    Debug.Log("right");
         //}
 
-        if (horizontalMove > 0 && collision.gameObject.CompareTag("Ground"))
+        if (horizontalMove > 0 && GameObject.Find("Ground"))
         {
             hasGround = true;
           
@@ -105,12 +111,12 @@ public class GroundSpawner : MonoBehaviour
 
 
 
-        if (horizontalMove > 0)
+        if (horizontalMove > 0 && collision.gameObject.CompareTag("Spawn"))
         {
             hasGround = false;
             Debug.Log("spawn");
         }
-      
+
 
     }
 
