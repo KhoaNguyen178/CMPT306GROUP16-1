@@ -7,7 +7,6 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D rb;
     public float speed = 10.0f;
     public Animator Anime;
-    public GameObject cam;//
 
     public LayerMask Groud;
     public float Jumpforce = 12.5f;
@@ -15,6 +14,7 @@ public class PlayerController : MonoBehaviour
     public bool isGround;
     public int extraJumpTimes = 1;
     public int jumpTimesLeft;
+    public AudioSource JumpAudio;
 
     void Update()
     {
@@ -45,21 +45,10 @@ public class PlayerController : MonoBehaviour
         }
         if (Input.GetButtonDown("Jump") && jumpTimesLeft > 0) //Allow the player jump.
         {
+            JumpAudio.Play();
             rb.velocity = Vector2.up * Jumpforce;
             jumpTimesLeft--;
             Anime.SetBool("jumping", true);
-        }
-
-        if (Input.GetButtonDown("Fire1")) //Allow the player attack.(Just a testing animation now)
-        {
-            if (Anime.GetBool("attack1"))
-            {
-                Anime.SetBool("attack1", false);
-            }
-            else
-            {
-                Anime.SetBool("attack1", true);
-            }
         }
     }
 
