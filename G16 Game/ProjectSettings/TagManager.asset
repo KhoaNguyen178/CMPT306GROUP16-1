@@ -7,6 +7,8 @@ TagManager:
   - HPBar
   - Ground
   - Spawn
+  - Gold
+  - Silver
   layers:
   - Default
   - TransparentFX
