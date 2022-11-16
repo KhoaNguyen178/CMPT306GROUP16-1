@@ -69,14 +69,29 @@ public class Enemy : MonoBehaviour
 
     public IEnumerator FlashRed()
     {
+        //NOTE: This will work because all enemy prefabs will have 3 sprites in the object. 
         //sprite.color = Color.red;
-        sprite.transform.GetChild(0).GetComponent<SpriteRenderer>().material.color = Color.red;
-        sprite.transform.GetChild(1).GetComponent<SpriteRenderer>().material.color = Color.red;
-        sprite.transform.GetChild(2).GetComponent<SpriteRenderer>().material.color = Color.red;
+        //sprite.transform.GetChild(0).GetComponent<SpriteRenderer>().material.color = Color.red;
+        //sprite.transform.GetChild(1).GetComponent<SpriteRenderer>().material.color = Color.red;
+        //sprite.transform.GetChild(2).GetComponent<SpriteRenderer>().material.color = Color.red;
+        foreach(Transform child in sprite.transform)
+        {
+            if(child.GetComponent<SpriteRenderer>() != null)
+            {
+                child.GetComponent<SpriteRenderer>().material.color = Color.red;
+            }
+        }
+
         yield return new WaitForSeconds(0.1f);
-        sprite.transform.GetChild(0).GetComponent<SpriteRenderer>().material.color = Color.white;
-        sprite.transform.GetChild(1).GetComponent<SpriteRenderer>().material.color = Color.white;
-        sprite.transform.GetChild(2).GetComponent<SpriteRenderer>().material.color = Color.white;
+
+        foreach (Transform child in sprite.transform)
+        {
+            if(child.GetComponent<SpriteRenderer>() != null)
+            {
+                child.GetComponent<SpriteRenderer>().material.color = Color.white;
+            }
+            
+        }
         //sprite.color = Color.white;
     }
 }
