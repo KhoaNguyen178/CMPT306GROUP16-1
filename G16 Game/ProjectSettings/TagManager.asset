@@ -9,6 +9,7 @@ TagManager:
   - Spawn
   - Gold
   - Silver
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -16,7 +17,7 @@ TagManager:
   - Ground
   - Water
   - UI
-  - 
+  - Enemy
   - 
   - 
   - 

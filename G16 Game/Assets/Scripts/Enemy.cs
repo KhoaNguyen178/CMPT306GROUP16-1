@@ -19,6 +19,8 @@ public class Enemy : MonoBehaviour
     public GameObject sprites;
     public GameObject deathEffect;
 
+    public AudioSource audioTakingDmg;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -66,6 +68,7 @@ public class Enemy : MonoBehaviour
             var temp = this.GetComponent<Rigidbody2D>();
             temp.constraints = RigidbodyConstraints2D.FreezeAll;
             //We would change this to player attack rather than player tag
+            audioTakingDmg.GetComponent<AudioSource>().Play();
             this.TakeDamage(damageToSelf);
             StartCoroutine(FlashRed());
             damageTime = Time.time + damageRate;
