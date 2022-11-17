@@ -1982,6 +1982,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9005118325440364989, guid: 1082756fdebb62f4292c4a0f6a179939, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 9005118325440364990, guid: 1082756fdebb62f4292c4a0f6a179939, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -2966,6 +2970,14 @@ PrefabInstance:
     - target: {fileID: 4533046827902932077, guid: 38d1b8d56cd9d64438e48e07a5870cab, type: 3}
       propertyPath: m_Name
       value: Boss
+      objectReference: {fileID: 0}
+    - target: {fileID: 4533046827902932077, guid: 38d1b8d56cd9d64438e48e07a5870cab, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4533046828325292086, guid: 38d1b8d56cd9d64438e48e07a5870cab, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4533046828325292086, guid: 38d1b8d56cd9d64438e48e07a5870cab, type: 3}
       propertyPath: m_SortingOrder

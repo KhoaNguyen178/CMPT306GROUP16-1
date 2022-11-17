@@ -16,6 +16,9 @@ public class PlayerController : MonoBehaviour
     public int jumpTimesLeft;
     public AudioSource JumpAudio;
 
+    private float face = 1;
+
+
     void Update()
     {
         isGround = Physics2D.OverlapCircle(GroundCheck.position, 0.2f, Groud);  //Check if the player is standing on the ground.
@@ -33,9 +36,10 @@ public class PlayerController : MonoBehaviour
             Anime.SetFloat("speed", Mathf.Abs(facedirection));
         }
 
-        if (facedirection != 0) //Change the player's direction.
+        if (facedirection != 0 && face != facedirection)
         {
-            transform.localScale = new Vector3(facedirection, 1, 1);
+            face = (face == 1) ? -1 : 1;
+            transform.Rotate(0f, 180f, 0f);
         }
 
 
