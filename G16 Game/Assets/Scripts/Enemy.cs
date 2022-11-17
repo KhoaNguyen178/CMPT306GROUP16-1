@@ -16,7 +16,8 @@ public class Enemy : MonoBehaviour
     public GameObject silverCoin;
     public GameObject goldCoin;
     public GameObject HPCanvas;
-    public GameObject sprite;
+    public GameObject sprites;
+    public GameObject deathEffect;
 
     // Start is called before the first frame update
     void Start()
@@ -42,7 +43,8 @@ public class Enemy : MonoBehaviour
         if (health <= 0)
         {
             Destroy(this.gameObject);
-            //Instantiate(deathEffect, transform.position, transform.rotation);
+            GameObject effect = Instantiate(deathEffect, transform.position, transform.rotation);
+            Destroy(effect, 0.35f);
             float rando1 = UnityEngine.Random.Range(1, 10);
             if(rando1 <= 2)
             {
@@ -60,6 +62,9 @@ public class Enemy : MonoBehaviour
     {
         if (other.transform.tag == "Player" && Time.time > damageTime)
         {
+            //Prevent enemy from being pushed by player
+            var temp = this.GetComponent<Rigidbody2D>();
+            temp.constraints = RigidbodyConstraints2D.FreezeAll;
             //We would change this to player attack rather than player tag
             this.TakeDamage(damageToSelf);
             StartCoroutine(FlashRed());
@@ -67,9 +72,16 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    private void OnCollisionExit2D(Collision2D other)
+    {
+        //Unfreeze enemy
+        var temp = this.GetComponent<Rigidbody2D>();
+        temp.constraints = RigidbodyConstraints2D.None;
+    }
+
     public IEnumerator FlashRed()
     {
-        foreach(Transform child in sprite.transform)
+        foreach(Transform child in sprites.transform)
         {
             if(child.GetComponent<SpriteRenderer>() != null)
             {
@@ -79,7 +91,7 @@ public class Enemy : MonoBehaviour
 
         yield return new WaitForSeconds(0.1f);
 
-        foreach (Transform child in sprite.transform)
+        foreach (Transform child in sprites.transform)
         {
             if(child.GetComponent<SpriteRenderer>() != null)
             {

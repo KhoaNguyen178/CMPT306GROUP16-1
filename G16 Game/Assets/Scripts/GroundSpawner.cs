@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GroundSpawner : MonoBehaviour
 {
-
+    public GameObject enemyPrefab;
     public GameObject[] ground;
     bool hasGround = true;
     bool isSpawned = true;
@@ -62,6 +62,7 @@ public class GroundSpawner : MonoBehaviour
             Instantiate(ground[4], new Vector3(transform.position.x + 9, -2.92f, 0), Quaternion.identity); //11
             isSpawned = true;
         }
+        Instantiate(enemyPrefab, transform.position, transform.rotation);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
