@@ -19,9 +19,16 @@ public class DropController : MonoBehaviour
     {
         if (other.transform.tag == "Player")
         {
+            if(this.gameObject.tag == "Gold")
+            {
+                GameManager.instance.AddCoins(3);
+            }
+            else
+            {
+                GameManager.instance.AddCoins(1);
+            }
             Destroy(this.gameObject);
-            //GameManager.instance.AddPoints(1);
-
+            
         }
     }
 }

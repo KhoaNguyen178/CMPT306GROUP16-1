@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 707969525962465535}
   - component: {fileID: 8059915751034169534}
   - component: {fileID: 7741816301278673713}
-  - component: {fileID: 4314287594102116924}
+  - component: {fileID: 5501215574629743185}
   m_Layer: 0
   m_Name: CoinGold3
-  m_TagString: Untagged
+  m_TagString: Gold
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,8 +29,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1785100447502755536}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.3056, y: 0.3118, z: 0}
-  m_LocalScale: {x: 0.38872766, y: 0.37627625, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -161,7 +161,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.44088954, y: 0.5521058}
   m_EdgeRadius: 0
---- !u!114 &4314287594102116924
+--- !u!114 &5501215574629743185
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -170,6 +170,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1785100447502755536}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e4369e557d3bac448fa45296ba25a0a, type: 3}
+  m_Script: {fileID: 11500000, guid: d7b8df7648f48c7459b70ea4f6082d8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

@@ -23,6 +23,14 @@ public class PlayerAttack : MonoBehaviour
         AttackAudio2.Play();
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)// Whien hit something.
+    {
+        if (collision.gameObject.tag == "Enemy") //If hit enemy.
+        {
+            // Hurting codes go here.
+        }
+    }
+
     void Attack()
     {
         if (Input.GetButtonDown("Fire1") && !Anime.GetBool("Attacking"))
