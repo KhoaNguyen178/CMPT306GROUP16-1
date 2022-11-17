@@ -17,20 +17,13 @@ public class PlayerController : MonoBehaviour
     public AudioSource JumpAudio;
 
     private float face = 1;
-    public float PlayerHP = 100f;
 
-    private void Start()
-    {
-        Anime.SetBool("Alive", true);
-    }
+
     void Update()
     {
-        if (Anime.GetBool("Alive"))
-        {
-            isGround = Physics2D.OverlapCircle(GroundCheck.position, 0.2f, Groud);  //Check if the player is standing on the ground.
-            SwitchAnime();
-            Movement();
-        }
+        isGround = Physics2D.OverlapCircle(GroundCheck.position, 0.2f, Groud);  //Check if the player is standing on the ground.
+        SwitchAnime();
+        Movement();
     }
 
     void Movement()
@@ -60,20 +53,6 @@ public class PlayerController : MonoBehaviour
             rb.velocity = Vector2.up * Jumpforce;
             jumpTimesLeft--;
             Anime.SetBool("jumping", true);
-        }
-    }
-
-    public void PlayerTakeDamage(float damage) // Player gets hurted and check if dies.
-    {
-        PlayerHP -= damage;
-        if (PlayerHP <= 0)
-        {
-            Anime.SetBool("Alive", false);
-            Anime.SetTrigger("Die");
-        }
-        else
-        {
-            Anime.SetTrigger("Hurted");
         }
     }
 
