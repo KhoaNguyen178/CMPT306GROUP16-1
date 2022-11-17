@@ -3601,6 +3601,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3979988103324313577, guid: c58e00cbd9cd36c44bd5c8ea05dc4153, type: 3}
+      propertyPath: m_Size.y
+      value: 0.4277167
+      objectReference: {fileID: 0}
+    - target: {fileID: 3979988103324313577, guid: c58e00cbd9cd36c44bd5c8ea05dc4153, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.028858349
+      objectReference: {fileID: 0}
     - target: {fileID: 3979988103324313578, guid: c58e00cbd9cd36c44bd5c8ea05dc4153, type: 3}
       propertyPath: m_Name
       value: Ground
