@@ -15,7 +15,7 @@ public class Enemy : MonoBehaviour
     //public GameObject deathEffect;
     public GameObject silverCoin;
     public GameObject goldCoin;
-    public GameObject HPCanvas;
+    //public GameObject HPCanvas;
     public GameObject sprites;
     public GameObject deathEffect;
 
@@ -40,11 +40,11 @@ public class Enemy : MonoBehaviour
     {
         health -= damage;
         //slider.value = health;
-        HPCanvas.SetActive(true);
+        //HPCanvas.SetActive(true);
 
         if (health <= 0)
         {
-            Destroy(this.gameObject, 1f);
+            Destroy(this.gameObject);
             GameObject effect = Instantiate(deathEffect, transform.position, transform.rotation);
             Destroy(effect, 0.35f);
             float rando1 = UnityEngine.Random.Range(1, 10);

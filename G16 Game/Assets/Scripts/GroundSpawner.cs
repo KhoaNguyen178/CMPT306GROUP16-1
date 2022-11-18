@@ -36,33 +36,38 @@ public class GroundSpawner : MonoBehaviour
         if (randomNum == 0)
         {
             Instantiate(ground[0], new Vector3(transform.position.x + 14, -4.5498f, 0), Quaternion.identity);
+            Instantiate(enemyPrefab, new Vector3(transform.position.x + 14, -4.5498f, 0), transform.rotation);
             isSpawned = true;
         }
 
         if (randomNum == 1)
         {
             Instantiate(ground[1], new Vector3(transform.position.x + 8, -2.52f, 0), Quaternion.identity);
+            Instantiate(enemyPrefab, new Vector3(transform.position.x + 8, -2.52f, 0), transform.rotation);
             isSpawned = true;
         }
 
         if (randomNum == 2)
         {
             Instantiate(ground[2], new Vector3(transform.position.x + 4, -2.58f, 0), Quaternion.identity);
+            Instantiate(enemyPrefab, new Vector3(transform.position.x + 4, -2.58f, 0), transform.rotation);
             isSpawned = true;
         }
 
         if (randomNum == 3)
         {
             Instantiate(ground[3], new Vector3(transform.position.x + 5, -2.56f, 0), Quaternion.identity);
+            Instantiate(enemyPrefab, new Vector3(transform.position.x + 5, -2.56f, 0), transform.rotation);
             isSpawned = true;
         }
 
         if (randomNum == 4)
         {
             Instantiate(ground[4], new Vector3(transform.position.x + 9, -2.92f, 0), Quaternion.identity); //11
+            Instantiate(enemyPrefab, new Vector3(transform.position.x + 9, -2.92f, 0), transform.rotation);
             isSpawned = true;
         }
-        Instantiate(enemyPrefab, transform.position, transform.rotation);
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
