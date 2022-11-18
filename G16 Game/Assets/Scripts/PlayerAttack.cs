@@ -7,12 +7,17 @@ public class PlayerAttack : MonoBehaviour
     public int damage;
     public float intervalTime;
     public float startTime;
+    public float AttackDamage = 30.0f;
 
     public Animator Anime;
     public PolygonCollider2D poly2D;
     public AudioSource AttackAudio1;
     public AudioSource AttackAudio2;
 
+    private void Start()
+    {
+        poly2D.enabled = false;
+    }
     void Update()
     {
         Attack();
@@ -23,11 +28,11 @@ public class PlayerAttack : MonoBehaviour
         AttackAudio2.Play();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)// Whien hit something.
+    private void OnTriggerEnter2D(Collider2D other)// Whien hit something.
     {
-        if (collision.gameObject.tag == "Enemy") //If hit enemy.
+        if (other.transform.CompareTag("Enemy") && poly2D.enabled)
         {
-            // Hurting codes go here.
+            other.GetComponent<Enemy>().TakeDamage(AttackDamage);
         }
     }
 

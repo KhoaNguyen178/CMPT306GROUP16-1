@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private float health = 100.0f;
+    public float damageToPlayer = 10.0f;
     [SerializeField] private float damageToSelf = 10.0f; //testing
     [SerializeField] private float moveSpeed = 15.0f;
     [SerializeField] private float damageRate = 0.2f;
@@ -24,7 +25,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -40,7 +41,10 @@ public class Enemy : MonoBehaviour
     {
         health -= damage;
         //slider.value = health;
+
         //HPCanvas.SetActive(true);
+        StartCoroutine(FlashRed());
+
 
         if (health <= 0)
         {
@@ -56,9 +60,10 @@ public class Enemy : MonoBehaviour
             {
                 GameObject drop = Instantiate(silverCoin, transform.position, transform.rotation);
             }
-            
+
         }
     }
+
 
     private void OnTriggerStay2D(Collider2D other)
     {
@@ -74,6 +79,16 @@ public class Enemy : MonoBehaviour
             damageTime = Time.time + damageRate;
         }
     }
+
+    //private void OnTriggerStay2D(Collider2D other)
+    //{
+        //if (other.transform.tag == "Player")
+        //{
+            //other.GetComponent<PlayerController>().PlayerTakeDamage(damageToPlayer);
+            //damageTime = Time.time + damageRate;
+        //}
+    //}
+
 
     private void OnCollisionExit2D(Collision2D other)
     {
@@ -100,7 +115,7 @@ public class Enemy : MonoBehaviour
             {
                 child.GetComponent<SpriteRenderer>().material.color = Color.white;
             }
-            
+
         }
     }
 }

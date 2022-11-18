@@ -16,18 +16,19 @@ public class PlayerController : MonoBehaviour
     public int jumpTimesLeft;
     public AudioSource JumpAudio;
 
-    private float face = 1;
+    public float face = 1;
     public float PlayerHP = 100f;
+    public bool onHurt;
 
     private void Start()
     {
         Anime.SetBool("Alive", true);
+        Anime.SetBool("onHurt", false);
     }
     void Update()
     {
-        if (Anime.GetBool("Alive"))
+        if (Anime.GetBool("Alive") && !onHurt)
         {
-            isGround = Physics2D.OverlapCircle(GroundCheck.position, 0.2f, Groud);  //Check if the player is standing on the ground.
             SwitchAnime();
             Movement();
         }
@@ -40,8 +41,8 @@ public class PlayerController : MonoBehaviour
         if (horizontalMove != 0) //Allow the player move leftward or rightward.
         {
             rb.velocity = new Vector2(horizontalMove * speed, rb.velocity.y);
-            Anime.SetFloat("speed", Mathf.Abs(facedirection));
         }
+        Anime.SetFloat("speed", Mathf.Abs(facedirection));
 
         if (facedirection != 0 && face != facedirection)
         {
@@ -49,13 +50,15 @@ public class PlayerController : MonoBehaviour
             transform.Rotate(0f, 180f, 0f);
         }
 
-
+        isGround = Physics2D.OverlapCircle(GroundCheck.position, 0.2f, Groud);  //Check if the player is standing on the ground.
         if (isGround)
         {
+            Anime.SetBool("isGround", true);
             jumpTimesLeft = extraJumpTimes; //Reset jumping status when player on the ground.
         }
         if (Input.GetButtonDown("Jump") && jumpTimesLeft > 0) //Allow the player jump.
         {
+            Anime.SetBool("isGround", false);
             JumpAudio.Play();
             rb.velocity = Vector2.up * Jumpforce;
             jumpTimesLeft--;
@@ -73,7 +76,54 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            Anime.SetTrigger("Hurted");
+            onHurt = true;
+            Anime.SetBool("onHurt", true);
+            Anime.SetBool("isGround", false);
+            Invoke("HurtedCancel", 0.5f);
+        }
+    }
+
+    public void HurtedCancel()
+    {
+        onHurt = false;
+        Anime.SetBool("onHurt", false);
+    }
+
+
+    void AccordingDirectionFlip(Collision2D collision)
+    {
+        if (collision != null)
+        {
+            int direction;
+            if (collision.transform.position.x < transform.position.x)
+            {
+                direction = -1;
+            }
+            else
+            {
+                direction = 1;
+            }
+            if (direction != face)
+            {
+                face = (face == 1) ? -1 : 1;
+                transform.Rotate(0f, 180f, 0f);
+            }
+        }
+    }
+
+    void Hurt(Collision2D collision)
+    {
+        PlayerTakeDamage(collision.gameObject.GetComponent<Enemy>().damageToPlayer);
+        AccordingDirectionFlip(collision);
+        rb.velocity = Vector2.up * 7f;
+        rb.velocity = new Vector2(face * -7, rb.velocity.y);
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Hurt(collision);
         }
     }
 
@@ -94,6 +144,7 @@ public class PlayerController : MonoBehaviour
             {
                 Anime.SetBool("falling", false);
                 Anime.SetBool("idle", true);
+                Anime.SetBool("isGround", true);
             }
         }
     }
