@@ -7,7 +7,6 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D rb;
     public float speed = 10.0f;
     public Animator Anime;
-    public GameObject cam;//
 
     public LayerMask Groud;
     public float Jumpforce = 12.5f;
@@ -15,12 +14,23 @@ public class PlayerController : MonoBehaviour
     public bool isGround;
     public int extraJumpTimes = 1;
     public int jumpTimesLeft;
+    public AudioSource JumpAudio;
 
+    private float face = 1;
+    public float PlayerHP = 100f;
+
+    private void Start()
+    {
+        Anime.SetBool("Alive", true);
+    }
     void Update()
     {
-        isGround = Physics2D.OverlapCircle(GroundCheck.position, 0.2f, Groud);  //Check if the player is standing on the ground.
-        SwitchAnime();
-        Movement();
+        if (Anime.GetBool("Alive"))
+        {
+            isGround = Physics2D.OverlapCircle(GroundCheck.position, 0.2f, Groud);  //Check if the player is standing on the ground.
+            SwitchAnime();
+            Movement();
+        }
     }
 
     void Movement()
@@ -33,9 +43,10 @@ public class PlayerController : MonoBehaviour
             Anime.SetFloat("speed", Mathf.Abs(facedirection));
         }
 
-        if (facedirection != 0) //Change the player's direction.
+        if (facedirection != 0 && face != facedirection)
         {
-            transform.localScale = new Vector3(facedirection, 1, 1);
+            face = (face == 1) ? -1 : 1;
+            transform.Rotate(0f, 180f, 0f);
         }
 
 
@@ -45,21 +56,24 @@ public class PlayerController : MonoBehaviour
         }
         if (Input.GetButtonDown("Jump") && jumpTimesLeft > 0) //Allow the player jump.
         {
+            JumpAudio.Play();
             rb.velocity = Vector2.up * Jumpforce;
             jumpTimesLeft--;
             Anime.SetBool("jumping", true);
         }
+    }
 
-        if (Input.GetButtonDown("Fire1")) //Allow the player attack.(Just a testing animation now)
+    public void PlayerTakeDamage(float damage) // Player gets hurted and check if dies.
+    {
+        PlayerHP -= damage;
+        if (PlayerHP <= 0)
         {
-            if (Anime.GetBool("attack1"))
-            {
-                Anime.SetBool("attack1", false);
-            }
-            else
-            {
-                Anime.SetBool("attack1", true);
-            }
+            Anime.SetBool("Alive", false);
+            Anime.SetTrigger("Die");
+        }
+        else
+        {
+            Anime.SetTrigger("Hurted");
         }
     }
 

@@ -10,6 +10,7 @@ TagManager:
   - Gold
   - Silver
   - Enemy
+  - Boss
   layers:
   - Default
   - TransparentFX
