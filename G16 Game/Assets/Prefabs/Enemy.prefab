@@ -283,7 +283,7 @@ GameObject:
   - component: {fileID: 4450810342771016307}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -387,10 +387,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  damageToSelf: 10
+  damageToPlayer: 10
   moveSpeed: 15
-  damageRate: 0.2
-  damageTime: 0
   silverCoin: {fileID: 5016376768434895919, guid: 2454d44c12c7fef4a8596dd19d112c5d, type: 3}
   goldCoin: {fileID: 1785100447502755536, guid: 0175dfddfe4a11f42ae8a8d87c2caa68, type: 3}
   HPCanvas: {fileID: 7335316240209975902}
