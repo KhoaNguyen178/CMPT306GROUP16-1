@@ -119,7 +119,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Anime.GetBool("Alive"))
         {
-            PlayerTakeDamage(collision.gameObject.GetComponent<Enemy>().damageToPlayer);
+            PlayerTakeDamage(collision.gameObject.GetComponent<EnemyAttribute>().damageToPlayer);
         }
         AccordingDirectionFlip(collision);
         rb.velocity = Vector2.up * 7f;
