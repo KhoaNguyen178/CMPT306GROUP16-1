@@ -7,10 +7,10 @@ using UnityEngine.UI;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private float health = 100.0f;
-    [SerializeField] private float damageToSelf = 10.0f; //testing
+    public float damageToPlayer = 10.0f;
     [SerializeField] private float moveSpeed = 15.0f;
-    [SerializeField] private float damageRate = 0.2f;
-    [SerializeField] private float damageTime;
+    //[SerializeField] private float damageRate = 0.2f;
+    //[SerializeField] private float damageTime;
     //public Slider slider;
     //public GameObject deathEffect;
     public GameObject silverCoin;
@@ -38,6 +38,7 @@ public class Enemy : MonoBehaviour
         health -= damage;
         //slider.value = health;
         HPCanvas.SetActive(true);
+        StartCoroutine(FlashRed());
 
         if (health <= 0)
         {
@@ -56,16 +57,14 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay2D(Collider2D other)
-    {
-        if (other.transform.tag == "Player" && Time.time > damageTime)
-        {
-            //We would change this to player attack rather than player tag
-            this.TakeDamage(damageToSelf);
-            StartCoroutine(FlashRed());
-            damageTime = Time.time + damageRate;
-        }
-    }
+    //private void OnTriggerStay2D(Collider2D other)
+    //{
+        //if (other.transform.tag == "Player")
+        //{
+            //other.GetComponent<PlayerController>().PlayerTakeDamage(damageToPlayer);
+            //damageTime = Time.time + damageRate;
+        //}
+    //}
 
     public IEnumerator FlashRed()
     {
