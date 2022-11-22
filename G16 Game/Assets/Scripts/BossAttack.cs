@@ -10,7 +10,22 @@ public class BossAttack : MonoBehaviour
 	public float attackRange = 1f;
 	public LayerMask attackMask;
 
-	public void Attack()
+	[SerializeField] GameObject projectile;
+
+	float fireRate;
+	float nextFire;
+
+    void Start()
+    {
+		fireRate = 1f;
+		nextFire = Time.time;
+    }
+
+  //  void Update()
+  //  {
+		//CheckTimeFired();
+  //  }
+    public void Attack()
 	{
 		Vector3 pos = transform.position;
 		pos += transform.right * attackOffset.x;
@@ -19,12 +34,12 @@ public class BossAttack : MonoBehaviour
 		Collider2D colInfo = Physics2D.OverlapCircle(pos, attackRange, attackMask);
 		if (colInfo != null)
 		{
-			//colInfo.GetComponent<PlayerHealth>().TakeDamage(attackDamage);
+			colInfo.GetComponent<PlayerHealth>().TakeDamage(attackDamage);
+			Instantiate(projectile, transform.position, Quaternion.identity);
 			colInfo.GetComponent<PlayerController>().PlayerTakeDamage(attackDamage);
-	
+			
 		}
 	}
-
 	void OnDrawGizmosSelected()
 	{
 		Vector3 pos = transform.position;
@@ -33,4 +48,13 @@ public class BossAttack : MonoBehaviour
 
 		Gizmos.DrawWireSphere(pos, attackRange);
 	}
+
+    //void CheckTimeFired()
+    //{
+    //    if (Time.time > nextFire)
+    //    {
+    //        Instantiate(projectile, transform.position, Quaternion.identity);
+    //        nextFire = Time.time + fireRate;
+    //    }
+    //}
 }

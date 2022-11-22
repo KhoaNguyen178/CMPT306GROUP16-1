@@ -2364,6 +2364,22 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 297063993}
+    - target: {fileID: 1203969181, guid: 4a720944a115d9447a4996ddaa03525b, type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 7189767724682233068, guid: c0bd56e603bf5c94f80e7750a75167dc, type: 3}
+    - target: {fileID: 1203969181, guid: 4a720944a115d9447a4996ddaa03525b, type: 3}
+      propertyPath: attackRange
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1203969181, guid: 4a720944a115d9447a4996ddaa03525b, type: 3}
+      propertyPath: attackOffset.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1203969181, guid: 4a720944a115d9447a4996ddaa03525b, type: 3}
+      propertyPath: attackOffset.y
+      value: 0.35
+      objectReference: {fileID: 0}
     - target: {fileID: 1221219518928168898, guid: 4a720944a115d9447a4996ddaa03525b, type: 3}
       propertyPath: m_RootOrder
       value: 13
