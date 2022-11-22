@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -73,6 +74,7 @@ public class PlayerController : MonoBehaviour
         {
             Anime.SetBool("Alive", false);
             Anime.SetTrigger("Die");
+            Die(); // Tam added this line
         }
         else
         {
@@ -147,5 +149,10 @@ public class PlayerController : MonoBehaviour
                 Anime.SetBool("isGround", true);
             }
         }
+    }
+
+    void Die() //Tam added this line
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
