@@ -20,6 +20,8 @@ public class BossAttack : MonoBehaviour
 		if (colInfo != null)
 		{
 			colInfo.GetComponent<PlayerHealth>().TakeDamage(attackDamage);
+			colInfo.GetComponent<PlayerController>().PlayerTakeDamage(attackDamage);
+	
 		}
 	}
 
