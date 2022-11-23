@@ -597,11 +597,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &279014259 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6559302083160762165, guid: 1e2ca83e232314ecca50c0a964def98c, type: 3}
-  m_PrefabInstance: {fileID: 6559302082902854726}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &297063992
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -886,7 +881,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab:
-  - {fileID: 279014259}
+  - {fileID: 1792500198}
   - {fileID: 1792500198}
   ground:
   - {fileID: 3979988103324313578, guid: c58e00cbd9cd36c44bd5c8ea05dc4153, type: 3}
@@ -3720,10 +3715,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy1
       objectReference: {fileID: 0}
-    - target: {fileID: 1384006157114418272, guid: a88e521e59c4c4c33b426ab398c46198, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1384006157114418273, guid: a88e521e59c4c4c33b426ab398c46198, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -3768,10 +3759,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7919655202224992293, guid: a88e521e59c4c4c33b426ab398c46198, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1013917347}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a88e521e59c4c4c33b426ab398c46198, type: 3}
 --- !u!1001 &3263539626395734493
