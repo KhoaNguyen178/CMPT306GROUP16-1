@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class GroundSpawner : MonoBehaviour
 {
-    public GameObject enemyPrefab;
+    public GameObject[] enemyPrefab;
     public GameObject[] ground;
     bool hasGround = true;
     bool isSpawned = true;
   
 
-
     // Start is called before the first frame update
     void Start()
     {
-       
+        InvokeRepeating("SpawnEnemy", 3.0f, 3.0f);
     }
 
     // Update is called once per frame
@@ -36,14 +35,14 @@ public class GroundSpawner : MonoBehaviour
         if (randomNum == 0)
         {
             Instantiate(ground[0], new Vector3(transform.position.x + 14, -4.5498f, 0), Quaternion.identity);
-            Instantiate(enemyPrefab, new Vector3(transform.position.x + 14, -4.5498f, 0), transform.rotation);
+            //Instantiate(enemyPrefab[0], new Vector3(transform.position.x + 14, -2, 0), transform.rotation);
             isSpawned = true;
         }
 
         if (randomNum == 1)
         {
             Instantiate(ground[1], new Vector3(transform.position.x + 8, -2.52f, 0), Quaternion.identity);
-            Instantiate(enemyPrefab, new Vector3(transform.position.x + 8, -2.52f, 0), transform.rotation);
+           // Instantiate(enemyPrefab[1], new Vector3(transform.position.x + 8, -2, 0), transform.rotation);
             isSpawned = true;
         }
 
@@ -57,17 +56,21 @@ public class GroundSpawner : MonoBehaviour
         if (randomNum == 3)
         {
             Instantiate(ground[3], new Vector3(transform.position.x + 5, -2.56f, 0), Quaternion.identity);
-            Instantiate(enemyPrefab, new Vector3(transform.position.x + 5, -2.56f, 0), transform.rotation);
+            //Instantiate(enemyPrefab[3], new Vector3(transform.position.x + 5, -2.56f, 0), transform.rotation);
             isSpawned = true;
         }
 
         if (randomNum == 4)
         {
             Instantiate(ground[4], new Vector3(transform.position.x + 9, -2.92f, 0), Quaternion.identity); //11
-            Instantiate(enemyPrefab, new Vector3(transform.position.x + 9, -2.92f, 0), transform.rotation);
+            //Instantiate(enemyPrefab[4], new Vector3(transform.position.x + 9, -2.92f, 0), transform.rotation);
             isSpawned = true;
         }
         
+    }
+    public void SpawnEnemy()
+    {
+        Instantiate(enemyPrefab[Random.Range(0, enemyPrefab.Length)], new Vector3(transform.position.x + 9, -2.92f, 0), transform.rotation);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

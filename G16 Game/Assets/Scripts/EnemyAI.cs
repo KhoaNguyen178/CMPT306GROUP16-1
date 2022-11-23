@@ -13,7 +13,7 @@ public class EnemyAI : MonoBehaviour
     int currentWayPoint = 0;
     bool reachedEndOfPath = false;
     public Transform enemyGFX;
-
+    private GameObject player;
     Seeker seeker;
     Rigidbody2D rb;
 
@@ -23,7 +23,8 @@ public class EnemyAI : MonoBehaviour
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
         InvokeRepeating("UpdatePath", 0f, .5f);
-
+        player = GameObject.FindGameObjectWithTag("Player");
+        target = player.transform;
     }
 
     void UpdatePath()

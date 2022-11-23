@@ -1,11 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class Boss : MonoBehaviour
 {
     public Transform player;
     public bool isFlipped = false;
+    private GameObject playerGameobject;
+
+    void Start()
+    {
+        playerGameobject = GameObject.FindGameObjectWithTag("Player");
+        player = playerGameobject.transform;
+    }
+
     public void LookAtPlayer()
     {
         Vector3 flipped = transform.localScale;
@@ -24,4 +33,5 @@ public class Boss : MonoBehaviour
             isFlipped = true;
         }
     }
+
 }
