@@ -58,15 +58,6 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    //private void OnTriggerStay2D(Collider2D other)
-    //{
-    //if (other.transform.tag == "Player")
-    //{
-    //other.GetComponent<PlayerController>().PlayerTakeDamage(damageToPlayer);
-    //damageTime = Time.time + damageRate;
-    //}
-    //}
-
     private void OnTriggerStay2D(Collider2D collision)
     {
         if(collision.transform.tag == "Player" && Time.time > damageTime)
