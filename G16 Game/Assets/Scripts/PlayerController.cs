@@ -126,6 +126,9 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             Hurt(collision);
+            //Prevent enemy from being pushed by player
+            var temp = collision.gameObject.GetComponent<Rigidbody2D>();
+            temp.constraints = RigidbodyConstraints2D.FreezeAll;
         }
     }
 
