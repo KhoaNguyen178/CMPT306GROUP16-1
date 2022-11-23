@@ -13,9 +13,11 @@ GameObject:
   - component: {fileID: 6559302083160762160}
   - component: {fileID: 6559302083160762163}
   - component: {fileID: 6559302083160762162}
+  - component: {fileID: 2103301694}
+  - component: {fileID: 2103301695}
   m_Layer: 0
   m_Name: FlyEnemy 1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133,6 +135,43 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aiPath: {fileID: 6559302083160762160}
+--- !u!114 &2103301694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6559302083160762165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 423a64e548541c145b9a133a1aecdd0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  damageToPlayer: 10
+  moveSpeed: 15
+  damageRate: 0.2
+  damageTime: 0
+  damageToSelf: 10
+  silverCoin: {fileID: 5016376768434895919, guid: 2454d44c12c7fef4a8596dd19d112c5d, type: 3}
+  goldCoin: {fileID: 1785100447502755536, guid: 0175dfddfe4a11f42ae8a8d87c2caa68, type: 3}
+  sprites: {fileID: 8666222939047016711}
+--- !u!58 &2103301695
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6559302083160762165}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.71
 --- !u!1001 &6559302081316824554
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -193,5 +232,10 @@ PrefabInstance:
 --- !u!4 &8666222939047016710 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2541096327176232172, guid: b2ac7a170dd277546b6480174ab305e3, type: 3}
+  m_PrefabInstance: {fileID: 6559302081316824554}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8666222939047016711 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2541096327176232173, guid: b2ac7a170dd277546b6480174ab305e3, type: 3}
   m_PrefabInstance: {fileID: 6559302081316824554}
   m_PrefabAsset: {fileID: 0}
