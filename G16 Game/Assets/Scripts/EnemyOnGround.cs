@@ -10,7 +10,7 @@ public class EnemyOnGround : MonoBehaviour
     private bool facingRight = false;
     private Vector3 localScale;
     public GameObject enemyPath;
-    public Pathfinding ePath;
+    //public Pathfinding ePath;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +19,7 @@ public class EnemyOnGround : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         dirX = -1f;
         moveSpeed = 3f;
-        enemyPath = GetComponent<Seeker>();
+        //enemyPath = GetComponent<Seeker>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -27,14 +27,14 @@ public class EnemyOnGround : MonoBehaviour
         if (collision.GetComponent<Wall>())
         {
             dirX *= -1f;
-            enemyPath.GetComponent<Pathfinding.Seeker>().enabled = false;
+//enemyPath.GetComponent<Pathfinding.Seeker>().enabled = false;
         }
     }
 
-    //void FixedUpdate()
-    //{
-    //    rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
-    //}
+    void FixedUpdate()
+    {
+        rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
+    }
 
     void LateUpdate()
     {
