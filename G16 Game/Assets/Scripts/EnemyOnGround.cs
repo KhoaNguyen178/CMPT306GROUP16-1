@@ -38,7 +38,7 @@ public class EnemyOnGround : MonoBehaviour
 
     void LateUpdate()
     {
-        CheckWhereToFace();        
+        CheckWhereToFace();
     }
 
     void CheckWhereToFace()

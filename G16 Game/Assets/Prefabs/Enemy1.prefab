@@ -268,7 +268,6 @@ GameObject:
   - component: {fileID: 865142083433391517}
   - component: {fileID: 865142083433391516}
   - component: {fileID: 865142083433391518}
-  - component: {fileID: 7919655202224992293}
   - component: {fileID: 1792500205}
   - component: {fileID: 1792500206}
   m_Layer: 0
@@ -386,20 +385,6 @@ MonoBehaviour:
   sprites: {fileID: 0}
   deathEffect: {fileID: 0}
   audioTakingDmg: {fileID: 0}
---- !u!114 &7919655202224992293
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1384006157114418272}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e55ace1803213bb419eed786f81413fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 842962337226128324, guid: 223211321c4342b428aff95625429579, type: 3}
-  isFlipped: 0
 --- !u!114 &1792500205
 MonoBehaviour:
   m_ObjectHideFlags: 0
