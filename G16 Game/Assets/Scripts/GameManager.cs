@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     public Image progressBarFillMask;
     private int coins = 0;
     private int kills = 0;
-    private float progressTracker = 28;
+    private float progressTracker = 0;
 
     // Start is called before the first frame update
     void Start()

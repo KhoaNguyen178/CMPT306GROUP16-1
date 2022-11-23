@@ -3796,7 +3796,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinsText: {fileID: 375835416}
-  progressBar: {fileID: 212374179}
+  progressBarFillMask: {fileID: 217718811}
 --- !u!4 &1853804743
 Transform:
   m_ObjectHideFlags: 0
