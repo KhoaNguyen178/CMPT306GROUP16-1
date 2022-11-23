@@ -50,7 +50,7 @@ public class GroundSpawner : MonoBehaviour
         if (randomNum == 2)
         {
             Instantiate(ground[2], new Vector3(transform.position.x + 4, -2.58f, 0), Quaternion.identity);
-            Instantiate(enemyPrefab, new Vector3(transform.position.x + 4, -2.58f, 0), transform.rotation);
+            //Instantiate(enemyPrefab, new Vector3(transform.position.x + 4, -2.58f, 0), transform.rotation);
             isSpawned = true;
         }
 
