@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        resetCoins();
     }
 
     // Update is called once per frame
@@ -23,5 +23,26 @@ public class GameManager : MonoBehaviour
         coins += scoreToAdd;
         Debug.Log(coins);
         //SetCoinText();
+    }
+
+    private void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+        }else if(instance != this)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    public void spendCoins(int num)
+    {
+        coins = num;
+    }
+
+    private void resetCoins()
+    {
+        coins = 0;
     }
 }

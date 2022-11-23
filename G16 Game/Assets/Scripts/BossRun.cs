@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BossRun : StateMachineBehaviour
-{
+{   
+    //StateMachineBehaviour
     public float speed = 2.5f;
     public float attackRange = 3f;
     Transform player;

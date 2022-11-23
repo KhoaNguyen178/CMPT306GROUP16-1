@@ -28,7 +28,6 @@ public class DropController : MonoBehaviour
                 GameManager.instance.AddCoins(1);
             }
             Destroy(this.gameObject);
-            
         }
     }
 }

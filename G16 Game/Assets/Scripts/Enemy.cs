@@ -7,16 +7,17 @@ using UnityEngine.UI;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private float health = 100.0f;
-    [SerializeField] private float damageToSelf = 10.0f; //testing
+    public float damageToPlayer = 10.0f;
     [SerializeField] private float moveSpeed = 15.0f;
     [SerializeField] private float damageRate = 0.2f;
     [SerializeField] private float damageTime;
+    [SerializeField] private float damageToSelf = 10.0f;
     //public Slider slider;
     //public GameObject deathEffect;
     public GameObject silverCoin;
     public GameObject goldCoin;
-    public GameObject HPCanvas;
-    public GameObject sprite;
+    //public GameObject HPCanvas;
+    public GameObject sprites;
 
     // Start is called before the first frame update
     void Start()
@@ -37,7 +38,8 @@ public class Enemy : MonoBehaviour
     {
         health -= damage;
         //slider.value = health;
-        HPCanvas.SetActive(true);
+        //HPCanvas.SetActive(true);
+        StartCoroutine(FlashRed());
 
         if (health <= 0)
         {
@@ -56,20 +58,26 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay2D(Collider2D other)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if (other.transform.tag == "Player" && Time.time > damageTime)
+        if(collision.transform.tag == "Player" && Time.time > damageTime)
         {
-            //We would change this to player attack rather than player tag
+            var temp = this.GetComponent<Rigidbody2D>();
+            temp.constraints = RigidbodyConstraints2D.FreezeAll;
             this.TakeDamage(damageToSelf);
             StartCoroutine(FlashRed());
             damageTime = Time.time + damageRate;
         }
     }
 
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        var temp = this.GetComponent<Rigidbody2D>();
+        temp.constraints = RigidbodyConstraints2D.None;
+    }
     public IEnumerator FlashRed()
     {
-        foreach(Transform child in sprite.transform)
+        foreach(Transform child in sprites.transform)
         {
             if(child.GetComponent<SpriteRenderer>() != null)
             {
@@ -79,7 +87,7 @@ public class Enemy : MonoBehaviour
 
         yield return new WaitForSeconds(0.1f);
 
-        foreach (Transform child in sprite.transform)
+        foreach (Transform child in sprites.transform)
         {
             if(child.GetComponent<SpriteRenderer>() != null)
             {

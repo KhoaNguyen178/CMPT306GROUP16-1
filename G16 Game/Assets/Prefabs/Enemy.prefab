@@ -283,7 +283,7 @@ GameObject:
   - component: {fileID: 4450810342771016307}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -335,7 +335,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9005118325440364989}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -361,7 +361,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.07956123, y: 0.37128294}
+  m_Offset: {x: 0.07956123, y: 0.41673148}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -372,7 +372,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.2386818, y: 1.9812472}
+  m_Size: {x: 1.2386818, y: 1.8903501}
   m_EdgeRadius: 0
 --- !u!114 &4450810342771016307
 MonoBehaviour:
@@ -394,7 +394,9 @@ MonoBehaviour:
   silverCoin: {fileID: 5016376768434895919, guid: 2454d44c12c7fef4a8596dd19d112c5d, type: 3}
   goldCoin: {fileID: 1785100447502755536, guid: 0175dfddfe4a11f42ae8a8d87c2caa68, type: 3}
   HPCanvas: {fileID: 7335316240209975902}
-  sprite: {fileID: 9005118325440364989}
+  sprites: {fileID: 9005118325440364989}
+  deathEffect: {fileID: 1967835574231978638, guid: 3e196c9e632c76841a71cb6e2dc6d010, type: 3}
+  audioTakingDmg: {fileID: 761173762501863038, guid: d5a4c8d7d3342cf4d9e01b2c560fdc27, type: 3}
 --- !u!1 &9005118325699812290
 GameObject:
   m_ObjectHideFlags: 0
