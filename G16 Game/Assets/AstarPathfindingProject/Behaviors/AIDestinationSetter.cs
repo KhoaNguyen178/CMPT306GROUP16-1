@@ -16,7 +16,14 @@ namespace Pathfinding {
 	public class AIDestinationSetter : VersionedMonoBehaviour {
 		/// <summary>The object that the AI should move to</summary>
 		public Transform target;
+		private GameObject player;
 		IAstarAI ai;
+
+		void Start()
+		{
+			player = GameObject.FindGameObjectWithTag("Player");
+			target = player.transform;
+		}
 
 		void OnEnable () {
 			ai = GetComponent<IAstarAI>();
