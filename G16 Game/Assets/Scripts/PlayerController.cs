@@ -22,6 +22,10 @@ public class PlayerController : MonoBehaviour
     public float PlayerHP = 100f;
     public bool onHurt;
 
+    public float xOffset;
+    public float yOffset;
+    public RectTransform recTransform;
+
     private void Start()
     {
         Anime.SetBool("Alive", true);
@@ -33,6 +37,18 @@ public class PlayerController : MonoBehaviour
         {
             SwitchAnime();
             Movement();
+        }
+
+        Vector2 player2DPosition = Camera.main.WorldToScreenPoint(transform.position);
+        recTransform.position = player2DPosition + new Vector2(xOffset, yOffset);
+
+        if (player2DPosition.x > Screen.width || player2DPosition.x < 0 || player2DPosition.y > Screen.height || player2DPosition.y < 0)
+        {
+            recTransform.gameObject.SetActive(false);
+        }
+        else
+        {
+            recTransform.gameObject.SetActive(true);
         }
     }
 
@@ -71,6 +87,7 @@ public class PlayerController : MonoBehaviour
     public void PlayerTakeDamage(float damage) // Player gets hurted and check if dies.
     {
         PlayerHP -= damage;
+        HealthSystem.Instance.TakeDamage(damage);
         if (PlayerHP <= 0)
         {
             DieAudio.Play();
