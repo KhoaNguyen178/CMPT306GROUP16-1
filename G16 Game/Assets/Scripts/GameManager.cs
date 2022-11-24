@@ -79,6 +79,12 @@ public class GameManager : MonoBehaviour
             coins -= spend;
             SetCoinText();
         }
+        else
+        {
+            coinsText.color = Color.red;
+            progressResetWait();
+            //coinsText.color = Color.white;
+        }
     }
 
     private void resetCoins()
@@ -94,6 +100,7 @@ public class GameManager : MonoBehaviour
     public void resetProgress()
     {
         progressTracker = 0;
+        coinsText.color = Color.white;
         setProgresss();
     }
 

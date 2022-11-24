@@ -16,9 +16,17 @@ public class UpgradeController : MonoBehaviour
 
     }
 
-    public void onCloseClick()
+    public void onUpgrade1Click()
     {
-
+        GameManager.instance.spendCoins(3);
+    }
+    public void onUpgrade2Click()
+    {
+        GameManager.instance.spendCoins(3);
+    }
+    public void onUpgrade3Click()
+    {
+        GameManager.instance.spendCoins(3);
     }
 }
 
