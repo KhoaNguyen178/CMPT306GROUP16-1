@@ -8,11 +8,12 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
+    public GameObject upgradeMenu;
     public Text coinsText;
     public Image progressBarFillMask;
     private int coins = 0;
     private int kills = 0;
-    private float progressTracker = 0;
+    private float progressTracker = 28;
 
     // Start is called before the first frame update
     void Start()
@@ -48,8 +49,8 @@ public class GameManager : MonoBehaviour
         progressTracker += 1;
         if(progressTracker == 30)
         {
-            StartCoroutine(progressResetWait());
-            progressTracker = 0;
+            Time.timeScale = 0;
+            upgradeMenu.SetActive(true);
         }
         setProgresss();
     }
@@ -71,9 +72,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void spendCoins(int num)
+    public void spendCoins(int spend)
     {
-        coins = num;
+        if((coins - spend) >= 0)
+        {
+            coins -= spend;
+            SetCoinText();
+        }
     }
 
     private void resetCoins()
@@ -84,6 +89,12 @@ public class GameManager : MonoBehaviour
     private void resetKills()
     {
         kills = 0;
+    }
+
+    public void resetProgress()
+    {
+        progressTracker = 0;
+        setProgresss();
     }
 
     void SetCoinText()

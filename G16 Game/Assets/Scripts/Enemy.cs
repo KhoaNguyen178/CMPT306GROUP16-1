@@ -53,7 +53,7 @@ public class Enemy : MonoBehaviour
             GameObject effect = Instantiate(deathEffect, transform.position, transform.rotation);
             Destroy(effect, 0.35f);
             float rando1 = UnityEngine.Random.Range(1, 10);
-            if(rando1 <= 2)
+            if(rando1 <= 1)
             {
                 GameObject drop = Instantiate(goldCoin, transform.position, transform.rotation);
             }
