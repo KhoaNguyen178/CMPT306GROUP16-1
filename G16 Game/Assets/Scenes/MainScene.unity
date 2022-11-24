@@ -1452,7 +1452,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31bf75a18eacd0c45ac048820b8e28d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgradeMenu: {fileID: 0}
+  upgradeMenu: {fileID: 5247621786083114657, guid: 2546f7aefa4d97640bc8adcf6234620c, type: 3}
   coinsText: {fileID: 0}
   progressBarFillMask: {fileID: 0}
 --- !u!4 &531037033
