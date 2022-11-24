@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5742642963097512792}
   - component: {fileID: -8824907132654516053}
   - component: {fileID: -6822299545593348455}
-  - component: {fileID: 242973873804414825}
+  - component: {fileID: -8671989939484857982}
   m_Layer: 0
   m_Name: FlyEnemy 2
   m_TagString: Enemy
@@ -172,27 +172,19 @@ MonoBehaviour:
   silverCoin: {fileID: 5016376768434895919, guid: 2454d44c12c7fef4a8596dd19d112c5d, type: 3}
   goldCoin: {fileID: 1785100447502755536, guid: 0175dfddfe4a11f42ae8a8d87c2caa68, type: 3}
   sprites: {fileID: 2162471442536276592}
---- !u!50 &242973873804414825
-Rigidbody2D:
-  serializedVersion: 4
+--- !u!114 &-8671989939484857982
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2041799819812606984}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46b77e4979b1b394e8a92a16ecf7ed90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageToPlayer: 10
 --- !u!1001 &8920823793419891251
 PrefabInstance:
   m_ObjectHideFlags: 0
