@@ -16,10 +16,16 @@ public class PlayerController : MonoBehaviour
     public int extraJumpTimes = 1;
     public int jumpTimesLeft;
     public AudioSource JumpAudio;
+    public AudioSource InjuredAudio;
+    public AudioSource DieAudio;
 
     public float face = 1;
     public float PlayerHP = 100f;
     public bool onHurt;
+
+    public float xOffset;
+    public float yOffset;
+    public RectTransform recTransform;
 
     private void Start()
     {
@@ -32,6 +38,18 @@ public class PlayerController : MonoBehaviour
         {
             SwitchAnime();
             Movement();
+        }
+
+        Vector2 player2DPosition = Camera.main.WorldToScreenPoint(transform.position);
+        recTransform.position = player2DPosition + new Vector2(xOffset, yOffset);
+
+        if (player2DPosition.x > Screen.width || player2DPosition.x < 0 || player2DPosition.y > Screen.height || player2DPosition.y < 0)
+        {
+            recTransform.gameObject.SetActive(false);
+        }
+        else
+        {
+            recTransform.gameObject.SetActive(true);
         }
     }
 
@@ -70,14 +88,17 @@ public class PlayerController : MonoBehaviour
     public void PlayerTakeDamage(float damage) // Player gets hurted and check if dies.
     {
         PlayerHP -= damage;
+        HealthSystem.Instance.TakeDamage(damage);
         if (PlayerHP <= 0)
         {
+            DieAudio.Play();
             Anime.SetBool("Alive", false);
             Anime.SetTrigger("Die");
             Die(); // Tam added this line
         }
         else
         {
+            InjuredAudio.Play();
             onHurt = true;
             Anime.SetBool("onHurt", true);
             Anime.SetBool("isGround", false);
@@ -115,7 +136,10 @@ public class PlayerController : MonoBehaviour
 
     void Hurt(Collision2D collision)
     {
-        PlayerTakeDamage(collision.gameObject.GetComponent<Enemy>().damageToPlayer);
+        if (Anime.GetBool("Alive"))
+        {
+            PlayerTakeDamage(collision.gameObject.GetComponent<EnemyAttribute>().damageToPlayer);
+        }
         AccordingDirectionFlip(collision);
         rb.velocity = Vector2.up * 7f;
         rb.velocity = new Vector2(face * -7, rb.velocity.y);

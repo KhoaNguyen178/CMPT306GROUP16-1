@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private float health = 100.0f;
-    public float damageToPlayer = 10.0f;
     [SerializeField] private float moveSpeed = 15.0f;
     [SerializeField] private float damageRate = 0.2f;
     [SerializeField] private float damageTime;
