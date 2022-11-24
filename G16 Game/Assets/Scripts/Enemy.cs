@@ -43,6 +43,7 @@ public class Enemy : MonoBehaviour
         if (health <= 0)
         {
             Destroy(this.gameObject);
+            GameManager.instance.AddKill();
             //Instantiate(deathEffect, transform.position, transform.rotation);
             float rando1 = UnityEngine.Random.Range(1, 10);
             if(rando1 <= 2)
