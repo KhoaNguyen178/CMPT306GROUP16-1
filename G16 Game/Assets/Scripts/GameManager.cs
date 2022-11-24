@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
     {
         kills += 1;
         progressTracker += 1;
-        if(progressTracker == 2) // 30
+        if(progressTracker == 30) // 30
         {
             Time.timeScale = 0;
             upgradeMenu.SetActive(true);

@@ -40,6 +40,8 @@ public class GroundSpawner : MonoBehaviour
         {
             Instantiate(ground[0], new Vector3(transform.position.x + 14, -4.5498f, 0), Quaternion.identity);
             Instantiate(enemy[randomEnemy],  new Vector3(transform.position.x + 14, -3.84f, 0), Quaternion.identity);
+            Instantiate(enemy[randomEnemy], new Vector3(transform.position.x + 14, -3.84f, 0), Quaternion.identity);
+            Instantiate(enemy[randomEnemy], new Vector3(transform.position.x + 14, -3.84f, 0), Quaternion.identity);
 
         }
 
@@ -60,7 +62,8 @@ public class GroundSpawner : MonoBehaviour
         {
             Instantiate(ground[3], new Vector3(transform.position.x + 5, -2.56f, 0), Quaternion.identity);
             Instantiate(enemy[randomEnemy],  new Vector3(transform.position.x + 5, -1.83f, 0), Quaternion.identity); //-1.83
-     
+            Instantiate(enemy[randomEnemy], new Vector3(transform.position.x + 5, -1.83f, 0), Quaternion.identity);
+
         }
 
         if (randomNum == 4)
