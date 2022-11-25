@@ -14,10 +14,9 @@ GameObject:
   - component: {fileID: 1110655082}
   - component: {fileID: 1203969181}
   - component: {fileID: 1110655080}
-  - component: {fileID: 5381260422471164729}
   m_Layer: 0
   m_Name: Character (96)
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 1221219518928168909}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1221219520100210880}
@@ -114,10 +113,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackDamage: 20
   attackOffset: {x: -1, y: 0.35, z: 0}
-  attackRange: 1
+  attackRange: 2
   attackMask:
     serializedVersion: 2
     m_Bits: 64
+  projectile: {fileID: 7189767724682233068, guid: c0bd56e603bf5c94f80e7750a75167dc, type: 3}
 --- !u!50 &1110655080
 Rigidbody2D:
   serializedVersion: 4
@@ -139,32 +139,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &5381260422471164729
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1221219518928168909}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.09597349, y: 0.69109416}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.2403936, y: 1.9432592}
-  m_EdgeRadius: 0
 --- !u!1 &1221219519426932013
 GameObject:
   m_ObjectHideFlags: 0

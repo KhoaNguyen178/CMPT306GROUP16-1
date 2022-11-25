@@ -39,16 +39,16 @@ public class GroundSpawner : MonoBehaviour
         if (randomNum == 0)
         {
             Instantiate(ground[0], new Vector3(transform.position.x + 14, -4.5498f, 0), Quaternion.identity);
-            Instantiate(enemy[randomEnemy],  new Vector3(transform.position.x + 14, -3.84f, 0), Quaternion.identity);
-            Instantiate(enemy[randomEnemy], new Vector3(transform.position.x + 14, -3.84f, 0), Quaternion.identity);
-            Instantiate(enemy[randomEnemy], new Vector3(transform.position.x + 14, -3.84f, 0), Quaternion.identity);
+            Instantiate(enemy[randomEnemy], new Vector3(transform.position.x + 14, -3.05f, 0), Quaternion.identity);
+            Instantiate(enemy[randomEnemy], new Vector3(transform.position.x + 14, -3.05f, 0), Quaternion.identity);
+            Instantiate(enemy[randomEnemy], new Vector3(transform.position.x + 14, -3.05f, 0), Quaternion.identity);
 
         }
 
         if (randomNum == 1)
         {
             Instantiate(ground[1], new Vector3(transform.position.x + 8, -2.52f, 0), Quaternion.identity);
-            Instantiate(enemy[randomEnemy],  new Vector3(transform.position.x + 8, -1.69f, 0), Quaternion.identity);
+            Instantiate(enemy[randomEnemy],  new Vector3(transform.position.x + 8, -1.08f, 0), Quaternion.identity);
      
         }
 
@@ -61,15 +61,15 @@ public class GroundSpawner : MonoBehaviour
         if (randomNum == 3)
         {
             Instantiate(ground[3], new Vector3(transform.position.x + 5, -2.56f, 0), Quaternion.identity);
-            Instantiate(enemy[randomEnemy],  new Vector3(transform.position.x + 5, -1.83f, 0), Quaternion.identity); //-1.83
-            Instantiate(enemy[randomEnemy], new Vector3(transform.position.x + 5, -1.83f, 0), Quaternion.identity);
+            Instantiate(enemy[randomEnemy],  new Vector3(transform.position.x + 5, -1.13f, 0), Quaternion.identity); //-1.83
+            Instantiate(enemy[randomEnemy], new Vector3(transform.position.x + 5, -1.13f, 0), Quaternion.identity);
 
         }
 
         if (randomNum == 4)
         {
             Instantiate(ground[4], new Vector3(transform.position.x + 9, -2.92f, 0), Quaternion.identity); //11
-            Instantiate(enemy[randomEnemy], new Vector3(transform.position.x + 9, -3.66f, 0), Quaternion.identity);
+            Instantiate(enemy[randomEnemy], new Vector3(transform.position.x + 9, -2.72f, 0), Quaternion.identity);
      
         }
     }
