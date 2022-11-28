@@ -34,9 +34,10 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
-        if (Anime.GetBool("Alive") && !onHurt)
+        SwitchAnime();
+        if (Anime.GetBool("Alive") && !onHurt && !Anime.GetBool("Attacking"))
         {
-            SwitchAnime();
+
             Movement();
         }
 

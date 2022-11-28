@@ -900,6 +900,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 842962337226128326, guid: 223211321c4342b428aff95625429579, type: 3}
+      propertyPath: extraJumpTimes
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 842962337226128345, guid: 223211321c4342b428aff95625429579, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1348,8 +1352,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b28f275e6c088204385affde74c5ff67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
-  rb: {fileID: 0}
 --- !u!61 &460080773
 BoxCollider2D:
   m_ObjectHideFlags: 0
