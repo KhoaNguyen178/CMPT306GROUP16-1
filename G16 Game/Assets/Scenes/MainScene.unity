@@ -1108,12 +1108,12 @@ MonoBehaviour:
   - {fileID: 6225460464126385214, guid: 983aeb73835645e41a51ba6577141358, type: 3}
   - {fileID: 2479522259105269795, guid: f8cfab19e271a7b49ad3bfdbc70dd52a, type: 3}
   enemy:
-  - {fileID: 470995172658638259, guid: 84a683ff18bf55a4086cffc7a99e3609, type: 3}
-  - {fileID: 470995172658638259, guid: 84a683ff18bf55a4086cffc7a99e3609, type: 3}
+  - {fileID: 7768667213989220873, guid: d9501729e45e57b41a14f3a9aac95626, type: 3}
+  - {fileID: 7768667213989220873, guid: d9501729e45e57b41a14f3a9aac95626, type: 3}
   - {fileID: 2041799819812606984, guid: 1bee794b517014b768d5c6d17dab9d00, type: 3}
   - {fileID: 5306363759573346250, guid: 0a2748470ad65470a90f567171a52de8, type: 3}
   - {fileID: 2702388820419165283, guid: 176198e884f8f48c6aea00bfc19272a8, type: 3}
-  - {fileID: 470995172658638259, guid: 84a683ff18bf55a4086cffc7a99e3609, type: 3}
+  - {fileID: 7768667213989220873, guid: d9501729e45e57b41a14f3a9aac95626, type: 3}
   - {fileID: 470995172658638259, guid: 84a683ff18bf55a4086cffc7a99e3609, type: 3}
 --- !u!1 &414286014
 GameObject:
@@ -1349,6 +1349,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1
+  rb: {fileID: 0}
 --- !u!61 &460080773
 BoxCollider2D:
   m_ObjectHideFlags: 0
