@@ -12,6 +12,7 @@ TagManager:
   - Enemy
   - Boss
   - PlayerAttack
+  - Close
   layers:
   - Default
   - TransparentFX
@@ -20,31 +21,31 @@ TagManager:
   - Water
   - UI
   - Enemy
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   m_SortingLayers:
   - name: Default
     uniqueID: 0

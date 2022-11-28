@@ -1,19 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
+//using System.Numerics;
 using UnityEngine;
 
 public class GroundSpawner : MonoBehaviour
 {
-    public GameObject[] enemyPrefab;
+
     public GameObject[] ground;
+    public GameObject[] enemy;
+
     bool hasGround = true;
-    bool isSpawned = true;
+
   
+
 
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("SpawnEnemy", 3.0f, 3.0f);
+       
     }
 
     // Update is called once per frame
@@ -30,47 +34,56 @@ public class GroundSpawner : MonoBehaviour
     public void SpawnGround()
     {
        
-       int randomNum = Random.Range(0, ground.Length);
+        int randomNum = Random.Range(0, ground.Length);
+        int randomEnemy = Random.Range(0, enemy.Length);
         
         if (randomNum == 0)
         {
             Instantiate(ground[0], new Vector3(transform.position.x + 14, -4.5498f, 0), Quaternion.identity);
-            //Instantiate(enemyPrefab[0], new Vector3(transform.position.x + 14, -2, 0), transform.rotation);
-            isSpawned = true;
+            Instantiate(enemy[randomEnemy],  new Vector3(transform.position.x + 14, -3.84f, 0), Quaternion.identity);
+            Instantiate(enemy[randomEnemy], new Vector3(transform.position.x + 14, -3.84f, 0), Quaternion.identity);
+            Instantiate(enemy[randomEnemy], new Vector3(transform.position.x + 14, -3.84f, 0), Quaternion.identity);
+
         }
 
         if (randomNum == 1)
         {
             Instantiate(ground[1], new Vector3(transform.position.x + 8, -2.52f, 0), Quaternion.identity);
-           // Instantiate(enemyPrefab[1], new Vector3(transform.position.x + 8, -2, 0), transform.rotation);
-            isSpawned = true;
+            Instantiate(enemy[randomEnemy],  new Vector3(transform.position.x + 8, -1.69f, 0), Quaternion.identity);
+     
         }
 
         if (randomNum == 2)
         {
             Instantiate(ground[2], new Vector3(transform.position.x + 4, -2.58f, 0), Quaternion.identity);
-            //Instantiate(enemyPrefab, new Vector3(transform.position.x + 4, -2.58f, 0), transform.rotation);
-            isSpawned = true;
+
         }
 
         if (randomNum == 3)
         {
             Instantiate(ground[3], new Vector3(transform.position.x + 5, -2.56f, 0), Quaternion.identity);
-            //Instantiate(enemyPrefab[3], new Vector3(transform.position.x + 5, -2.56f, 0), transform.rotation);
-            isSpawned = true;
+            Instantiate(enemy[randomEnemy],  new Vector3(transform.position.x + 5, -1.83f, 0), Quaternion.identity); //-1.83
+            Instantiate(enemy[randomEnemy], new Vector3(transform.position.x + 5, -1.83f, 0), Quaternion.identity);
+
         }
 
         if (randomNum == 4)
         {
             Instantiate(ground[4], new Vector3(transform.position.x + 9, -2.92f, 0), Quaternion.identity); //11
-            //Instantiate(enemyPrefab[4], new Vector3(transform.position.x + 9, -2.92f, 0), transform.rotation);
-            isSpawned = true;
+            Instantiate(enemy[randomEnemy], new Vector3(transform.position.x + 9, -3.66f, 0), Quaternion.identity);
+     
         }
-        
-    }
-    public void SpawnEnemy()
-    {
-        Instantiate(enemyPrefab[Random.Range(0, enemyPrefab.Length)], new Vector3(transform.position.x + 9, -2.92f, 0), transform.rotation);
+
+        if (randomNum == 5)
+        {
+            Instantiate(ground[5], new Vector3(transform.position.x + 9, -2.92f, 0), Quaternion.identity); 
+        }
+
+        if (randomNum == 6)
+        {
+            Instantiate(ground[6], new Vector3(transform.position.x + 9, -2.92f, 0), Quaternion.identity); 
+        }
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -88,7 +101,7 @@ public class GroundSpawner : MonoBehaviour
         if(GameObject.Find("Ground") && horizontalMove != 0)
         {
             hasGround = true;
-            Debug.Log("has ground in right");
+            //Debug.Log("has ground in right");
         }
 
     }
@@ -101,7 +114,7 @@ public class GroundSpawner : MonoBehaviour
         {
             hasGround = true;
 
-            Debug.Log("left");
+            //Debug.Log("left");
         }
 
         //if (collision.gameObject.CompareTag("Ground") && horizontalMove > 0)
@@ -115,7 +128,7 @@ public class GroundSpawner : MonoBehaviour
         {
             hasGround = true;
           
-            Debug.Log("right");
+            //Debug.Log("right");
         }
 
 
@@ -123,7 +136,7 @@ public class GroundSpawner : MonoBehaviour
         if (horizontalMove > 0 && collision.gameObject.CompareTag("Spawn"))
         {
             hasGround = false;
-            Debug.Log("spawn");
+            //Debug.Log("spawn");
         }
 
 
