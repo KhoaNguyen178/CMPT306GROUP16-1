@@ -16,6 +16,11 @@ public class EnemyGroundMoving : MonoBehaviour
     public Transform groundDetection;
     private bool movingRight = true;
 
+
+    void Start()
+    {
+        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+    }
     // Update is called once per frame
     void Update()
     {
