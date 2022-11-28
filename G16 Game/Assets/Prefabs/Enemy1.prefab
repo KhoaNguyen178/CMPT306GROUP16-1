@@ -262,12 +262,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream
   - component: {fileID: 4703320719157783779}
   - component: {fileID: 8869159736500093855}
   - component: {fileID: 6683868877054222920}
   - component: {fileID: 3813079451851610194}
   - component: {fileID: 4775480557361302431}
   - component: {fileID: 7814527475787512440}
+=======
+  - component: {fileID: 1384006157114418273}
+  - component: {fileID: 6469662758313379808}
+  - component: {fileID: 865142083433391517}
+  - component: {fileID: 865142083433391516}
+  - component: {fileID: 865142083433391518}
+  - component: {fileID: 1792500205}
+  - component: {fileID: 1792500206}
+>>>>>>> Stashed changes
   m_Layer: 0
   m_Name: Enemy1
   m_TagString: Enemy
@@ -360,12 +370,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.1911635, y: 1.5734913}
   m_EdgeRadius: 0
+<<<<<<< Updated upstream
 --- !u!114 &4775480557361302431
+=======
+--- !u!114 &865142083433391518
+>>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 4703320719157783778}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -375,6 +390,54 @@ MonoBehaviour:
   player: {fileID: 842962337226128324, guid: 223211321c4342b428aff95625429579, type: 3}
   isFlipped: 0
 --- !u!114 &7814527475787512440
+=======
+  m_GameObject: {fileID: 1384006157114418272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 423a64e548541c145b9a133a1aecdd0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  damageToPlayer: 10
+  damageToSelf: 10
+  moveSpeed: 15
+  damageRate: 0.2
+  damageTime: 0
+  silverCoin: {fileID: 0}
+  goldCoin: {fileID: 0}
+  sprites: {fileID: 0}
+  deathEffect: {fileID: 0}
+  audioTakingDmg: {fileID: 0}
+--- !u!114 &1792500205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1384006157114418272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 373b52eb9bf8c40f785bb6947a1aee66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  drawGizmos: 1
+  detailedGizmos: 0
+  startEndModifier:
+    addPoints: 0
+    exactStartPoint: 3
+    exactEndPoint: 3
+    useRaycasting: 0
+    mask:
+      serializedVersion: 2
+      m_Bits: 4294967295
+    useGraphRaycasting: 0
+  traversableTags: -1
+  tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  graphMask:
+    value: -1
+--- !u!114 &1792500206
+>>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
