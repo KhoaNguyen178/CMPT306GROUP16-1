@@ -13,6 +13,9 @@ TagManager:
   - Boss
   - PlayerAttack
   - Close
+  - HealthSprite
+  - CheckRight
+  - CheckLeft
   layers:
   - Default
   - TransparentFX
