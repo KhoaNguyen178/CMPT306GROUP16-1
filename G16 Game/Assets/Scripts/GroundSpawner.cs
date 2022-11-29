@@ -7,12 +7,11 @@ public class GroundSpawner : MonoBehaviour
 
     public GameObject[] ground;
     public GameObject[] enemy;
+    public GameObject[] flyEnemy;
 
     bool hasGround = true;
 
-  
-
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -84,13 +83,6 @@ public class GroundSpawner : MonoBehaviour
     {
 
         float horizontalMove = Input.GetAxis("Horizontal");
-
-        //if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("MoveGround"))
-        //{
-        //    hasGround = true;
-        //    isSpawned = true;
-        //    Debug.Log("has ground");
-        //}
         
         if(GameObject.Find("Ground") && horizontalMove != 0)
         {
@@ -109,19 +101,10 @@ public class GroundSpawner : MonoBehaviour
             hasGround = true;
         }
 
-        //if (collision.gameObject.CompareTag("Ground") && horizontalMove > 0)
-        //{
-        //    hasGround = true;
-
-        //    Debug.Log("right");
-        //}
-
         if (horizontalMove > 0 && GameObject.Find("Ground"))
         {
             hasGround = true;
         }
-
-
 
         if (horizontalMove > 0 && collision.gameObject.CompareTag("Spawn"))
         {
