@@ -1107,6 +1107,7 @@ MonoBehaviour:
   - {fileID: 449623698232397591, guid: 7f4e361a3d2c4e94d9e61706d8dc55ce, type: 3}
   - {fileID: 6225460464126385214, guid: 983aeb73835645e41a51ba6577141358, type: 3}
   - {fileID: 2479522259105269795, guid: f8cfab19e271a7b49ad3bfdbc70dd52a, type: 3}
+  - {fileID: 9006906889776831277, guid: 1867562befdcb3b4da9de55c65a39d68, type: 3}
   enemy:
   - {fileID: 470995172658638259, guid: 84a683ff18bf55a4086cffc7a99e3609, type: 3}
   - {fileID: 470995172658638259, guid: 84a683ff18bf55a4086cffc7a99e3609, type: 3}
@@ -1348,8 +1349,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b28f275e6c088204385affde74c5ff67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
-  rb: {fileID: 0}
 --- !u!61 &460080773
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4044,7 +4043,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2107972506}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -32.15, y: -0.10093855, z: 0.048673302}
+  m_LocalPosition: {x: -43.31, y: -0.10093855, z: 0.048673302}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4159,12 +4158,16 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3979988103324313583, guid: c58e00cbd9cd36c44bd5c8ea05dc4153, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.488361
+      objectReference: {fileID: 0}
+    - target: {fileID: 3979988103324313583, guid: c58e00cbd9cd36c44bd5c8ea05dc4153, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.2215
+      value: 0.26
       objectReference: {fileID: 0}
     - target: {fileID: 3979988103324313583, guid: c58e00cbd9cd36c44bd5c8ea05dc4153, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.5498
+      value: -4.5554
       objectReference: {fileID: 0}
     - target: {fileID: 3979988103324313583, guid: c58e00cbd9cd36c44bd5c8ea05dc4153, type: 3}
       propertyPath: m_LocalPosition.z

@@ -72,6 +72,12 @@ public class GroundSpawner : MonoBehaviour
             Instantiate(enemy[4], new Vector3(transform.position.x + 9, -2.72f, 0), Quaternion.identity);
      
         }
+
+        if (randomNum == 5)
+        {
+            Instantiate(ground[5], new Vector3(transform.position.x + 29.5f, 4.083343f, 0), Quaternion.identity); //11
+
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
