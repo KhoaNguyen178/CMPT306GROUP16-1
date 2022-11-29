@@ -18,11 +18,6 @@ public class ObjectDestroy : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //if (collision.gameObject.CompareTag("Object"))
-        //{
-        //    Destroy(collision.gameObject);
-        //}
-
 
         if (collision.gameObject.CompareTag("Ground"))
         {
