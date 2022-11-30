@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:G16 Game/Assets/Scripts/BossAttack.cs.meta
-guid: c19f8945a81512645adbae5620afb84c
-========
-guid: 22a0560bfe6741b46b1ebbce59faf7cc
->>>>>>>> Thao:G16 Game/Assets/Scripts/AIPatrol.cs.meta
+guid: fa7ba9e0b4a8d454f8e17403c8d2689a
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

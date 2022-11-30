@@ -13,9 +13,12 @@ TagManager:
   - Boss
   - PlayerAttack
   - Close
+<<<<<<< HEAD
   - HealthSprite
   - CheckRight
   - CheckLeft
+=======
+>>>>>>> Thao
   layers:
   - Default
   - TransparentFX

@@ -17,12 +17,15 @@ public class Enemy : MonoBehaviour
     public GameObject goldCoin;
     //public GameObject HPCanvas;
     public GameObject sprites;
+<<<<<<< HEAD
 
     //Add on
     public int attackDamage = 20;
     public Vector3 attackOffset;
     public float attackRange = 1f;
     public LayerMask attackMask;
+=======
+>>>>>>> Thao
 
     // Start is called before the first frame update
     void Start()
@@ -100,6 +103,7 @@ public class Enemy : MonoBehaviour
                 child.GetComponent<SpriteRenderer>().material.color = Color.white;
             }
             
+<<<<<<< HEAD
         }
     }
 
@@ -116,6 +120,8 @@ public class Enemy : MonoBehaviour
             //Instantiate(projectile, transform.position, Quaternion.identity);
             colInfo.GetComponent<PlayerController>().PlayerTakeDamage(attackDamage);
 
+=======
+>>>>>>> Thao
         }
     }
 
