@@ -25,7 +25,6 @@ public class EnemyGroundMoving : MonoBehaviour
     void Update()
     {
         RaycastHit2D groundInfor = Physics2D.Raycast(groundDetection.position, Vector2.down, 2f);
-        //RaycastHit2D groundInform = Physics2D.Raycast(groundDetection.position, Vector2.left, 2f);
         transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
 
         if (Vector2.Distance(transform.position, playerTransform.position) < chaseDistance)
