@@ -69,7 +69,12 @@ public class GroundSpawner : MonoBehaviour
         {
             Instantiate(ground[4], new Vector3(transform.position.x + 9, -2.92f, 0), Quaternion.identity); //11
             Instantiate(flyEnemy[randomFlyEnemy], new Vector3(transform.position.x + 9, -1.92f, 0), Quaternion.identity);
+        }
 
+        if (randomNum == 5)
+        {
+            Instantiate(ground[5], new Vector3(transform.position.x + 20, -4.548f, 0), Quaternion.identity); //11
+            Instantiate(flyEnemy[randomFlyEnemy], new Vector3(transform.position.x + 21, -1f, 0), Quaternion.identity);
         }
     }
 

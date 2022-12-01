@@ -1107,6 +1107,7 @@ MonoBehaviour:
   - {fileID: 449623698232397591, guid: 7f4e361a3d2c4e94d9e61706d8dc55ce, type: 3}
   - {fileID: 6225460464126385214, guid: 983aeb73835645e41a51ba6577141358, type: 3}
   - {fileID: 2479522259105269795, guid: f8cfab19e271a7b49ad3bfdbc70dd52a, type: 3}
+  - {fileID: 7457175232663038013, guid: 65717dbed9498654ab474bb8fca75a0d, type: 3}
   groundEnemy:
   - {fileID: 470995172658638259, guid: 84a683ff18bf55a4086cffc7a99e3609, type: 3}
   - {fileID: 7768667213989220873, guid: d9501729e45e57b41a14f3a9aac95626, type: 3}

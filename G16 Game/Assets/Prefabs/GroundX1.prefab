@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8343774956258134856}
   - component: {fileID: 602708730568258977}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: TX Village Props Ladder T
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3323581727919265300}
   - component: {fileID: 7883372763568291405}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: TX Village Props Bush A (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -182,7 +182,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3311330617895175599}
   - component: {fileID: 8823562456345328553}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Point (1)
   m_TagString: Spawn
   m_Icon: {fileID: 0}
@@ -240,7 +240,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2937982021202505433}
   - component: {fileID: 5654757958612777123}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: TX Village Props Bush B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -324,7 +324,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2482811545306876194}
   - component: {fileID: 4009809991383145404}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: TX Village Props Ladder T (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -408,7 +408,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5308112864658811249}
   - component: {fileID: 8168290672434610318}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: TX Village Props Ladder T (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -492,7 +492,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5236706387107159024}
   - component: {fileID: 7304022623272506345}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: TX Village Props Ladder T (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -576,7 +576,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4048698086444676855}
   - component: {fileID: 2244122390541834619}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: TX Village Props Ladder T (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -660,7 +660,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6697525881286280806}
   - component: {fileID: 7132478521604465214}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: TX Village Props Tree B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -744,9 +744,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4811796956127135532}
   - component: {fileID: 7177189714676692234}
-  m_Layer: 0
+  - component: {fileID: 2054890935253659919}
+  m_Layer: 3
   m_Name: GroundX1
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -826,6 +827,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &2054890935253659919
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7457175232663038013}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.57, y: 0.37}
+    newSize: {x: 1.57, y: 0.37}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.57, y: 0.37}
+  m_EdgeRadius: 0
 --- !u!1 &7844425115783155984
 GameObject:
   m_ObjectHideFlags: 0
@@ -836,7 +863,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1689076171184466758}
   - component: {fileID: 1560941254987395257}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: TX Village Props Bush A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -920,7 +947,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1336910848868855771}
   - component: {fileID: 481924120963322586}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: TX Village Props Tree A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1005,6 +1032,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PF Village Props - Campfire
       objectReference: {fileID: 0}
+    - target: {fileID: 6309599118117444192, guid: e8bae36b607017047ace9061609051d9, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6309599118117444193, guid: e8bae36b607017047ace9061609051d9, type: 3}
       propertyPath: m_SortingOrder
       value: 0
@@ -1064,6 +1095,18 @@ PrefabInstance:
     - target: {fileID: 6309599118117444222, guid: e8bae36b607017047ace9061609051d9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6310798581986732171, guid: e8bae36b607017047ace9061609051d9, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6311499908509928827, guid: e8bae36b607017047ace9061609051d9, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6802551647957549518, guid: e8bae36b607017047ace9061609051d9, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8bae36b607017047ace9061609051d9, type: 3}
