@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 423a64e548541c145b9a133a1aecdd0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 50
   moveSpeed: 9
   damageRate: 0.2
   damageTime: 0
@@ -172,6 +172,12 @@ MonoBehaviour:
   silverCoin: {fileID: 5016376768434895919, guid: 2454d44c12c7fef4a8596dd19d112c5d, type: 3}
   goldCoin: {fileID: 1785100447502755536, guid: 0175dfddfe4a11f42ae8a8d87c2caa68, type: 3}
   sprites: {fileID: 2901156577332313630}
+  attackDamage: 20
+  attackOffset: {x: 0, y: 0, z: 0}
+  attackRange: 1
+  attackMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &-7301570221000056199
 MonoBehaviour:
   m_ObjectHideFlags: 0
