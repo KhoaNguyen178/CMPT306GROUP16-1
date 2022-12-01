@@ -28,7 +28,7 @@ public class PlayerAttack : MonoBehaviour
         AttackAudio2.Play();
     }
 
-    private void OnTriggerEnter2D(Collider2D other)// Whien hit something.
+    private void OnTriggerEnter2D(Collider2D other)// When hit something.
     {
         if (other.transform.CompareTag("Enemy") && poly2D.enabled)
         {
@@ -38,7 +38,7 @@ public class PlayerAttack : MonoBehaviour
 
     void Attack()
     {
-        if (Input.GetButtonDown("Fire1") && !Anime.GetBool("Attacking"))
+        if ((Input.GetButtonDown("Fire1") || Input.GetButtonDown("Fire2")) && !Anime.GetBool("Attacking"))
         {
             Anime.SetBool("Attacking", true);
             Anime.SetTrigger("Attack");

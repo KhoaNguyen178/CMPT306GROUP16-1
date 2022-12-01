@@ -270,6 +270,7 @@ MonoBehaviour:
   xOffset: 0
   yOffset: 0
   recTransform: {fileID: 2722740518510598800}
+  BulletNumber: 1
 --- !u!82 &1013917347
 AudioSource:
   m_ObjectHideFlags: 0
@@ -667,7 +668,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85dfa30bda381be4cac658a85517996e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BulletPrefab: {fileID: 9036368376401009004, guid: a1e0877483e227442b827d2e322f4c06, type: 3}
+  Fireball: {fileID: 9036368376401009004, guid: a1e0877483e227442b827d2e322f4c06, type: 3}
+  TrapBullet: {fileID: 1306759248813716154, guid: 4d7e499afa34650448d612c58c640d8e, type: 3}
   Anime: {fileID: 842962337226128347}
 --- !u!1 &2722740516748875414
 GameObject:
