@@ -276,7 +276,7 @@ MonoBehaviour:
   patrolDestination: 0
   playerTransform: {fileID: 842962337226128324, guid: 223211321c4342b428aff95625429579, type: 3}
   isChasing: 0
-  chaseDistance: 5
+  chaseDistance: 2
   groundDetection: {fileID: 3706071766445842086}
 --- !u!1 &7768667214017754244
 GameObject:
