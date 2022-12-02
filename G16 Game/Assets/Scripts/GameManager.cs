@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
     public GameObject upgradeMenu;
+    public GameObject player;
     public Text coinsText;
     public Image progressBarFillMask;
     private int coins = 0;

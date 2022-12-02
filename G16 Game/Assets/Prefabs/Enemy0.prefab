@@ -385,12 +385,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  damageToPlayer: 10
   moveSpeed: 15
+  damageRate: 0.2
+  damageTime: 0
+  damageToSelf: 10
   silverCoin: {fileID: 5016376768434895919, guid: 2454d44c12c7fef4a8596dd19d112c5d, type: 3}
   goldCoin: {fileID: 1785100447502755536, guid: 0175dfddfe4a11f42ae8a8d87c2caa68, type: 3}
-  HPCanvas: {fileID: 0}
-  sprite: {fileID: 0}
+  sprites: {fileID: 0}
 --- !u!1 &2366890722052281431
 GameObject:
   m_ObjectHideFlags: 0

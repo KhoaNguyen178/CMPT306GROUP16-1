@@ -27,6 +27,8 @@ public class PlayerController : MonoBehaviour
     public float yOffset;
     public RectTransform recTransform;
 
+    public GameObject coinMagnet;
+
     private void Start()
     {
         Anime.SetBool("Alive", true);
@@ -38,6 +40,7 @@ public class PlayerController : MonoBehaviour
         {
             SwitchAnime();
             Movement();
+            coinMagnet.transform.position = new Vector2(transform.position.x, transform.position.y);
         }
 
         Vector2 player2DPosition = Camera.main.WorldToScreenPoint(transform.position);
@@ -83,6 +86,7 @@ public class PlayerController : MonoBehaviour
             jumpTimesLeft--;
             Anime.SetBool("jumping", true);
         }
+
     }
 
     public void PlayerTakeDamage(float damage) // Player gets hurted and check if dies.
@@ -134,6 +138,21 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Gold")
+        {
+            GameManager.instance.AddCoins(3);
+            Destroy(collision.gameObject);
+        }
+        else if (collision.gameObject.tag == "Silver")
+        {
+            GameManager.instance.AddCoins(1);
+            Destroy(collision.gameObject);
+        }
+
+    }
+
     void Hurt(Collision2D collision)
     {
         if (Anime.GetBool("Alive"))
@@ -154,6 +173,7 @@ public class PlayerController : MonoBehaviour
             var temp = collision.gameObject.GetComponent<Rigidbody2D>();
             temp.constraints = RigidbodyConstraints2D.FreezeAll;
         }
+
     }
 
     void SwitchAnime()
@@ -182,4 +202,6 @@ public class PlayerController : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
+
 }
