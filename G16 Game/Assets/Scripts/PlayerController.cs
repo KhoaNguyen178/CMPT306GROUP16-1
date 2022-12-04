@@ -27,6 +27,8 @@ public class PlayerController : MonoBehaviour
     public float yOffset;
     public RectTransform recTransform;
 
+    public int BulletNumber = 1;
+
     private void Start()
     {
         Anime.SetBool("Alive", true);
@@ -34,9 +36,10 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
-        if (Anime.GetBool("Alive") && !onHurt)
+        SwitchAnime();
+        if (Anime.GetBool("Alive") && !onHurt && !Anime.GetBool("Attacking"))
         {
-            SwitchAnime();
+
             Movement();
         }
 
@@ -181,5 +184,10 @@ public class PlayerController : MonoBehaviour
     void Die() //Tam added this line
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public int GetBulletNumber()
+    {
+        return BulletNumber;
     }
 }

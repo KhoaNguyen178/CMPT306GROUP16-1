@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5081205993476276979}
   - component: {fileID: 1312125592}
   m_Layer: 0
-  m_Name: Bullet
+  m_Name: Fireball
   m_TagString: PlayerAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -167,6 +167,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0da0a02bf4543b645aca2263d25b03a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BulletSpeed: 20
+  BulletSpeed: 15
   BulletDamage: 20
   rb: {fileID: 6962250493008817142}

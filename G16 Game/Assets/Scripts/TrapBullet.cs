@@ -2,16 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class TrapBullet : MonoBehaviour
 {
-    public float BulletSpeed = 15.0f;
+    public float BulletSpeed = 12.0f;
     public float BulletDamage = 20.0f;
     public Rigidbody2D rb;
 
     void Start()
     {
-        rb.velocity = transform.right * BulletSpeed;
-        Destroy(gameObject, 3); //Destory the bullet after 3 seconds.
+        Vector2 v = new(Random.value, Random.value);
+        rb.velocity = v * BulletSpeed;
+        Destroy(gameObject, 1); //Destory the bullet after 1 seconds.
     }
 
     private void Update()
@@ -54,18 +55,11 @@ public class Bullet : MonoBehaviour
     private void Movement()
     {
         GameObject target = FindClosestEnemy();
-        if (transform.position.y > target.transform.position.y)
-        {
-            Vector2 v = new Vector2(0, -3);
-            rb.AddForce(v);
-        }
-        else
-        {
-            if (transform.position.y < target.transform.position.y)
-            {
-                Vector2 v = new Vector2(0, 3);
-                rb.AddForce(v);
-            }
-        }
+
+        Vector2 direction = target.transform.position - transform.position;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
+        this.transform.Translate(new Vector3(10f * Time.deltaTime, 1f * Time.deltaTime, 1f * Time.deltaTime));
     }
 }
