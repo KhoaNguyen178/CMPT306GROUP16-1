@@ -15,8 +15,7 @@ GameObject:
   - component: {fileID: 2702388820419165285}
   - component: {fileID: 4164720773495133890}
   - component: {fileID: 2598182118918184111}
-  - component: {fileID: 8146258761138920424}
-  - component: {fileID: -8698414111392155250}
+  - component: {fileID: -7301570221000056199}
   m_Layer: 0
   m_Name: FlyEnemy 4
   m_TagString: Enemy
@@ -179,33 +178,7 @@ MonoBehaviour:
   attackMask:
     serializedVersion: 2
     m_Bits: 0
-<<<<<<< HEAD
 --- !u!114 &-7301570221000056199
-=======
-  childEnemyPrefab: {fileID: 4649643167349731872, guid: fbeada94915a24d488fcf2dab68124be, type: 3}
---- !u!50 &8146258761138920424
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2702388820419165283}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!114 &-8698414111392155250
->>>>>>> origin/Thao
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

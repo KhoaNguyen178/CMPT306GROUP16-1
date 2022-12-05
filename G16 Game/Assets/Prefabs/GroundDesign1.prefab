@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8164620467293325443}
   - component: {fileID: 2041327612888039895}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: mainlevbuild_45 (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4942366789578238798}
   - component: {fileID: 4441609151059847751}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: decorative_obj_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,8 +109,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 323813488064238389}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.34, y: 3.79, z: 0}
-  m_LocalScale: {x: 2.0090466, y: 2.0090466, z: 2.0090466}
+  m_LocalPosition: {x: 3.3475, y: 3.2625, z: 0}
+  m_LocalScale: {x: 2.0028164, y: 1.717534, z: 1.717534}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8587372743125906332}
@@ -178,7 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1751774896506638280}
   - component: {fileID: 6719704275410063069}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: mainlevbuild_45 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -262,7 +262,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5203665249765521029}
   - component: {fileID: 1428949459612325448}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: decorative_obj_8 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -346,7 +346,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6990393633324705616}
   - component: {fileID: 3029986654645531714}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: decorative_obj_15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -430,7 +430,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5938186392514256149}
   - component: {fileID: 4822081415810258289}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: mainlevbuild_45 (34)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -514,7 +514,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6794140006637736484}
   - component: {fileID: 2356362622536735835}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rock-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -598,7 +598,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2047680931069097799}
   - component: {fileID: 3609019005917074585}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: mainlevbuild_45 (27)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -682,7 +682,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7153446417120922854}
   - component: {fileID: 8994873579764192025}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: decorative_obj_14 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -766,7 +766,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1221103236317141212}
   - component: {fileID: 2310083621044164590}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: mainlevbuild_45 (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -850,7 +850,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1285654162387868928}
   - component: {fileID: 216510463044436274}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: mainlevbuild_45 (31)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -934,7 +934,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6958078604353552864}
   - component: {fileID: 989602771299900521}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: mainlevbuild_45 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1008,6 +1008,64 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2178436069863617875
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4820145845866632612}
+  - component: {fileID: 642761192693220165}
+  m_Layer: 0
+  m_Name: Point (1)
+  m_TagString: Spawn
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4820145845866632612
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2178436069863617875}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 10.13, y: -0.27250114, z: -0.08014408}
+  m_LocalScale: {x: 0.6989569, y: 0.73089653, z: 0.2631579}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8587372743125906332}
+  m_RootOrder: 25
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &642761192693220165
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2178436069863617875}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.17445862}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.65108275, y: 0.65108275}
+  m_EdgeRadius: 0
 --- !u!1 &2350100715161613840
 GameObject:
   m_ObjectHideFlags: 0
@@ -1018,7 +1076,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4755687930129791162}
   - component: {fileID: 21059701626179136}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: mainlevbuild_45 (32)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1102,7 +1160,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8970013145736234926}
   - component: {fileID: 7272446914716302440}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: mainlevbuild_45 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1186,7 +1244,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6762382859694312240}
   - component: {fileID: 636915801914059534}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: mainlevbuild_45 (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1270,7 +1328,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2490785737445834094}
   - component: {fileID: 7403858560549602225}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: mainlevbuild_45 (28)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1354,7 +1412,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7077446872387172370}
   - component: {fileID: 314636192917622919}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: mainlevbuild_45 (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1438,7 +1496,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4839403542900923447}
   - component: {fileID: 4476982920804711251}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: mainlevbuild_45 (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1522,7 +1580,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1304429805363534476}
   - component: {fileID: 4078254769012439424}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: mainlevbuild_45 (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1606,7 +1664,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6355933320930885113}
   - component: {fileID: 8037483092872975547}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: decorative_obj_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1690,7 +1748,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4670238129894698253}
   - component: {fileID: 5955960031861185112}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: mainlevbuild_45 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1774,7 +1832,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2621286168514592302}
   - component: {fileID: 3459283954116970278}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: mainlevbuild_45 (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1858,7 +1916,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6861919989118816605}
   - component: {fileID: 7435716057327123174}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: mainlevbuild_45 (25)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1942,7 +2000,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8302376013210856269}
   - component: {fileID: 5746630926780940141}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: mainlevbuild_45
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2026,7 +2084,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4055429614156406449}
   - component: {fileID: 3172811103501873298}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: decorative_obj_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2110,7 +2168,7 @@ GameObject:
   m_Component:
   - component: {fileID: 198710358414089484}
   - component: {fileID: 5856657082471284971}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: mainlevbuild_45 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2194,7 +2252,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1799674369081521092}
   - component: {fileID: 8591394381070232749}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: decorative_obj_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2278,7 +2336,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4293275755922821671}
   - component: {fileID: 8494984986862822291}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: decorative_obj_14 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2362,7 +2420,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1118539701268726031}
   - component: {fileID: 6831310629453447789}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: decorative_obj_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2377,8 +2435,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4260295120248675498}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.7094002, y: 3.515, z: 0}
-  m_LocalScale: {x: 5.922009, y: 5.3315277, z: 5.732825}
+  m_LocalPosition: {x: -0.305, y: 3.0469, z: 0}
+  m_LocalScale: {x: 4.588818, y: 4.6943073, z: 5.732825}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8587372743125906332}
@@ -2446,7 +2504,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4585701328285264856}
   - component: {fileID: 6998036144694974176}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: decorative_obj_8 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2530,7 +2588,7 @@ GameObject:
   m_Component:
   - component: {fileID: 257577154837392976}
   - component: {fileID: 7942264070870816399}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: mainlevbuild_45 (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2614,7 +2672,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7596409359155971973}
   - component: {fileID: 8382783686072613128}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: mainlevbuild_45 (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2698,7 +2756,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3424995819487683746}
   - component: {fileID: 91925069821216268}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: mainlevbuild_45 (24)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2782,7 +2840,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5074537937190115497}
   - component: {fileID: 7960639642737584646}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: mainlevbuild_45 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2866,7 +2924,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6018275329863186603}
   - component: {fileID: 880187105219743884}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: mainlevbuild_45 (33)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2950,7 +3008,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4070164786935395269}
   - component: {fileID: 2162932481555882128}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: mainlevbuild_45 (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3034,7 +3092,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6452198416569446105}
   - component: {fileID: 1667028011265342079}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: decorative_obj_21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3118,7 +3176,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6935599309000049936}
   - component: {fileID: 4443430890046964817}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: mainlevbuild_45 (29)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3202,9 +3260,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8587372743125906332}
   - component: {fileID: 6609929650075136277}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GroundDesign1
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3216,9 +3274,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6506979278797567685}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.47, y: -1.54, z: 0}
-  m_LocalScale: {x: 3.8, y: 3.8, z: 3.8}
+  m_LocalScale: {x: 1.4307033, y: 1.3681827, z: 3.8}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3308080658250017909}
@@ -3246,6 +3304,7 @@ Transform:
   - {fileID: 3123829896887142337}
   - {fileID: 6056845701770555600}
   - {fileID: 8371048029561945423}
+  - {fileID: 4820145845866632612}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3285,7 +3344,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5935691479482901406}
   - component: {fileID: 3086242599427301286}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rock-1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3368,7 +3427,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3308080658250017909}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: unityGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3436,7 +3495,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1242163898122190048}
   - component: {fileID: 1214220413012443393}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: decorative_obj_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3520,7 +3579,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5688345718703260218}
   - component: {fileID: 7146951417049537799}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: decorative_obj_15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3604,7 +3663,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4481468974014590861}
   - component: {fileID: 7098941487985934338}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: mainlevbuild_45 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3688,7 +3747,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5346163474591665049}
   - component: {fileID: 7777751924668357779}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: mainlevbuild_45 (22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3772,7 +3831,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2911999965362454467}
   - component: {fileID: 5450067904201789669}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: mainlevbuild_45 (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3856,7 +3915,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5564929404216599535}
   - component: {fileID: 3749116065222011711}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: mainlevbuild_45 (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3940,7 +3999,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1551728220406295460}
   - component: {fileID: 9221643274902907831}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: mainlevbuild_45 (30)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4024,7 +4083,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2141311153482705861}
   - component: {fileID: 6274744080794974026}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: mainlevbuild_45 (35)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4108,7 +4167,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7756351427894498446}
   - component: {fileID: 1387179158519836727}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: mainlevbuild_45 (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4192,7 +4251,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6097025259565035032}
   - component: {fileID: 7594810126519619193}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: mainlevbuild_45 (26)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4276,7 +4335,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8077711521348315019}
   - component: {fileID: 8478251206544995152}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: decorative_obj_14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4360,7 +4419,7 @@ GameObject:
   m_Component:
   - component: {fileID: 283118703888082300}
   - component: {fileID: 5432249458432478437}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: decorative_obj_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4444,7 +4503,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8296097870564547999}
   - component: {fileID: 5935653915042862116}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: mainlevbuild_45 (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4528,7 +4587,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8119557760457760410}
   - component: {fileID: 8423683547693534922}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: mainlevbuild_45 (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4612,7 +4671,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8371048029561945423}
   - component: {fileID: 8134251199593167913}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: straw-house
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4627,8 +4686,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9000847609139079195}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.87, y: 3.13, z: 0}
-  m_LocalScale: {x: 6.189393, y: 6.189393, z: 6.189393}
+  m_LocalPosition: {x: 0.9602, y: 2.4052, z: 0}
+  m_LocalScale: {x: 4.767689, y: 4.679181, z: 6.189393}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8587372743125906332}
@@ -4693,9 +4752,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8587372743125906332}
     m_Modifications:
+    - target: {fileID: 3226521009140389271, guid: c13263f1f05170f4e849875cee5c46d0, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3226521009676847256, guid: c13263f1f05170f4e849875cee5c46d0, type: 3}
       propertyPath: m_Name
       value: PF Village Props - Road Lamp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3226521009676847256, guid: c13263f1f05170f4e849875cee5c46d0, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3226521009676847262, guid: c13263f1f05170f4e849875cee5c46d0, type: 3}
       propertyPath: m_RootOrder
@@ -4757,6 +4824,22 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3693432273548653689, guid: c13263f1f05170f4e849875cee5c46d0, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6345973947618921439, guid: c13263f1f05170f4e849875cee5c46d0, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7793038299900132495, guid: c13263f1f05170f4e849875cee5c46d0, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9020119765090098761, guid: c13263f1f05170f4e849875cee5c46d0, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c13263f1f05170f4e849875cee5c46d0, type: 3}
 --- !u!4 &3773466486456593269 stripped
@@ -4774,6 +4857,10 @@ PrefabInstance:
     - target: {fileID: 6309599118117444192, guid: e8bae36b607017047ace9061609051d9, type: 3}
       propertyPath: m_Name
       value: PF Village Props - Campfire
+      objectReference: {fileID: 0}
+    - target: {fileID: 6309599118117444192, guid: e8bae36b607017047ace9061609051d9, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6309599118117444193, guid: e8bae36b607017047ace9061609051d9, type: 3}
       propertyPath: m_SortingOrder
@@ -4835,6 +4922,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6310798581986732171, guid: e8bae36b607017047ace9061609051d9, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6311499908509928827, guid: e8bae36b607017047ace9061609051d9, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6802551647957549518, guid: e8bae36b607017047ace9061609051d9, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8bae36b607017047ace9061609051d9, type: 3}
 --- !u!4 &7032748867279012471 stripped
@@ -4852,6 +4951,10 @@ PrefabInstance:
     - target: {fileID: 7529635343020985361, guid: 8dab7379f6c67d9448d4c24d1eace61b, type: 3}
       propertyPath: m_Name
       value: PF Village Props - Rock A
+      objectReference: {fileID: 0}
+    - target: {fileID: 7529635343020985361, guid: 8dab7379f6c67d9448d4c24d1eace61b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7529635343020985367, guid: 8dab7379f6c67d9448d4c24d1eace61b, type: 3}
       propertyPath: m_RootOrder
@@ -4923,6 +5026,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8587372743125906332}
     m_Modifications:
+    - target: {fileID: 1417126714469770504, guid: db3033d1b9a69204ebc8a3bc98f3c254, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1417126714486668438, guid: db3033d1b9a69204ebc8a3bc98f3c254, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1417126714983127583, guid: db3033d1b9a69204ebc8a3bc98f3c254, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1417126715660350473, guid: db3033d1b9a69204ebc8a3bc98f3c254, type: 3}
       propertyPath: m_RootOrder
       value: 23
@@ -4983,6 +5098,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PF Village Props - Weapon Rack
       objectReference: {fileID: 0}
+    - target: {fileID: 1417126715660350475, guid: db3033d1b9a69204ebc8a3bc98f3c254, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1417126716145141335, guid: db3033d1b9a69204ebc8a3bc98f3c254, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db3033d1b9a69204ebc8a3bc98f3c254, type: 3}
 --- !u!4 &6056845701770555600 stripped
@@ -4997,9 +5120,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8587372743125906332}
     m_Modifications:
+    - target: {fileID: 7471922056857359772, guid: bbde5b0f2fde63f47aab9703a1e8e784, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7471922057008591172, guid: bbde5b0f2fde63f47aab9703a1e8e784, type: 3}
       propertyPath: m_Name
       value: PF Village Props - Road Sign - A
+      objectReference: {fileID: 0}
+    - target: {fileID: 7471922057008591172, guid: bbde5b0f2fde63f47aab9703a1e8e784, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7471922057008591194, guid: bbde5b0f2fde63f47aab9703a1e8e784, type: 3}
       propertyPath: m_RootOrder
@@ -5138,6 +5269,10 @@ PrefabInstance:
     - target: {fileID: 4973302571607540863, guid: b076c268235cb7348a5d9a036ec254c4, type: 3}
       propertyPath: m_Name
       value: PF Village Props - Rock B
+      objectReference: {fileID: 0}
+    - target: {fileID: 4973302571607540863, guid: b076c268235cb7348a5d9a036ec254c4, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b076c268235cb7348a5d9a036ec254c4, type: 3}
