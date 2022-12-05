@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 107628266088858325}
   - component: {fileID: 107628266088858324}
   - component: {fileID: 107628266088858321}
+  - component: {fileID: -4711759881907907262}
   m_Layer: 0
   m_Name: EnemyFly
   m_TagString: Enemy
@@ -131,7 +132,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  damageToPlayer: 10
   moveSpeed: 15
   damageRate: 0.2
   damageTime: 0
@@ -139,6 +139,26 @@ MonoBehaviour:
   silverCoin: {fileID: 5016376768434895919, guid: 2454d44c12c7fef4a8596dd19d112c5d, type: 3}
   goldCoin: {fileID: 1785100447502755536, guid: 0175dfddfe4a11f42ae8a8d87c2caa68, type: 3}
   sprites: {fileID: 107628266088858327}
+  attackDamage: 20
+  attackOffset: {x: 0, y: 0, z: 0}
+  attackRange: 1
+  attackMask:
+    serializedVersion: 2
+    m_Bits: 0
+  childEnemyPrefab: {fileID: 4649643167349731872, guid: fbeada94915a24d488fcf2dab68124be, type: 3}
+--- !u!114 &-4711759881907907262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107628266088858327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46b77e4979b1b394e8a92a16ecf7ed90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageToPlayer: 10
 --- !u!1001 &107628265598812944
 PrefabInstance:
   m_ObjectHideFlags: 0

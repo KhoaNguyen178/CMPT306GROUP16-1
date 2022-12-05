@@ -26,11 +26,13 @@ public class PlayerController : MonoBehaviour
     public float xOffset;
     public float yOffset;
     public RectTransform recTransform;
+    public GameObject DeathMenu;
 
     private void Start()
     {
         Anime.SetBool("Alive", true);
         Anime.SetBool("onHurt", false);
+        DeathMenu.SetActive(false);
     }
     void Update()
     {
@@ -51,6 +53,13 @@ public class PlayerController : MonoBehaviour
         {
             recTransform.gameObject.SetActive(true);
         }
+
+
+        //if (transform.position.y < -5.0f) // menu to play again
+        //{
+        //    DeathMenu.SetActive(true);
+        //    Destroy(this.gameObject);
+        //}
     }
 
     void Movement()
@@ -153,6 +162,7 @@ public class PlayerController : MonoBehaviour
             //Prevent enemy from being pushed by player
             var temp = collision.gameObject.GetComponent<Rigidbody2D>();
             temp.constraints = RigidbodyConstraints2D.FreezeAll;
+
         }
     }
 

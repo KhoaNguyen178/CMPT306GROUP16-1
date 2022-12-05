@@ -18,13 +18,24 @@ public class Enemy : MonoBehaviour
     //public GameObject HPCanvas;
     public GameObject sprites;
 
-    // Start is called before the first frame update
+    
+
+    //Add on
+    public int attackDamage = 10;
+    public Vector3 attackOffset;
+    public float attackRange = 1f;
+    public LayerMask attackMask;
+
+    public GameObject childEnemyPrefab;
+    /*private PlayerHealth playerHealth_SC;
+    private PlayerController playerController_SC;*/
+
     void Start()
     {
-        
+        /*playerController_SC = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        playerHealth_SC = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();*/
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         /*if (Time.time > damageTime) //testing drop
@@ -33,6 +44,7 @@ public class Enemy : MonoBehaviour
             damageTime = Time.time + damageRate;
         }*/
     }
+
     public void TakeDamage(float damage)
     {
         health -= damage;
@@ -42,6 +54,7 @@ public class Enemy : MonoBehaviour
 
         if (health <= 0)
         {
+            Debug.Log("health < 0");
             Destroy(this.gameObject);
             GameManager.instance.AddKill();
             //Instantiate(deathEffect, transform.position, transform.rotation);
@@ -54,27 +67,36 @@ public class Enemy : MonoBehaviour
             {
                 GameObject drop = Instantiate(silverCoin, transform.position, transform.rotation);
             }
-            
+            float spawnDistance = Random.Range(-3f, 3f);
+            Vector3 spawnPos = new Vector3(transform.position.x + spawnDistance, transform.position.y, transform.position.z);
+            Instantiate(childEnemyPrefab, spawnPos, transform.rotation);
         }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.transform.tag == "Player" && Time.time > damageTime)
+        if(collision.transform.tag == "PlayerAttack" && Time.time > damageTime)
         {
-            var temp = this.GetComponent<Rigidbody2D>();
-            temp.constraints = RigidbodyConstraints2D.FreezeAll;
+            Debug.Log("hit player attack");
+            //var temp = this.GetComponent<Rigidbody2D>();
+            //temp.constraints = RigidbodyConstraints2D.FreezeAll;
             this.TakeDamage(damageToSelf);
             StartCoroutine(FlashRed());
             damageTime = Time.time + damageRate;
         }
+        /*if(collision.transform.tag == "Player")
+        {
+            playerHealth_SC.TakeDamage(attackDamage);
+            playerController_SC.PlayerTakeDamage(attackDamage);
+            Debug.Log("enemy hit player");
+        }*/
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    /*private void OnCollisionExit2D(Collision2D collision)
     {
         var temp = this.GetComponent<Rigidbody2D>();
         temp.constraints = RigidbodyConstraints2D.None;
-    }
+    }*/
     public IEnumerator FlashRed()
     {
         foreach(Transform child in sprites.transform)
@@ -93,7 +115,22 @@ public class Enemy : MonoBehaviour
             {
                 child.GetComponent<SpriteRenderer>().material.color = Color.white;
             }
-            
         }
+    }
+
+    public void Attack()
+    {
+        Vector3 pos = transform.position;
+        pos += transform.right * attackOffset.x;
+        pos += transform.up * attackOffset.y;
+
+        Collider2D colInfo = Physics2D.OverlapCircle(pos, attackRange, attackMask);
+        if (colInfo != null)
+        {
+            colInfo.GetComponent<PlayerHealth>().TakeDamage(attackDamage);
+            //Instantiate(projectile, transform.position, Quaternion.identity);
+            colInfo.GetComponent<PlayerController>().PlayerTakeDamage(attackDamage);
+        }
+
     }
 }

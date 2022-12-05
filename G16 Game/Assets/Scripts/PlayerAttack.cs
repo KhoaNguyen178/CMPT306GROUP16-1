@@ -28,7 +28,7 @@ public class PlayerAttack : MonoBehaviour
         AttackAudio2.Play();
     }
 
-    private void OnTriggerEnter2D(Collider2D other)// Whien hit something.
+    private void OnTriggerEnter2D(Collider2D other)// When hit something.
     {
         if (other.transform.CompareTag("Enemy") && poly2D.enabled)
         {

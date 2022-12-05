@@ -15,7 +15,8 @@ GameObject:
   - component: {fileID: 6559302083160762162}
   - component: {fileID: 2103301694}
   - component: {fileID: 2103301695}
-  - component: {fileID: 1820627986088469736}
+  - component: {fileID: -7324752618931833955}
+  - component: {fileID: 8786772493883117265}
   m_Layer: 0
   m_Name: FlyEnemy 1
   m_TagString: Enemy
@@ -156,6 +157,13 @@ MonoBehaviour:
   silverCoin: {fileID: 5016376768434895919, guid: 2454d44c12c7fef4a8596dd19d112c5d, type: 3}
   goldCoin: {fileID: 1785100447502755536, guid: 0175dfddfe4a11f42ae8a8d87c2caa68, type: 3}
   sprites: {fileID: 8666222939047016711}
+  attackDamage: 20
+  attackOffset: {x: 0, y: 0, z: 0}
+  attackRange: 1
+  attackMask:
+    serializedVersion: 2
+    m_Bits: 0
+  childEnemyPrefab: {fileID: 4649643167349731872, guid: fbeada94915a24d488fcf2dab68124be, type: 3}
 --- !u!58 &2103301695
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -172,7 +180,28 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.71
---- !u!114 &1820627986088469736
+--- !u!50 &-7324752618931833955
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6559302083160762165}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &8786772493883117265
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

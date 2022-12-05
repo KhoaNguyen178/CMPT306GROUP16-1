@@ -141,7 +141,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  damageToPlayer: 10
   moveSpeed: 15
   damageRate: 0.2
   damageTime: 0
@@ -149,6 +148,7 @@ MonoBehaviour:
   silverCoin: {fileID: 5016376768434895919, guid: 2454d44c12c7fef4a8596dd19d112c5d, type: 3}
   goldCoin: {fileID: 1785100447502755536, guid: 0175dfddfe4a11f42ae8a8d87c2caa68, type: 3}
   sprites: {fileID: 3107744761934505138}
+  childEnemyPrefab: {fileID: 4649643167349731872, guid: fbeada94915a24d488fcf2dab68124be, type: 3}
 --- !u!1001 &3107744761563375935
 PrefabInstance:
   m_ObjectHideFlags: 0

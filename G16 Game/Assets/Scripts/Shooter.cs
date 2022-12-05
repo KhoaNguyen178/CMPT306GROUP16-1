@@ -17,7 +17,7 @@ public class Shooter : MonoBehaviour
         if (Input.GetButtonDown("Fire1") && !Anime.GetBool("Attacking"))
         {
             Invoke("Shoot", 0.4f);
-            Invoke("Shoot", 0.8f);
+            //Invoke("Shoot", 0.8f);
         }
     }
 

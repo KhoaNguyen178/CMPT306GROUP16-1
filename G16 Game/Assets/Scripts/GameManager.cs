@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
     public void AddCoins(int scoreToAdd)
     {
         coins += scoreToAdd;
-        Debug.Log(coins);
+        //Debug.Log(coins);
         SetCoinText();
   
     }
@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
     private void setProgresss()
     {
         progressBarFillMask.fillAmount = progressTracker / 30;
-        Debug.Log("progress: " + progressBarFillMask.fillAmount);
+        //Debug.Log("progress: " + progressBarFillMask.fillAmount);
     }
 
 

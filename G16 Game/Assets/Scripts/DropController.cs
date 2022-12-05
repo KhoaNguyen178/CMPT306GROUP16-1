@@ -4,17 +4,12 @@ using UnityEngine;
 
 public class DropController : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private HealthSystem healthSystem_SC;
     void Start()
     {
-        
+        healthSystem_SC = GameObject.Find("TinyHealthSystem").GetComponent<HealthSystem>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.transform.tag == "Player")
@@ -23,11 +18,16 @@ public class DropController : MonoBehaviour
             {
                 GameManager.instance.AddCoins(3);
             }
-            else
+            else if(this.gameObject.tag == "Silver")
             {
                 GameManager.instance.AddCoins(1);
             }
+            else
+            {
+                healthSystem_SC.HealDamage(30);
+            }
             Destroy(this.gameObject);
+
         }
     }
 }
