@@ -29,10 +29,19 @@ public class PlayerController : MonoBehaviour
 
     public int BulletNumber = 1;
 
+    //Tam Add on
+    private Rigidbody2D rigidbody2D;
+    private float moveSpeed, dirX, dirY;
+    public bool ClimbingAllowed { get; set; }
+
     private void Start()
     {
         Anime.SetBool("Alive", true);
         Anime.SetBool("onHurt", false);
+
+        //Tam add on
+        rigidbody2D = GetComponent<Rigidbody2D>();
+        moveSpeed = 5f;
     }
     void Update()
     {
@@ -53,6 +62,13 @@ public class PlayerController : MonoBehaviour
         else
         {
             recTransform.gameObject.SetActive(true);
+        }
+
+        // Tam add on
+        dirX = Input.GetAxisRaw("Horizontal") * moveSpeed;
+        if (ClimbingAllowed)
+        {
+            dirY = Input.GetAxisRaw("Vertical") * moveSpeed;
         }
     }
 
@@ -189,5 +205,20 @@ public class PlayerController : MonoBehaviour
     public int GetBulletNumber()
     {
         return BulletNumber;
+    }
+
+    // Tam add on
+    private void FixedUpdate()
+    {
+        if (ClimbingAllowed)
+        {
+            rigidbody2D.isKinematic = true;
+            rigidbody2D.velocity = new Vector2(dirX, dirY);
+        }
+        else
+        {
+            rigidbody2D.isKinematic = false;
+            rigidbody2D.velocity = new Vector2(dirX, rb.velocity.y);
+        }
     }
 }
