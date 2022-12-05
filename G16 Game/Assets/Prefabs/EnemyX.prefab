@@ -141,7 +141,48 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 6
+<<<<<<< HEAD:G16 Game/Assets/Prefabs/EnemyX.prefab
 --- !u!1001 &2160749728223409584
+=======
+--- !u!114 &3107744761934505141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3107744761934505138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c85f63cd614b45e9831784cff83614a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 842962337226128324, guid: 223211321c4342b428aff95625429579, type: 3}
+  speed: 50
+  nextWayPointDistance: 3
+  enemyGFX: {fileID: 3107744761934505289}
+--- !u!114 &3107744761934505288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3107744761934505138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 423a64e548541c145b9a133a1aecdd0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  moveSpeed: 15
+  damageRate: 0.2
+  damageTime: 0
+  damageToSelf: 10
+  silverCoin: {fileID: 5016376768434895919, guid: 2454d44c12c7fef4a8596dd19d112c5d, type: 3}
+  goldCoin: {fileID: 1785100447502755536, guid: 0175dfddfe4a11f42ae8a8d87c2caa68, type: 3}
+  sprites: {fileID: 3107744761934505138}
+  childEnemyPrefab: {fileID: 4649643167349731872, guid: fbeada94915a24d488fcf2dab68124be, type: 3}
+--- !u!1001 &3107744761563375935
+>>>>>>> origin/Thao:G16 Game/Assets/Prefabs/EnemyX1.prefab
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2

@@ -29,7 +29,7 @@ public class EnemyAI : MonoBehaviour
 
     void UpdatePath()
     {
-        if (seeker.IsDone())
+        if (seeker.IsDone() && !target.Equals(null))
         {
             seeker.StartPath(rb.position, target.position, OnPathComplete);
         }

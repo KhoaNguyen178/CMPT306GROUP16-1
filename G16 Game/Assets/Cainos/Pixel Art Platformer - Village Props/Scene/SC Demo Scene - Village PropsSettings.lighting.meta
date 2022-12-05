@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: a25437c15882935428dbc530df848771
+=======
+guid: 7b699b355f6534062a78ac8819808473
+>>>>>>> origin/Thao
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 4890085278179872738

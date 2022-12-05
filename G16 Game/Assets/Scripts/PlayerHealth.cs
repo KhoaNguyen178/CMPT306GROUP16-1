@@ -9,11 +9,15 @@ public class PlayerHealth : MonoBehaviour
 	public int health = 100;
 
 	//public GameObject deathEffect;
+	void Update()
+    {
+		Debug.Log(health);
+    }
 
 	public void TakeDamage(int damage)
 	{
 		health -= damage;
-		Debug.Log("Decrease");
+		//Debug.Log("Decrease");
 		StartCoroutine(DamageAnimation());
 
 		if (health <= 0)

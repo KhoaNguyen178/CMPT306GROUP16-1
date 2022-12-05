@@ -17,6 +17,7 @@ public class Shooter : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1") && !Input.GetButtonDown("Fire2") && !Anime.GetBool("Attacking"))
         {
+<<<<<<< HEAD
             Invoke("ShootFireball", 0.4f);
             Invoke("ShootFireball", 0.8f);
         }
@@ -24,6 +25,10 @@ public class Shooter : MonoBehaviour
         {
             Invoke("ShootTrapBullet", 0.4f);
             Invoke("ShootTrapBullet", 0.8f);
+=======
+            Invoke("Shoot", 0.4f);
+            //Invoke("Shoot", 0.8f);
+>>>>>>> origin/Thao
         }
     }
 
