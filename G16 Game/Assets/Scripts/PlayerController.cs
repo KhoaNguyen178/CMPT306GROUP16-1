@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -20,7 +21,17 @@ public class PlayerController : MonoBehaviour
     public AudioSource DieAudio;
 
     public float face = 1;
+
     public float PlayerHP = 100f;
+    public float PlayerMana = 100f;
+    public float PlayerMaxHP = 100f;
+    public float PlayerMaxMana = 100f;
+    //Variables for player UI
+    public Image hpBarFillMask;
+    public Image manaBarFillMask;
+    public Text hpText;
+    public Text manaText;
+
     public bool onHurt;
 
     public float xOffset;
@@ -33,6 +44,8 @@ public class PlayerController : MonoBehaviour
     {
         Anime.SetBool("Alive", true);
         Anime.SetBool("onHurt", false);
+        SetHP();
+        SetMana();
     }
     void Update()
     {
@@ -92,6 +105,7 @@ public class PlayerController : MonoBehaviour
     public void PlayerTakeDamage(float damage) // Player gets hurted and check if dies.
     {
         PlayerHP -= damage;
+        SetHP();
         HealthSystem.Instance.TakeDamage(damage);
         if (PlayerHP <= 0)
         {
@@ -203,5 +217,16 @@ public class PlayerController : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
+    void SetHP()
+    {
+        hpBarFillMask.fillAmount = PlayerHP / PlayerMaxHP;
+        hpText.text = PlayerHP + "/" + PlayerMaxHP;
+    }
+
+    void SetMana()
+    {
+        manaBarFillMask.fillAmount = PlayerMana / PlayerMaxMana;
+        manaText.text = PlayerMana + "/" + PlayerMaxMana;
+    }
 
 }

@@ -109,4 +109,5 @@ public class GameManager : MonoBehaviour
     {
         coinsText.text = ": " + coins.ToString();
     }
+
 }

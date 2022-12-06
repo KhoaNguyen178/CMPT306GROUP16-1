@@ -60,6 +60,7 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
+        /*
         if(collision.transform.tag == "Player" && Time.time > damageTime)
         {
             var temp = this.GetComponent<Rigidbody2D>();
@@ -68,6 +69,7 @@ public class Enemy : MonoBehaviour
             StartCoroutine(FlashRed());
             damageTime = Time.time + damageRate;
         }
+        */
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -81,6 +83,15 @@ public class Enemy : MonoBehaviour
         {
             if(child.GetComponent<SpriteRenderer>() != null)
             {
+                //Each enemy has a body with more child sprites
+                foreach (Transform bodyPart in child)
+                {
+                    if (bodyPart.GetComponent<SpriteRenderer>() != null) 
+                    {
+                        bodyPart.GetComponent<SpriteRenderer>().material.color = Color.red;
+                    }
+
+                }
                 child.GetComponent<SpriteRenderer>().material.color = Color.red;
             }
         }
@@ -91,6 +102,14 @@ public class Enemy : MonoBehaviour
         {
             if(child.GetComponent<SpriteRenderer>() != null)
             {
+                foreach (Transform bodyPart in child)
+                {
+                    if (bodyPart.GetComponent<SpriteRenderer>() != null)
+                    {
+                        bodyPart.GetComponent<SpriteRenderer>().material.color = Color.white;
+                    }
+
+                }
                 child.GetComponent<SpriteRenderer>().material.color = Color.white;
             }
             

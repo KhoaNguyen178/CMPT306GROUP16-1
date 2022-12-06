@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CloseMenu : MonoBehaviour
+public class OpenShopMenu : MonoBehaviour
 {
     public GameObject upgradeMenu;
     // Start is called before the first frame update
@@ -16,10 +16,11 @@ public class CloseMenu : MonoBehaviour
     {
         
     }
-    public void onCloseClick()
+
+    public void onOpenClick()
     {
-        upgradeMenu.SetActive(false);
-        Time.timeScale = 1;
-        //GameManager.instance.resetProgress();
+        upgradeMenu.SetActive(true);
+        Time.timeScale = 0;
+        GameManager.instance.resetProgress();
     }
 }
