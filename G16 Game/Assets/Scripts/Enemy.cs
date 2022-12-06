@@ -45,16 +45,23 @@ public class Enemy : MonoBehaviour
             Destroy(this.gameObject);
             GameManager.instance.AddKill();
             //Instantiate(deathEffect, transform.position, transform.rotation);
-            float rando1 = UnityEngine.Random.Range(1, 10);
-            if(rando1 <= 2)
-            {
-                GameObject drop = Instantiate(goldCoin, transform.position, transform.rotation);
-            }
-            else
-            {
-                GameObject drop = Instantiate(silverCoin, transform.position, transform.rotation);
-            }
             
+            int rando1 = UnityEngine.Random.Range(2, 5);
+            float tempVar = 0.0f;
+            for(int i = 0; i < rando1; i++)
+            {
+                int rando2 = UnityEngine.Random.Range(1, 10);
+                Vector3 tempV3 = new Vector3(transform.position.x + tempVar, transform.position.y, transform.position.z);
+                if (rando2 <= 2)
+                {
+                    GameObject drop = Instantiate(goldCoin, tempV3, transform.rotation);
+                }
+                else
+                {
+                    GameObject drop = Instantiate(silverCoin, tempV3, transform.rotation);
+                }
+                tempVar += 0.1f;
+            }
         }
     }
 
@@ -115,4 +122,5 @@ public class Enemy : MonoBehaviour
             
         }
     }
+
 }

@@ -245,7 +245,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3673250265332657105, guid: dfa1ede155204784da206d11dd38b966, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3673250265332657106, guid: dfa1ede155204784da206d11dd38b966, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 640.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3673250265332657106, guid: dfa1ede155204784da206d11dd38b966, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 327.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3673250265332657116, guid: dfa1ede155204784da206d11dd38b966, type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3673250266173729307, guid: dfa1ede155204784da206d11dd38b966, type: 3}
       propertyPath: m_Pivot.x
@@ -337,7 +349,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3673250266381533946, guid: dfa1ede155204784da206d11dd38b966, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3673250266381533947, guid: dfa1ede155204784da206d11dd38b966, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 619.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 3673250266381533947, guid: dfa1ede155204784da206d11dd38b966, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 327.4
       objectReference: {fileID: 0}
     - target: {fileID: 4326777804783397683, guid: dfa1ede155204784da206d11dd38b966, type: 3}
       propertyPath: m_Name
@@ -3476,7 +3496,7 @@ GameObject:
   - component: {fileID: 1335717142}
   m_Layer: 0
   m_Name: EnemyX
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3715,6 +3735,10 @@ PrefabInstance:
     - target: {fileID: 2366890721908629179, guid: d016568716047e3498c6986fe2edb3fe, type: 3}
       propertyPath: m_Name
       value: Enemy0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2366890721908629179, guid: d016568716047e3498c6986fe2edb3fe, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4606481970311612126, guid: d016568716047e3498c6986fe2edb3fe, type: 3}
       propertyPath: m_Constraints

@@ -20,6 +20,6 @@ public class CloseMenu : MonoBehaviour
     {
         upgradeMenu.SetActive(false);
         Time.timeScale = 1;
-        //GameManager.instance.resetProgress();
+        GameManager.instance.resetProgress();
     }
 }
