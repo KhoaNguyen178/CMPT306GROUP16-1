@@ -18,6 +18,8 @@ TagManager:
   - CheckLeft
   - Ladder
   - Potion
+  - Level
+  - Cost
   layers:
   - Default
   - TransparentFX
