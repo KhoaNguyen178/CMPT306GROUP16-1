@@ -170,3 +170,6 @@ MonoBehaviour:
   BulletSpeed: 5
   BulletDamage: 20
   rb: {fileID: 3504110184171834275}
+  DestroyTime: 2
+  TrapDistance: 5
+  BulletDestroyed: {fileID: 4905289620591929167, guid: 843d2a9f3af771b4e802cde81b7cd539, type: 3}
