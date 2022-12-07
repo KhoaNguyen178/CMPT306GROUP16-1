@@ -37,7 +37,7 @@ public class GroundSpawner : MonoBehaviour
 
         if (randomNum == 0)
         {
-            Instantiate(ground[0], new Vector3(transform.position.x + 15, -4.5498f, 0), Quaternion.identity); //-3.066727
+            Instantiate(ground[0], new Vector3(transform.position.x + 13, -4.5498f, 0), Quaternion.identity); //-3.066727
             if(randomEnemy != 2)
             {
                 Instantiate(groundEnemy[randomEnemy], new Vector3(transform.position.x + 14, -4.023341f, 0), Quaternion.identity);
@@ -46,10 +46,14 @@ public class GroundSpawner : MonoBehaviour
             else
             {
                 Instantiate(groundEnemy[2], new Vector3(transform.position.x + 8, -3.061435f, 0), Quaternion.identity);
+                Instantiate(groundEnemy[1], new Vector3(transform.position.x + 8, -4.023341f, 0), Quaternion.identity);
             }
             
-            Instantiate(flyEnemy[randomFlyEnemy], new Vector3(transform.position.x + 2, -2, 0), Quaternion.identity);
-            
+            Instantiate(flyEnemy[randomFlyEnemy], new Vector3(transform.position.x + 8, 0, 0), Quaternion.identity);
+            Instantiate(flyEnemy[randomFlyEnemy], new Vector3(transform.position.x + 15, 1, 0), Quaternion.identity);
+            Instantiate(flyEnemy[randomFlyEnemy], new Vector3(transform.position.x + 11, 2, 0), Quaternion.identity);
+            Instantiate(flyEnemy[randomFlyEnemy], new Vector3(transform.position.x + 19, 3, 0), Quaternion.identity);
+
 
         }
 
@@ -62,7 +66,7 @@ public class GroundSpawner : MonoBehaviour
             }
             else
             {
-                Instantiate(groundEnemy[2], new Vector3(transform.position.x + 8, -1.436775f, 0), Quaternion.identity);
+                Instantiate(groundEnemy[2], new Vector3(transform.position.x + 8, -0.9972827f, 0), Quaternion.identity);
             }
             
      
@@ -95,26 +99,40 @@ public class GroundSpawner : MonoBehaviour
         if (randomNum == 5)
         {
             Instantiate(ground[5], new Vector3(transform.position.x + 20, -4.548f, 0), Quaternion.identity); //11
-            Instantiate(flyEnemy[randomFlyEnemy], new Vector3(transform.position.x + 21, -1f, 0), Quaternion.identity);
-            Instantiate(flyEnemy[randomFlyEnemy], new Vector3(transform.position.x + 18, -2f, 0), Quaternion.identity);
-            Instantiate(flyEnemy[randomFlyEnemy], new Vector3(transform.position.x + 20, -1.5f, 0), Quaternion.identity);
-            Instantiate(flyEnemy[randomFlyEnemy], new Vector3(transform.position.x + 25, -1.8f, 0), Quaternion.identity);
+            Instantiate(flyEnemy[randomFlyEnemy], new Vector3(transform.position.x + 21, 8f, 0), Quaternion.identity);
+            Instantiate(flyEnemy[randomFlyEnemy], new Vector3(transform.position.x + 29, 9f, 0), Quaternion.identity);
+            Instantiate(flyEnemy[randomFlyEnemy], new Vector3(transform.position.x + 28, 10f, 0), Quaternion.identity);
+            Instantiate(flyEnemy[randomFlyEnemy], new Vector3(transform.position.x + 25, 7f, 0), Quaternion.identity);
+
+           
+            Instantiate(flyEnemy[2], new Vector3(transform.position.x + 21, 3f, 0), Quaternion.identity);
+            Instantiate(flyEnemy[2], new Vector3(transform.position.x + 19, 4f, 0), Quaternion.identity);
 
             if (randomEnemy != 2)
             {
                 Instantiate(groundEnemy[randomEnemy], new Vector3(transform.position.x + 18, -3.97611f, 0), Quaternion.identity);
             }
-            Instantiate(groundEnemy[2], new Vector3(transform.position.x + 22, -3.08f, 0), Quaternion.identity);
+            Instantiate(groundEnemy[2], new Vector3(transform.position.x + 30, -3.08f, 0), Quaternion.identity);
+            Instantiate(groundEnemy[1], new Vector3(transform.position.x + 20, -3.97611f, 0), Quaternion.identity);
 
         }
 
         if (randomNum == 6)
         {
             Instantiate(ground[6], new Vector3(transform.position.x + 18, -4.560649f, 0), Quaternion.identity); //11
-            Instantiate(flyEnemy[randomFlyEnemy], new Vector3(transform.position.x + 21, -1f, 0), Quaternion.identity);
+            Instantiate(flyEnemy[randomFlyEnemy], new Vector3(transform.position.x + 21, 13f, 0), Quaternion.identity);
+            Instantiate(flyEnemy[randomFlyEnemy], new Vector3(transform.position.x + 25, 8f, 0), Quaternion.identity);
+            Instantiate(flyEnemy[1], new Vector3(transform.position.x + 18, 6f, 0), Quaternion.identity);
+            Instantiate(flyEnemy[2], new Vector3(transform.position.x + 17, 7f, 0), Quaternion.identity);
+            Instantiate(flyEnemy[3], new Vector3(transform.position.x + 24, 7f, 0), Quaternion.identity);
+            Instantiate(flyEnemy[3], new Vector3(transform.position.x + 29, 9f, 0), Quaternion.identity); 
             if (randomEnemy != 2)
             {
                 Instantiate(groundEnemy[randomEnemy], new Vector3(transform.position.x + 25, 0.53f, 0), Quaternion.identity);
+            }
+            else
+            {
+                Instantiate(groundEnemy[randomEnemy], new Vector3(transform.position.x + 25, 1.48258f, 0), Quaternion.identity);
             }
                 
         }
@@ -122,7 +140,13 @@ public class GroundSpawner : MonoBehaviour
         if (randomNum == 7)
         {
             Instantiate(ground[7], new Vector3(transform.position.x + 17, -4.39f, 0), Quaternion.identity); //11
-            Instantiate(flyEnemy[randomFlyEnemy], new Vector3(transform.position.x + 21, -1f, 0), Quaternion.identity);
+            Instantiate(flyEnemy[randomFlyEnemy], new Vector3(transform.position.x + 21, 1f, 0), Quaternion.identity);
+            Instantiate(flyEnemy[randomFlyEnemy], new Vector3(transform.position.x + 21, 1f, 0), Quaternion.identity);
+ 
+            Instantiate(flyEnemy[2], new Vector3(transform.position.x + 19, 4f, 0), Quaternion.identity);
+            Instantiate(flyEnemy[3], new Vector3(transform.position.x + 25, 3f, 0), Quaternion.identity);
+            Instantiate(flyEnemy[randomFlyEnemy], new Vector3(transform.position.x + 23, 3f, 0), Quaternion.identity);
+            
             if (randomEnemy != 2)
                 Instantiate(groundEnemy[randomEnemy], new Vector3(transform.position.x + 18, -3.97611f, 0), Quaternion.identity);
         }
@@ -133,15 +157,35 @@ public class GroundSpawner : MonoBehaviour
             Instantiate(flyEnemy[randomFlyEnemy], new Vector3(transform.position.x + 21, -1f, 0), Quaternion.identity);
             if (randomEnemy != 2)
                 Instantiate(groundEnemy[randomEnemy], new Vector3(transform.position.x + 18, -3.97611f, 0), Quaternion.identity);
+         
+  
+             Instantiate(flyEnemy[1], new Vector3(transform.position.x + 17, 4f, 0), Quaternion.identity);
+             Instantiate(flyEnemy[2], new Vector3(transform.position.x + 16, 3.5f, 0), Quaternion.identity);
+             Instantiate(flyEnemy[2], new Vector3(transform.position.x + 12, 2f, 0), Quaternion.identity);
+       
         }
 
         if (randomNum == 9)
         {
             Instantiate(ground[9], new Vector3(transform.position.x + 19, 7.74f, 0), Quaternion.identity);
-            //Instantiate(groundEnemy[2], new Vector3(transform.position.x + 36, -3.066727f, 0), Quaternion.identity);
-            Instantiate(flyEnemy[randomFlyEnemy], new Vector3(transform.position.x + 21, -1f, 0), Quaternion.identity);
-            Instantiate(flyEnemy[randomFlyEnemy], new Vector3(transform.position.x + 21, -1f, 0), Quaternion.identity);
+            Instantiate(groundEnemy[2], new Vector3(transform.position.x + 39, -3.066727f, 0), Quaternion.identity);
+            Instantiate(groundEnemy[randomEnemy], new Vector3(transform.position.x + 21, -3.066727f, 0), Quaternion.identity);
 
+
+            Instantiate(flyEnemy[randomFlyEnemy], new Vector3(transform.position.x + 21, 10f, 0), Quaternion.identity);
+            Instantiate(flyEnemy[1], new Vector3(transform.position.x + 21, 11f, 0), Quaternion.identity);
+
+
+            Instantiate(flyEnemy[2], new Vector3(transform.position.x + 17, 11.9f, 0), Quaternion.identity);
+            Instantiate(flyEnemy[randomFlyEnemy], new Vector3(transform.position.x + 14, 13f, 0), Quaternion.identity);
+            Instantiate(flyEnemy[randomFlyEnemy], new Vector3(transform.position.x + 12, 14f, 0), Quaternion.identity);
+            Instantiate(flyEnemy[randomFlyEnemy], new Vector3(transform.position.x + 12, 13.4f, 0), Quaternion.identity);
+
+
+            Instantiate(flyEnemy[2], new Vector3(transform.position.x + 36, 15f, 0), Quaternion.identity);
+            Instantiate(flyEnemy[2], new Vector3(transform.position.x + 38, 15f, 0), Quaternion.identity);
+            Instantiate(flyEnemy[3], new Vector3(transform.position.x + 39, 14f, 0), Quaternion.identity);
+            Instantiate(flyEnemy[3], new Vector3(transform.position.x + 41, 12f, 0), Quaternion.identity);
         }
 
        
