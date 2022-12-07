@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
     public float PlayerMana = 100f;
     public float PlayerMaxHP = 100f;
     public float PlayerMaxMana = 100f;
+
     //Variables for player UI
     public Image hpBarFillMask;
     public Image manaBarFillMask;
@@ -39,6 +40,10 @@ public class PlayerController : MonoBehaviour
     public RectTransform recTransform;
 
     public GameObject coinMagnet;
+    
+    //Additional variables for upgrades
+    int coinMultiplier = 1;
+    bool isRockSteady = false;
 
     private void Start()
     {
@@ -156,12 +161,12 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Gold")
         {
-            GameManager.instance.AddCoins(3);
+            GameManager.instance.AddCoins(3 * coinMultiplier);
             Destroy(collision.gameObject);
         }
         else if (collision.gameObject.tag == "Silver")
         {
-            GameManager.instance.AddCoins(1);
+            GameManager.instance.AddCoins(1 * coinMultiplier);
             Destroy(collision.gameObject);
         }
 
@@ -169,13 +174,17 @@ public class PlayerController : MonoBehaviour
 
     void Hurt(Collision2D collision)
     {
-        if (Anime.GetBool("Alive"))
+        if (!isRockSteady)
         {
-            PlayerTakeDamage(collision.gameObject.GetComponent<EnemyAttribute>().damageToPlayer);
+            if (Anime.GetBool("Alive"))
+            {
+                PlayerTakeDamage(collision.gameObject.GetComponent<EnemyAttribute>().damageToPlayer);
+            }
+            AccordingDirectionFlip(collision);
+            rb.velocity = Vector2.up * 7f;
+            rb.velocity = new Vector2(face * -7, rb.velocity.y);
         }
-        AccordingDirectionFlip(collision);
-        rb.velocity = Vector2.up * 7f;
-        rb.velocity = new Vector2(face * -7, rb.velocity.y);
+
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -234,8 +243,39 @@ public class PlayerController : MonoBehaviour
         speed += i;
     }
 
+    //Need to pull player to adjust this upgrade - I think Shuhao separated spell and normal attack
     public void upgradeAtkDamage(float i)
     {
         
+    }
+
+    public void upgradeJump(float i)
+    {
+
+    }
+    
+    //Need to modify bullet prefab for spell damage
+    public void upgradeSpellDamage(float i)
+    {
+
+    }
+
+    public void upgradeMultiplier()
+    {
+        coinMultiplier *= 2;
+    }
+
+    public void enableRockSteady()
+    {
+        isRockSteady = true;
+    }
+
+    public void resetDefaults()
+    {
+        isRockSteady = false;
+        speed = 10f;
+        Jumpforce = 12.5f;
+        coinMultiplier = 1;
+
     }
 }
