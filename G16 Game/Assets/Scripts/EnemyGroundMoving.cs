@@ -8,7 +8,7 @@ public class EnemyGroundMoving : MonoBehaviour
     // Start is called before the first frame update
     //public Transform[] checkpoint;
     public float moveSpeed;
-    public int patrolDestination;
+    //public int patrolDestination;
     public Transform playerTransform;
     public bool isChasing;
     public float chaseDistance;
@@ -46,14 +46,14 @@ public class EnemyGroundMoving : MonoBehaviour
             {
                 transform.eulerAngles = new Vector3(0, -0, 0);
                 transform.position += Vector3.right * moveSpeed * Time.deltaTime;
-                //patrolDestination = 1;
+     
             }
 
             if (transform.position.x > playerTransform.position.x)
             {
                 transform.eulerAngles = new Vector3(0, -180, 0);
                 transform.position += Vector3.left * moveSpeed * Time.deltaTime;
-                //patrolDestination = 0;
+    
             }
         }
 

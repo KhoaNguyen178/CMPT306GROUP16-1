@@ -15,7 +15,7 @@ GameObject:
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3706071766445842086
 Transform:
   m_ObjectHideFlags: 0
@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3706071766445842087}
   m_LocalRotation: {x: -0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.5834255, y: 0.5, z: 3.9944434}
+  m_LocalPosition: {x: -0.788, y: 0.5, z: 3.9944434}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -129,7 +129,7 @@ GameObject:
   - component: {fileID: 4148219266829013062}
   - component: {fileID: 4148219266829013067}
   - component: {fileID: 4148219266829013066}
-  - component: {fileID: 3706071767129549168}
+  - component: {fileID: 638031255752730456}
   m_Layer: 0
   m_Name: EnemyG2
   m_TagString: Enemy
@@ -151,6 +151,7 @@ Transform:
   m_Children:
   - {fileID: 7768667214768111485}
   - {fileID: 3706071766445842086}
+  - {fileID: 7827059314675735225}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -246,7 +247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 423a64e548541c145b9a133a1aecdd0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 80
   moveSpeed: 15
   damageRate: 0.2
   damageTime: 0
@@ -260,7 +261,7 @@ MonoBehaviour:
   attackMask:
     serializedVersion: 2
     m_Bits: 64
---- !u!114 &3706071767129549168
+--- !u!114 &638031255752730456
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -269,15 +270,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 7768667213989220873}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c5cf2ecf9f7b6b46a01eae28de580a8, type: 3}
+  m_Script: {fileID: 11500000, guid: 1bc4c441b4c21f948a7d6a693f6e6d63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 4
-  patrolDestination: 0
-  playerTransform: {fileID: 842962337226128324, guid: 223211321c4342b428aff95625429579, type: 3}
+  moveSpeed: 5
+  castPos: {fileID: 7827059314675735225}
+  baseCastDistance: 0.5
   isChasing: 0
-  chaseDistance: 3
-  groundDetection: {fileID: 3706071766445842086}
+  chaseDistance: 2
+  playerTransform: {fileID: 842962337226128324, guid: 223211321c4342b428aff95625429579, type: 3}
 --- !u!1 &7768667214017754244
 GameObject:
   m_ObjectHideFlags: 0
@@ -533,3 +534,34 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &8722145810931027522
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7827059314675735225}
+  m_Layer: 0
+  m_Name: CastPos
+  m_TagString: Untagged
+  m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7827059314675735225
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8722145810931027522}
+  m_LocalRotation: {x: -0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.94, y: 0.109999895, z: -1.5179874}
+  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7768667213989220918}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
