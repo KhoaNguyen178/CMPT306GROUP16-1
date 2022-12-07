@@ -120,7 +120,7 @@ public class PlayerController : MonoBehaviour
             DieAudio.Play();
             Anime.SetBool("Alive", false);
             Anime.SetTrigger("Die");
-            Invoke("Die", 3f);
+            Die();
         }
         else
         {
