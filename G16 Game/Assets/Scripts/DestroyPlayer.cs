@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class DestroyPlayer : MonoBehaviour
 {
     // Start is called before the first frame update
+    public GameObject gameOver;
     void Start()
     {
 
@@ -21,7 +22,10 @@ public class DestroyPlayer : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             Destroy(collision.gameObject);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            gameOver.SetActive(true);
+            Time.timeScale = 0f;
+            
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }
