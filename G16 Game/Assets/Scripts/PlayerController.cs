@@ -49,7 +49,6 @@ public class PlayerController : MonoBehaviour
         SwitchAnime();
         if (Anime.GetBool("Alive") && !onHurt && !Anime.GetBool("Attacking"))
         {
-
             Movement();
         }
 
@@ -70,6 +69,10 @@ public class PlayerController : MonoBehaviour
         if (ClimbingAllowed)
         {
             dirY = Input.GetAxisRaw("Vertical") * moveSpeed;
+            if (Input.GetButtonDown("Vertical"))
+            {
+                Anime.SetBool("Climbing", true);
+            }
         }
     }
 
@@ -79,7 +82,7 @@ public class PlayerController : MonoBehaviour
         float facedirection = Input.GetAxisRaw("Horizontal");
         if (horizontalMove != 0) //Allow the player move leftward or rightward.
         {
-            rb.velocity = new Vector2(horizontalMove * speed, rb.velocity.y);
+            //rb.velocity = new Vector2(horizontalMove * speed, rb.velocity.y);
         }
         Anime.SetFloat("speed", Mathf.Abs(facedirection));
 
@@ -94,6 +97,7 @@ public class PlayerController : MonoBehaviour
         {
             Anime.SetBool("isGround", true);
             jumpTimesLeft = extraJumpTimes; //Reset jumping status when player on the ground.
+            Anime.SetBool("Climbing", false);
         }
         if (Input.GetButtonDown("Jump") && jumpTimesLeft > 0) //Allow the player jump.
         {
@@ -114,7 +118,7 @@ public class PlayerController : MonoBehaviour
             DieAudio.Play();
             Anime.SetBool("Alive", false);
             Anime.SetTrigger("Die");
-            Die(); // Tam added this line
+            Invoke("Die", 3f);
         }
         else
         {
@@ -159,10 +163,10 @@ public class PlayerController : MonoBehaviour
         if (Anime.GetBool("Alive"))
         {
             PlayerTakeDamage(collision.gameObject.GetComponent<EnemyAttribute>().damageToPlayer);
+            AccordingDirectionFlip(collision);
+            rb.velocity = Vector2.up * 7f;
+            rb.velocity = new Vector2(face * -7, rb.velocity.y);
         }
-        AccordingDirectionFlip(collision);
-        rb.velocity = Vector2.up * 7f;
-        rb.velocity = new Vector2(face * -7, rb.velocity.y);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -211,15 +215,18 @@ public class PlayerController : MonoBehaviour
     // Tam add on
     private void FixedUpdate()
     {
-        if (ClimbingAllowed)
+        if (Anime.GetBool("Alive") && !onHurt && !Anime.GetBool("Attacking"))
         {
-            rigidbody2D.isKinematic = true;
-            rigidbody2D.velocity = new Vector2(dirX, dirY);
-        }
-        else
-        {
-            rigidbody2D.isKinematic = false;
-            rigidbody2D.velocity = new Vector2(dirX, rb.velocity.y);
+            if (ClimbingAllowed)
+            {
+                rigidbody2D.isKinematic = true;
+                rigidbody2D.velocity = new Vector2(dirX, dirY);
+            }
+            else
+            {
+                rigidbody2D.isKinematic = false;
+                rigidbody2D.velocity = new Vector2(dirX, rb.velocity.y);
+            }
         }
     }
 }
