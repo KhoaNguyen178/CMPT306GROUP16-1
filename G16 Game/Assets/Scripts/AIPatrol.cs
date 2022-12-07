@@ -20,12 +20,10 @@ public class AIPatrol : MonoBehaviour
 
     //[SerializeField] private SpriteRenderer spriteRenderer;
     //[SerializeField] private Sprite[] newSprite;
-    [SerializeField] private GameObject[] newSprite;
+    [SerializeField] private GameObject[] newSprite; // List of patrolling enemies
     [SerializeField] private GameObject enemyasParent;
 
-
-
-    int spriteRandomIndex;
+    int spriteRandomIndex; 
 
     private PlayerHealth playerHealth_SC;
     private PlayerController playerController_SC;
@@ -39,9 +37,9 @@ public class AIPatrol : MonoBehaviour
         targetLeft = new Vector3(leftCollison.position.x, transform.position.y, leftCollison.position.z);
         targetRight = new Vector3(rightCollison.position.x, transform.position.y, rightCollison.position.z);
 
-        spriteRandomIndex = Random.Range(0, newSprite.Length);
-        GameObject myChar = Instantiate(newSprite[spriteRandomIndex], enemyasParent.transform.position, Quaternion.identity);
-        myChar.transform.parent = enemyasParent.transform;
+        spriteRandomIndex = Random.Range(0, newSprite.Length); // Random from 0 to sprite list length
+        GameObject myChar = Instantiate(newSprite[spriteRandomIndex], enemyasParent.transform.position, Quaternion.identity); 
+        myChar.transform.parent = enemyasParent.transform; 
 
         playerController_SC = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         playerHealth_SC = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();

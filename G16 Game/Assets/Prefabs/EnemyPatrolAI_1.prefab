@@ -435,7 +435,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3705714814447237278}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.27, y: 0.16, z: 0}
+  m_LocalPosition: {x: -0.17, y: 0.16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -505,7 +505,7 @@ MonoBehaviour:
   leftCollison: {fileID: 3705714813743576838}
   rightCollison: {fileID: 3705714813330964143}
   newSprite:
-  - {fileID: 4072521505062543147, guid: 1c3a24296a9515b45a93c356781e9da2, type: 3}
+  - {fileID: 1433602116043693599, guid: db148d9ce685ac348a3f357d37453baa, type: 3}
   - {fileID: 4257422641565858584, guid: f4a032b5d6fd07740913b99389b565ed, type: 3}
   - {fileID: 700227025433305788, guid: 361981530247ec54bb679f89e208d82f, type: 3}
   enemyasParent: {fileID: 3705714814447237278}

@@ -67,6 +67,7 @@ public class Enemy : MonoBehaviour
             {
                 GameObject drop = Instantiate(silverCoin, transform.position, transform.rotation);
             }
+            // Spawn child enemy
             float spawnDistance = Random.Range(-3f, 3f);
             Vector3 spawnPos = new Vector3(transform.position.x + spawnDistance, transform.position.y, transform.position.z);
             Instantiate(childEnemyPrefab, spawnPos, transform.rotation);

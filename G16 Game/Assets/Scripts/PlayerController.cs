@@ -55,11 +55,11 @@ public class PlayerController : MonoBehaviour
         }
 
 
-        //if (transform.position.y < -5.0f) // menu to play again
-        //{
-        //    DeathMenu.SetActive(true);
-        //    Destroy(this.gameObject);
-        //}
+        if (transform.position.y < -5.0f) // menu to play again
+        {
+            DeathMenu.SetActive(true);
+            Destroy(this.gameObject);
+        }
     }
 
     void Movement()

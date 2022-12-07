@@ -11,7 +11,6 @@ public class childEnemy : MonoBehaviour
     [SerializeField] private float damageValue;
     [SerializeField] private GameObject enemySprite;
     [SerializeField] private float yourCurLocalScaleX;
-    //[SerializeField] private GameObject[] dropObjects;
 
     private float health;
     private Vector3 localScale;
@@ -30,7 +29,7 @@ public class childEnemy : MonoBehaviour
         if (movement == true && !target.Equals(null))
         {
             Vector3 targetPos = new Vector3(target.position.x, transform.position.y, target.position.z);
-            transform.position = Vector3.MoveTowards(transform.position, targetPos, Random.Range(0,0.5f) * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, targetPos, Random.Range(0, 0.5f) * Time.deltaTime);
         }
 
         if (target.position.x > transform.position.x)
@@ -43,7 +42,7 @@ public class childEnemy : MonoBehaviour
             localScale.x = yourCurLocalScaleX;
             transform.localScale = localScale;
         }
-            
+
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -51,7 +50,8 @@ public class childEnemy : MonoBehaviour
         if (other.gameObject.tag == "Ground")
         {
             gameObject.GetComponent<Collider2D>().isTrigger = false;
-            Destroy(this.gameObject.GetComponent<Rigidbody2D>());
+            //Destroy(this.gameObject.GetComponent<Rigidbody2D>());
+            rb.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
             movement = true;
             gameObject.GetComponent<Collider2D>().isTrigger = true;
         }
@@ -61,8 +61,12 @@ public class childEnemy : MonoBehaviour
     {
         if (other.gameObject.tag == "Ground")
         {
+            rb.constraints = RigidbodyConstraints2D.None;
             movement = false;
-            Destroy(this.gameObject);
+            if (transform.position.y < -5.0f)
+            {
+                Destroy(this.gameObject);
+            }
         }
     }
 
@@ -74,7 +78,7 @@ public class childEnemy : MonoBehaviour
         {
             Destroy(this.gameObject);
             GameManager.instance.AddKill();
-            Instantiate(coin,transform.position, transform.rotation);
+            Instantiate(coin, transform.position, transform.rotation);
         }
     }
 
@@ -86,8 +90,6 @@ public class childEnemy : MonoBehaviour
             StartCoroutine(FlashingRed());
         }
     }
-
-    
 
     private IEnumerator FlashingRed()
     {

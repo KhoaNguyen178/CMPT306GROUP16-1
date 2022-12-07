@@ -178,7 +178,7 @@ MonoBehaviour:
   coin: {fileID: 5016376768434895919, guid: 2454d44c12c7fef4a8596dd19d112c5d, type: 3}
   damageValue: 30
   enemySprite: {fileID: 3462197789104864333}
-  yourCurLocalScaleX: 1.5
+  yourCurLocalScaleX: 2
 --- !u!4 &3462197789104864334 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8109552845080039876, guid: d4fa6dbffce76d14e9e8d0125f41a08b, type: 3}
@@ -333,7 +333,7 @@ MonoBehaviour:
   coin: {fileID: 5016376768434895919, guid: 2454d44c12c7fef4a8596dd19d112c5d, type: 3}
   damageValue: 30
   enemySprite: {fileID: 3462197789201222735}
-  yourCurLocalScaleX: 1.5
+  yourCurLocalScaleX: 2
 --- !u!1001 &4649643166405616163
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -486,7 +486,7 @@ MonoBehaviour:
   coin: {fileID: 5016376768434895919, guid: 2454d44c12c7fef4a8596dd19d112c5d, type: 3}
   damageValue: 30
   enemySprite: {fileID: 3462197788734714852}
-  yourCurLocalScaleX: 1.5
+  yourCurLocalScaleX: 2
 --- !u!4 &3462197788734714855 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8109552845080039876, guid: d4fa6dbffce76d14e9e8d0125f41a08b, type: 3}

@@ -8,16 +8,15 @@ public class GroundSpawner : MonoBehaviour
 
     public GameObject[] ground;
     public GameObject[] enemy;
+    //[SerializeField] int startSpawnEnemy;
+    private int randomNum;
 
     bool hasGround = true;
-
-  
-
 
     // Start is called before the first frame update
     void Start()
     {
-       
+        
     }
 
     // Update is called once per frame
@@ -27,23 +26,23 @@ public class GroundSpawner : MonoBehaviour
         {
             SpawnGround();
             hasGround = true;
+            //float randomRate = Random.Range(0.7f, 1.0f);
+            //InvokeRepeating("SpawnEnemy", startSpawnEnemy, randomRate);         
         }
     }
  
 
     public void SpawnGround()
     {
-       
-        int randomNum = Random.Range(0, ground.Length);
+        randomNum = Random.Range(0, ground.Length);
         int randomEnemy = Random.Range(0, enemy.Length);
         
         if (randomNum == 0)
         {
             Instantiate(ground[0], new Vector3(transform.position.x + 14, -4.5498f, 0), Quaternion.identity);
-            Instantiate(enemy[randomEnemy],  new Vector3(transform.position.x + 14, -3.84f, 0), Quaternion.identity);
-            Instantiate(enemy[randomEnemy], new Vector3(transform.position.x + 14, -3.84f, 0), Quaternion.identity);
-            Instantiate(enemy[randomEnemy], new Vector3(transform.position.x + 14, -3.84f, 0), Quaternion.identity);
-
+            //Instantiate(enemy[randomEnemy], new Vector3(transform.position.x + 14, -3.84f, 0), Quaternion.identity);
+            //Instantiate(enemy[randomEnemy], new Vector3(transform.position.x + 14, -3.84f, 0), Quaternion.identity);
+            //Instantiate(enemy[randomEnemy], new Vector3(transform.position.x + 14, -3.84f, 0), Quaternion.identity);
         }
 
         if (randomNum == 1)
@@ -85,6 +84,48 @@ public class GroundSpawner : MonoBehaviour
         }
 
     }
+
+    //public void SpawnEnemy()
+    //{
+    //    int randomNum = Random.Range(0, ground.Length);
+    //    int randomEnemy = Random.Range(0, enemy.Length);
+
+    //    if (randomNum == 0)
+    //    {
+    //        Instantiate(enemy[randomEnemy], new Vector3(transform.position.x + 14, -3.84f, 0), Quaternion.identity);
+    //        Instantiate(enemy[randomEnemy], new Vector3(transform.position.x + 14, -3.84f, 0), Quaternion.identity);
+    //        Instantiate(enemy[randomEnemy], new Vector3(transform.position.x + 14, -3.84f, 0), Quaternion.identity);
+    //    }
+
+    //    if (randomNum == 1)
+    //    {
+    //        Instantiate(enemy[randomEnemy], new Vector3(transform.position.x + 8, -1.69f, 0), Quaternion.identity);
+    //    }
+
+    //    if (randomNum == 3)
+    //    {
+    //        Instantiate(enemy[randomEnemy], new Vector3(transform.position.x + 5, -1.83f, 0), Quaternion.identity); //-1.83
+    //        Instantiate(enemy[randomEnemy], new Vector3(transform.position.x + 5, -1.83f, 0), Quaternion.identity);
+
+    //    }
+
+    //    if (randomNum == 4)
+    //    {
+    //        Instantiate(enemy[randomEnemy], new Vector3(transform.position.x + 9, -3.66f, 0), Quaternion.identity);
+
+    //    }
+
+    //    if (randomNum == 5)
+    //    {
+
+    //    }
+
+    //    if (randomNum == 6)
+    //    {
+
+    //    }
+
+    //}
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -131,16 +172,11 @@ public class GroundSpawner : MonoBehaviour
             //Debug.Log("right");
         }
 
-
-
         if (horizontalMove > 0 && collision.gameObject.CompareTag("Spawn"))
         {
             hasGround = false;
             //Debug.Log("spawn");
         }
-
-
     }
-
 
 }
