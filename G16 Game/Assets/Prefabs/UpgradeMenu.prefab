@@ -35,8 +35,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -394.81094, y: -25.73}
-  m_SizeDelta: {x: 259.1192, y: 44.132}
+  m_AnchoredPosition: {x: -405.11533, y: -25.73}
+  m_SizeDelta: {x: 238.5104, y: 44.132}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7817726123082163969
 CanvasRenderer:
@@ -79,7 +79,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: x2 the amount of coins!
+  m_Text: Gain 50% more coins!
 --- !u!1 &659542428457862763
 GameObject:
   m_ObjectHideFlags: 0

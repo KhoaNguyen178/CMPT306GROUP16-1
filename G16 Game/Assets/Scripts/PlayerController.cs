@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
     public GameObject coinMagnet;
     
     //Additional variables for upgrades
-    int coinMultiplier = 1;
+    float coinMultiplier = 1;
     bool isRockSteady = false;
 
     private void Start()
@@ -161,12 +161,12 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Gold")
         {
-            GameManager.instance.AddCoins(3 * coinMultiplier);
+            GameManager.instance.AddCoins((int)(3.0f * coinMultiplier));
             Destroy(collision.gameObject);
         }
         else if (collision.gameObject.tag == "Silver")
         {
-            GameManager.instance.AddCoins(1 * coinMultiplier);
+            GameManager.instance.AddCoins((int)(1.0f * coinMultiplier));
             Destroy(collision.gameObject);
         }
 
@@ -262,7 +262,7 @@ public class PlayerController : MonoBehaviour
 
     public void upgradeMultiplier()
     {
-        coinMultiplier *= 2;
+        coinMultiplier *= 1.5f;
     }
 
     public void enableRockSteady()
