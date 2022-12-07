@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class UpgradeController : MonoBehaviour
 {
+    public GameObject player;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +19,7 @@ public class UpgradeController : MonoBehaviour
 
     public void onUpgrade1Click()
     {
+        player.GetComponent<PlayerController>().
         GameManager.instance.spendCoins(3);
     }
     public void onUpgrade2Click()
@@ -28,5 +30,14 @@ public class UpgradeController : MonoBehaviour
     {
         GameManager.instance.spendCoins(3);
     }
+    public void onUpgrade4Click()
+    {
+        GameManager.instance.spendCoins(3);
+    }
+    public void onUpgrade5Click()
+    {
+        GameManager.instance.spendCoins(3);
+    }
+
 }
 

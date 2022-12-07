@@ -229,4 +229,13 @@ public class PlayerController : MonoBehaviour
         manaText.text = PlayerMana + "/" + PlayerMaxMana;
     }
 
+    public void upgradePlayerSpeed(float i)
+    {
+        speed += i;
+    }
+
+    public void upgradeAtkDamage(float i)
+    {
+        
+    }
 }
