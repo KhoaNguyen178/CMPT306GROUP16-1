@@ -101,7 +101,7 @@ MonoBehaviour:
   castPos: {fileID: 1262608563517417462}
   baseCastDistance: 0.5
   isChasing: 0
-  chaseDistance: 2
+  chaseDistance: 5
   playerTransform: {fileID: 842962337226128324, guid: 223211321c4342b428aff95625429579, type: 3}
 --- !u!114 &1262608563584259572
 MonoBehaviour:
@@ -135,7 +135,7 @@ MonoBehaviour:
   damageToSelf: 10
   silverCoin: {fileID: 1785100447502755536, guid: 0175dfddfe4a11f42ae8a8d87c2caa68, type: 3}
   goldCoin: {fileID: 5016376768434895919, guid: 2454d44c12c7fef4a8596dd19d112c5d, type: 3}
-  sprites: {fileID: 0}
+  sprites: {fileID: 3216075030060528276}
   attackDamage: 20
   attackOffset: {x: 0, y: 0, z: 0}
   attackRange: 1
@@ -238,6 +238,11 @@ PrefabInstance:
     - {fileID: -1163732364328606593, guid: d016568716047e3498c6986fe2edb3fe, type: 3}
     - {fileID: 4606481970311612125, guid: d016568716047e3498c6986fe2edb3fe, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d016568716047e3498c6986fe2edb3fe, type: 3}
+--- !u!1 &3216075030060528276 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2366890721908629179, guid: d016568716047e3498c6986fe2edb3fe, type: 3}
+  m_PrefabInstance: {fileID: 898795374054665263}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3216075030060528277 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2366890721908629178, guid: d016568716047e3498c6986fe2edb3fe, type: 3}

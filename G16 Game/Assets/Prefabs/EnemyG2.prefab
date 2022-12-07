@@ -277,7 +277,7 @@ MonoBehaviour:
   castPos: {fileID: 7827059314675735225}
   baseCastDistance: 0.5
   isChasing: 0
-  chaseDistance: 2
+  chaseDistance: 5
   playerTransform: {fileID: 842962337226128324, guid: 223211321c4342b428aff95625429579, type: 3}
 --- !u!1 &7768667214017754244
 GameObject:

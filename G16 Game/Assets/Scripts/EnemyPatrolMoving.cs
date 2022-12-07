@@ -26,13 +26,46 @@ public class EnemyPatrolMoving : MonoBehaviour
         baseScale = transform.localScale;
         facingDirection = RIGHT;
         rb = GetComponent<Rigidbody2D>();
+        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Vector2.Distance(transform.position, playerTransform.position) < chaseDistance)
+        {
+            isChasing = true;
+            Debug.Log(" CHASING");
+        }
+
+        if (Vector2.Distance(transform.position, playerTransform.position) > chaseDistance)
+        {
+            isChasing = false;
+            Debug.Log("NOT CHASING");
+        }
+
+
+        if (isChasing)
+        {
+            if (transform.position.x < playerTransform.position.x)
+            {
+                if (facingDirection == LEFT)
+                {
+                    EnemyFlip(RIGHT);
+                }
+            }
+
+            if (transform.position.x > playerTransform.position.x)
+            {
+                if (facingDirection == RIGHT)
+                {
+                    EnemyFlip(LEFT);
+                }
+            }
+        }
+
+       
     }
 
     private void FixedUpdate()
@@ -49,7 +82,12 @@ public class EnemyPatrolMoving : MonoBehaviour
         rb.velocity = new Vector2(vX, rb.velocity.y);
 
 
-        if (isChasing && IsHittingWall() || IsNearEdge())
+        if (Vector2.Distance(transform.position, playerTransform.position) > chaseDistance && IsHittingWall() || IsNearEdge())
+        {
+            isChasing = false;
+        }
+
+        if (IsHittingWall() || IsNearEdge())
         {
             if (facingDirection == LEFT)
             {
@@ -61,17 +99,17 @@ public class EnemyPatrolMoving : MonoBehaviour
             }
         }
 
-        if (!isChasing && IsHittingWall() || IsNearEdge())
-        {
-            if (facingDirection == LEFT)
-            {
-                EnemyFlip(RIGHT);
-            }
-            else if (facingDirection == RIGHT)
-            {
-                EnemyFlip(LEFT);
-            }
-        }
+        //if (IsHittingWall() || IsNearEdge())
+        //{
+        //    if (facingDirection == LEFT)
+        //    {
+        //        EnemyFlip(RIGHT);
+        //    }
+        //    else if (facingDirection == RIGHT)
+        //    {
+        //        EnemyFlip(LEFT);
+        //    }
+        //}
 
 
 
@@ -150,4 +188,5 @@ public class EnemyPatrolMoving : MonoBehaviour
 
         return val;
     }
+
 }
