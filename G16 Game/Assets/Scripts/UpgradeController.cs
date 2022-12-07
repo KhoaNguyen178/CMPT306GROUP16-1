@@ -19,7 +19,7 @@ public class UpgradeController : MonoBehaviour
 
     public void onUpgrade1Click()
     {
-        player.GetComponent<PlayerController>().
+        //player.GetComponent<PlayerController>().
         GameManager.instance.spendCoins(3);
     }
     public void onUpgrade2Click()
