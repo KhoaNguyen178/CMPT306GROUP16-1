@@ -7,9 +7,10 @@ public class PlayerHealth : MonoBehaviour
 {
 
 	public int health = 100;
+    public GameObject gameOverUI;
 
-	//public GameObject deathEffect;
-	void Update()
+    //public GameObject deathEffect;
+    void Update()
     {
 		Debug.Log(health);
     }
@@ -28,7 +29,9 @@ public class PlayerHealth : MonoBehaviour
 
 	void Die()
 	{
-		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        gameOverUI.SetActive(true);
+        Time.timeScale = 0f;
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 	}
 
 	IEnumerator DamageAnimation()
