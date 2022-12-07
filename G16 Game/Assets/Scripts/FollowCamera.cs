@@ -24,6 +24,6 @@ public class FollowCamera : MonoBehaviour
            GridGraph.astarData.gridGraph.center.z);
             AstarPath.active.Scan();
         }
-       
+
     }
 }

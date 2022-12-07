@@ -30,6 +30,8 @@ public class PlayerController : MonoBehaviour
 
     public int BulletNumber = 1;
 
+    public GameObject gameOverUI;
+
     //Tam Add on
     private Rigidbody2D rigidbody2D;
     private float moveSpeed, dirX, dirY;
@@ -204,7 +206,10 @@ public class PlayerController : MonoBehaviour
 
     void Die() //Tam added this line
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        //Khoa changed these
+        gameOverUI.SetActive(true);
+        Time.timeScale = 0f;
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public int GetBulletNumber()
