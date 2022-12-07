@@ -27,10 +27,13 @@ public class PlayerController : MonoBehaviour
     public float yOffset;
     public RectTransform recTransform;
 
+    public GameObject gameOverUI;
+
     private void Start()
     {
         Anime.SetBool("Alive", true);
         Anime.SetBool("onHurt", false);
+        
     }
     void Update()
     {
@@ -180,6 +183,8 @@ public class PlayerController : MonoBehaviour
 
     void Die() //Tam added this line
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        gameOverUI.SetActive(true);
+        Time.timeScale = 0f;
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
