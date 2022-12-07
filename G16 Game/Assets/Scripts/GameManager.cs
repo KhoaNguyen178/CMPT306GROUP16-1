@@ -10,10 +10,40 @@ public class GameManager : MonoBehaviour
     public static GameManager instance = null;
     public GameObject upgradeMenu;
     public Text coinsText;
-    public Image progressBarFillMask;
+    public Text shopCoinsText;
+    //public Image progressBarFillMask;
     private int coins = 0;
     private int kills = 0;
     private float progressTracker = 0;
+
+    //Current level for upgrades
+    private int currentSpeedLevel;
+    private int currentAttackLevel;
+    private int currentJumpLevel;
+    private int currentSpellLevel;
+    private int currentMultiplierLevel;
+    private int currentRockSteadyLevel;
+
+    //Max level for upgrades
+    private int maxSpeedUpgrade = 10;
+    private int maxJumpUpgrade = 10;
+    private int maxMultiplierUpgrade = 10;
+    private int maxRockSteadyUpgrade = 1;
+
+    //Current cost for upgrades
+    public int currentSpeedCost;
+    public int currentAttackCost;
+    public int currentJumpCost;
+    public int currentSpellCost;
+    public int currentMultiplierCost;
+    public int currentRockSteadyCost;
+
+    public Button buttonSpeedUpgrade;
+    public Button buttonJumpUpgrade;
+    public Button buttonMultiplierUpgrade;
+    public Button buttonRockSteadyUpgrade;
+    public Button buttonAttackUpgrade;
+    public Button buttonSpellUpgrade;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +51,7 @@ public class GameManager : MonoBehaviour
         resetCoins();
         SetCoinText();
         resetKills();
+        resetCostAndLevels();
     }
 
     // Update is called once per frame
@@ -38,7 +69,7 @@ public class GameManager : MonoBehaviour
 
     private void setProgresss()
     {
-        progressBarFillMask.fillAmount = progressTracker / 30;
+        //progressBarFillMask.fillAmount = progressTracker / 30;
         //Debug.Log("progress: " + progressBarFillMask.fillAmount);
     }
 
@@ -52,7 +83,7 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 0;
             upgradeMenu.SetActive(true);
         }
-        setProgresss();
+        //setProgresss();
     }
 
     public IEnumerator progressResetWait()
@@ -87,6 +118,94 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public bool spendOnSpeed()
+    {
+        if ((coins - currentSpeedCost) >= 0)
+        {
+            coins -= currentSpeedCost;
+            currentSpeedCost = ((int)(currentSpeedCost * 2.5));
+            currentSpeedLevel += 1;
+            if(currentSpeedLevel >= maxSpeedUpgrade)
+            {
+                buttonSpeedUpgrade.interactable = false;
+            }
+            SetCoinText();
+            return true;
+        }
+        else
+        {
+            coinsText.color = Color.red;
+            return false;
+        }
+    }
+
+    public void spendOnAttack()
+    {
+        if ((coins - currentAttackCost) >= 0)
+        {
+            coins -= currentSpeedCost;
+            currentAttackCost = ((int)(currentAttackCost * 2.5));
+            SetCoinText();
+        }
+        else
+        {
+            coinsText.color = Color.red;
+        }
+    }
+    public void spendOnJump()
+    {
+        if ((coins - currentJumpCost) >= 0)
+        {
+            coins -= currentJumpCost;
+            currentJumpCost = ((int)(currentJumpCost * 2.5));
+            SetCoinText();
+        }
+        else
+        {
+            coinsText.color = Color.red;
+        }
+    }
+
+    public void spendOnSpell()
+    {
+        if ((coins - currentSpellCost) >= 0)
+        {
+            coins -= currentSpellCost;
+            currentSpellCost = ((int)(currentSpellCost * 2.5));
+            SetCoinText();
+        }
+        else
+        {
+            coinsText.color = Color.red;
+        }
+    }
+    public void spenOnMultiplier()
+    {
+        if ((coins - currentMultiplierCost) >= 0)
+        {
+            coins -= currentMultiplierCost;
+            GameManager.instance.spendCoins(GameManager.instance.currentMultiplierCost);
+            SetCoinText();
+        }
+        else
+        {
+            coinsText.color = Color.red;
+        }
+    }
+    public void spendOnRockSteady()
+    {
+        if ((coins - currentRockSteadyCost) >= 0)
+        {
+            coins -= currentRockSteadyCost;
+            SetCoinText();
+        }
+        else
+        {
+            coinsText.color = Color.red;
+        }
+    }
+
+
     private void resetCoins()
     {
         coins = 0;
@@ -107,5 +226,28 @@ public class GameManager : MonoBehaviour
     void SetCoinText()
     {
         coinsText.text = ": " + coins.ToString();
+        shopCoinsText.text = "Coins: " + coins.ToString();
+    }
+
+    public void resetCostAndLevels()
+    {
+        currentSpeedCost = 5;
+        currentAttackCost = 5;
+        currentJumpCost = 5;
+        currentSpellCost = 10;
+        currentMultiplierCost = 50;
+        currentRockSteadyCost = 500;
+
+        currentSpeedLevel = 0;
+        currentAttackLevel = 0;
+        currentJumpLevel = 0;
+        currentSpellLevel = 0;
+        currentMultiplierLevel = 0;
+        currentRockSteadyLevel = 0;
+}
+    
+    public bool isRockSteady()
+    {
+        return (currentRockSteadyLevel < maxRockSteadyUpgrade);
     }
 }

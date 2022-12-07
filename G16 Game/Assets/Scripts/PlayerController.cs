@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -21,7 +22,6 @@ public class PlayerController : MonoBehaviour
     public AudioSource DieAudio;
 
     public float face = 1;
-    public float PlayerHP = 100f;
     public bool onHurt;
 
     public float xOffset;
@@ -35,6 +35,24 @@ public class PlayerController : MonoBehaviour
     private float moveSpeed, dirX, dirY;
     public bool ClimbingAllowed { get; set; }
 
+    private HealthSystem healthSystem_SC;
+
+    public GameObject coinMagnet;
+
+    //Additional variables for upgrades
+    float coinMultiplier = 1;
+    bool isRockSteady = false;
+
+    //Variables for player UI
+    public Image hpBarFillMask;
+    public Image manaBarFillMask;
+    public Text hpText;
+    public Text manaText;
+    public float PlayerHP = 100f;
+    public float PlayerMana = 100f;
+    public float PlayerMaxHP = 100f;
+    public float PlayerMaxMana = 100f;
+
     private void Start()
     {
         Anime.SetBool("Alive", true);
@@ -43,6 +61,11 @@ public class PlayerController : MonoBehaviour
         //Tam add on
         rigidbody2D = GetComponent<Rigidbody2D>();
         moveSpeed = 5f;
+
+        healthSystem_SC = GameObject.Find("TinyHealthSystem").GetComponent<HealthSystem>();
+        SetHP();
+        SetMana();
+        StartCoroutine(manaRegen());
     }
     void Update()
     {
@@ -50,6 +73,7 @@ public class PlayerController : MonoBehaviour
         if (Anime.GetBool("Alive") && !onHurt && !Anime.GetBool("Attacking"))
         {
             Movement();
+            coinMagnet.transform.position = new Vector2(transform.position.x, transform.position.y);
         }
 
         Vector2 player2DPosition = Camera.main.WorldToScreenPoint(transform.position);
@@ -112,6 +136,7 @@ public class PlayerController : MonoBehaviour
     public void PlayerTakeDamage(float damage) // Player gets hurted and check if dies.
     {
         PlayerHP -= damage;
+        SetHP();
         HealthSystem.Instance.TakeDamage(damage);
         if (PlayerHP <= 0)
         {
@@ -168,7 +193,24 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector2(face * -7, rb.velocity.y);
         }
     }
-
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Gold")
+        {
+            GameManager.instance.AddCoins((int)(3.0f * coinMultiplier));
+            Destroy(collision.gameObject);
+        }
+        else if (collision.gameObject.tag == "Silver")
+        {
+            GameManager.instance.AddCoins((int)(1.0f * coinMultiplier));
+            Destroy(collision.gameObject);
+        }
+        else if(collision.gameObject.tag == "Potion")
+        {
+            healthSystem_SC.HealDamage(30);
+            Destroy(collision.gameObject);
+        }
+    }
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
@@ -229,7 +271,83 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+    void SetHP()
+    {
+        hpBarFillMask.fillAmount = PlayerHP / PlayerMaxHP;
+        hpText.text = PlayerHP + "/" + PlayerMaxHP;
+    }
+
+    void SetMana()
+    {
+        manaBarFillMask.fillAmount = PlayerMana / PlayerMaxMana;
+        manaText.text = PlayerMana + "/" + PlayerMaxMana;
+    }
+
+    public void spendMana(int i)
+    {
+        PlayerMana -= i;
+        SetMana();
+    }
+    IEnumerator manaRegen()
+    {
+        while(true)
+        {
+            if(PlayerMana < PlayerMaxMana)
+            {
+                PlayerMana += 1;
+                SetMana();
+                yield return new WaitForSeconds(0.3f);
+            }
+            else
+            {
+                yield return null;
+            }
+
+        }
+    }
+
+    public void upgradePlayerSpeed(float i)
+    {
+        speed += i;
+    }
+
+    //Need to pull player to adjust this upgrade - I think Shuhao separated spell and normal attack
+    public void upgradeAtkDamage(float i)
+    {
+
+    }
+
+    public void upgradeJump(float i)
+    {
+
+    }
+
+    //Need to modify bullet prefab for spell damage
+    public void upgradeSpellDamage(float i)
+    {
+
+    }
+
+    public void upgradeMultiplier()
+    {
+        coinMultiplier *= 1.5f;
+    }
+
+    public void enableRockSteady()
+    {
+        isRockSteady = true;
+    }
+
+    public void resetDefaults()
+    {
+        isRockSteady = false;
+        speed = 10f;
+        Jumpforce = 12.5f;
+        coinMultiplier = 1;
+    }
 }
+
+
 
 //using System.Collections;
 //using System.Collections.Generic;

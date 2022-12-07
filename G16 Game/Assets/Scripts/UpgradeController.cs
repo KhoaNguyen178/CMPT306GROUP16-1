@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class UpgradeController : MonoBehaviour
 {
+    public GameObject player;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,17 +18,40 @@ public class UpgradeController : MonoBehaviour
 
     }
 
-    public void onUpgrade1Click()
+    public void onSpeedUpgradeClick()
     {
-        GameManager.instance.spendCoins(3);
+        if (GameManager.instance.spendOnSpeed())
+        {
+            player.GetComponent<PlayerController>().upgradePlayerSpeed(0.2f);
+        }
     }
-    public void onUpgrade2Click()
+    public void onAttackUpgradeClick()
     {
-        GameManager.instance.spendCoins(3);
+        GameManager.instance.spendCoins(GameManager.instance.currentAttackCost);
+        //currentAttackCost = ((int)(currentAttackCost * 2.5));
     }
-    public void onUpgrade3Click()
+    public void onJumpUpgradeClick()
     {
-        GameManager.instance.spendCoins(3);
+        GameManager.instance.spendCoins(GameManager.instance.currentJumpCost);
+        //currentJumpCost = ((int)(currentJumpCost * 2.5));
+    }
+    public void onSpellUpgradeClick()
+    {
+        GameManager.instance.spendCoins(GameManager.instance.currentSpellCost);
+        //currentSpellCost = ((int)(currentSpellCost * 2.5));
+    }
+    public void onMultiplierUpgradeClick()
+    {
+        GameManager.instance.spendCoins(GameManager.instance.currentMultiplierCost);
+        //currentMultiplierCost = ((int)(currentMultiplierCost * 2.5));
+    }
+
+    public void onRockSteadyUpgradeClick()
+    {
+        if (GameManager.instance.isRockSteady())
+        {
+            GameManager.instance.spendCoins(GameManager.instance.currentRockSteadyCost);
+        }
     }
 }
 

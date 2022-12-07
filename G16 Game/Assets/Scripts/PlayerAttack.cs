@@ -87,10 +87,15 @@ public class PlayerAttack : MonoBehaviour
 
     void ShootTrapBullet()
     {
-        int n = GameObject.Find("Player").GetComponent<PlayerController>().GetBulletNumber();
-        for (int i = 0; i < 2 * n; i++)
+        if(this.GetComponentInParent<PlayerController>().PlayerMana >= 10)
         {
-            Instantiate(TrapBullet, Shooter.transform.position, Shooter.transform.rotation);
+            int n = GameObject.Find("Player").GetComponent<PlayerController>().GetBulletNumber();
+            for (int i = 0; i < 2 * n; i++)
+            {
+                Instantiate(TrapBullet, Shooter.transform.position, Shooter.transform.rotation);
+            
+            }
+            this.GetComponentInParent<PlayerController>().spendMana(10);
         }
     }
 

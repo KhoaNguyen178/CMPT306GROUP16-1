@@ -17,6 +17,7 @@ TagManager:
   - CheckRight
   - CheckLeft
   - Ladder
+  - Potion
   layers:
   - Default
   - TransparentFX
