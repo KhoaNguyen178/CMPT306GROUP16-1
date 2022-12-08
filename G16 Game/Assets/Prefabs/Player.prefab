@@ -177,6 +177,9 @@ MonoBehaviour:
   poly2D: {fileID: 2643494668379542353}
   AttackAudio1: {fileID: 2828877895132536945}
   AttackAudio2: {fileID: 9173900023433584776}
+  Shooter: {fileID: 0}
+  Fireball: {fileID: 0}
+  TrapBullet: {fileID: 0}
 --- !u!82 &9173900023433584776
 AudioSource:
   m_ObjectHideFlags: 0
@@ -982,13 +985,23 @@ MonoBehaviour:
   InjuredAudio: {fileID: 2052024182464281215}
   DieAudio: {fileID: 8722897429191892532}
   face: 1
-  PlayerHP: 100
   onHurt: 0
   xOffset: 0
   yOffset: 0
   recTransform: {fileID: 6701335786884539371}
   BulletNumber: 1
-  gameOverUI: {fileID: 0}
+  moveSpeed: 0
+  coinMagnet: {fileID: 2761623221174202002, guid: f2d7044db04ce1643845f68c7e56e56c, type: 3}
+  bullet: {fileID: 9036368376401009004, guid: a1e0877483e227442b827d2e322f4c06, type: 3}
+  trapBullet: {fileID: 1306759248813716154, guid: 4d7e499afa34650448d612c58c640d8e, type: 3}
+  hpBarFillMask: {fileID: 0}
+  manaBarFillMask: {fileID: 0}
+  hpText: {fileID: 0}
+  manaText: {fileID: 0}
+  PlayerHP: 100
+  PlayerMana: 100
+  PlayerMaxHP: 100
+  PlayerMaxMana: 100
 --- !u!82 &8734436223127494616
 AudioSource:
   m_ObjectHideFlags: 0
