@@ -7,7 +7,7 @@ public class PlayerAttack : MonoBehaviour
     public int damage;
     public float intervalTime;
     public float startTime;
-    public float AttackDamage = 30.0f;
+    public float AttackDamage = 100.0f;
 
     public Animator Anime;
     public PolygonCollider2D poly2D;
