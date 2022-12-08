@@ -234,7 +234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46b77e4979b1b394e8a92a16ecf7ed90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageToPlayer: 10
+  damageToPlayer: 1
 --- !u!114 &4148219266829013066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,7 +255,7 @@ MonoBehaviour:
   silverCoin: {fileID: 5016376768434895919, guid: 2454d44c12c7fef4a8596dd19d112c5d, type: 3}
   goldCoin: {fileID: 1785100447502755536, guid: 0175dfddfe4a11f42ae8a8d87c2caa68, type: 3}
   sprites: {fileID: 7768667213989220873}
-  attackDamage: 20
+  attackDamage: 15
   attackOffset: {x: -0.89, y: 0.8, z: 0}
   attackRange: 1
   attackMask:
