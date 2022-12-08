@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class UpgradeController : MonoBehaviour
 {
+    public GameObject player;
+    public GameObject bullet; //regular attack
+    public GameObject trapBullet; //spell attack
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,17 +20,48 @@ public class UpgradeController : MonoBehaviour
 
     }
 
-    public void onUpgrade1Click()
+    public void onSpeedUpgradeClick()
     {
-        GameManager.instance.spendCoins(3);
+        if (GameManager.instance.spendOnSpeed())
+        {
+            player.GetComponent<PlayerController>().upgradePlayerSpeed(0.5f);
+        }
     }
-    public void onUpgrade2Click()
+    public void onAttackUpgradeClick()
     {
-        GameManager.instance.spendCoins(3);
+        if (GameManager.instance.spendOnAttack())
+        {
+            bullet.GetComponent<Bullet>().upgradeBulletDamage();
+        }
     }
-    public void onUpgrade3Click()
+    public void onJumpUpgradeClick()
     {
-        GameManager.instance.spendCoins(3);
+        if (GameManager.instance.spendOnJump())
+        {
+            player.GetComponent<PlayerController>().upgradeJump(0.5f);
+        }
+    }
+    public void onSpellUpgradeClick()
+    {
+        if (GameManager.instance.spendOnSpell())
+        {
+            trapBullet.GetComponent<TrapBullet>().upgradeBulletDamage();
+        }
+    }
+    public void onMultiplierUpgradeClick()
+    {
+        if (GameManager.instance.spendOnMultiplier())
+        {
+            player.GetComponent<PlayerController>().upgradeMultiplier();
+        }
+    }
+
+    public void onRockSteadyUpgradeClick()
+    {
+        if (GameManager.instance.spendOnRockSteady())
+        {
+            player.GetComponent<PlayerController>().enableRockSteady();
+        }
     }
 }
 

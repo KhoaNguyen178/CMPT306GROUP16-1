@@ -5,7 +5,7 @@ using UnityEngine;
 public class TrapBullet : MonoBehaviour
 {
     public float BulletSpeed = 5.0f;
-    public float BulletDamage = 20.0f;
+    [SerializeField] private float BulletDamage = 20.0f;
     public Rigidbody2D rb;
     private float ExistTime;
     public float DestroyTime = 2f;
@@ -72,13 +72,26 @@ public class TrapBullet : MonoBehaviour
     private void Movement()
     {
         GameObject target = FindClosestEnemy();
-        if ((target.transform.position - this.transform.position).magnitude <= TrapDistance)
+        if(target != null)
         {
-            Vector2 direction = target.transform.position - transform.position;
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+            if ((target.transform.position - this.transform.position).magnitude <= TrapDistance)
+            {
+                Vector2 direction = target.transform.position - transform.position;
+                float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+                transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
-            this.transform.Translate(new Vector3(10f * Time.deltaTime, 1f * Time.deltaTime, 1f * Time.deltaTime));
+                this.transform.Translate(new Vector3(10f * Time.deltaTime, 1f * Time.deltaTime, 1f * Time.deltaTime));
+            }
         }
+
+    }
+
+    public void upgradeBulletDamage()
+    {
+        BulletDamage += 5.0f;
+    }
+    public void resetBulletDamage()
+    {
+        BulletDamage = 25;
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float BulletSpeed = 15.0f;
-    public float BulletDamage = 20.0f;
+    [SerializeField] private float BulletDamage = 25.0f;
     public Rigidbody2D rb;
 
     void Start()
@@ -54,18 +54,32 @@ public class Bullet : MonoBehaviour
     private void Movement()
     {
         GameObject target = FindClosestEnemy();
-        if (transform.position.y > target.transform.position.y)
+        if(target != null)
         {
-            Vector2 v = new Vector2(0, -3);
-            rb.AddForce(v);
-        }
-        else
-        {
-            if (transform.position.y < target.transform.position.y)
+            if (transform.position.y > target.transform.position.y)
             {
-                Vector2 v = new Vector2(0, 3);
+                Vector2 v = new Vector2(0, -3);
                 rb.AddForce(v);
             }
+            else
+            {
+                if (transform.position.y < target.transform.position.y)
+                {
+                    Vector2 v = new Vector2(0, 3);
+                    rb.AddForce(v);
+                }
+            }
         }
+
+    }
+
+    public void upgradeBulletDamage()
+    {
+        BulletDamage += 5f;
+    }
+
+    public void resetBulletDamage()
+    {
+        BulletDamage = 25;
     }
 }

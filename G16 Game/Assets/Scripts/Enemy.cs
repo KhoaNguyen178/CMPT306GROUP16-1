@@ -45,30 +45,39 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= damage;
-        //slider.value = health;
         //HPCanvas.SetActive(true);
+        DamagePopup.Create(this.transform.position, damage);
         StartCoroutine(FlashRed());
 
         if (health <= 0)
         {
             Destroy(this.gameObject);
-            GameManager.instance.AddKill();
-            //Instantiate(deathEffect, transform.position, transform.rotation);
-            float rando1 = UnityEngine.Random.Range(1, 10);
-            if(rando1 <= 2)
-            {
-                GameObject drop = Instantiate(goldCoin, transform.position, transform.rotation);
-            }
-            else
-            {
-                GameObject drop = Instantiate(silverCoin, transform.position, transform.rotation);
-            }
             
+            //Instantiate(deathEffect, transform.position, transform.rotation);
+
+            int rando1 = UnityEngine.Random.Range(2, 5);
+            float tempVar = 0.0f;
+            for (int i = 0; i < rando1; i++)
+            {
+                int rando2 = UnityEngine.Random.Range(1, 10);
+                Vector3 tempV3 = new Vector3(transform.position.x + tempVar, transform.position.y, transform.position.z);
+                if (rando2 <= 2)
+                {
+                    GameObject drop = Instantiate(goldCoin, tempV3, transform.rotation);
+                }
+                else
+                {
+                    GameObject drop = Instantiate(silverCoin, tempV3, transform.rotation);
+                }
+                tempVar += 0.1f;
+            }
+            GameManager.instance.AddKill();
         }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
+        /*
         if(collision.transform.tag == "Player" && Time.time > damageTime)
         {
             var temp = this.GetComponent<Rigidbody2D>();
@@ -77,6 +86,7 @@ public class Enemy : MonoBehaviour
             StartCoroutine(FlashRed());
             damageTime = Time.time + damageRate;
         }
+        */
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -86,10 +96,19 @@ public class Enemy : MonoBehaviour
     }
     public IEnumerator FlashRed()
     {
-        foreach(Transform child in sprites.transform)
+        foreach (Transform child in sprites.transform)
         {
-            if(child.GetComponent<SpriteRenderer>() != null)
+            if (child.GetComponent<SpriteRenderer>() != null)
             {
+                //Each enemy has a body with more child sprites
+                foreach (Transform bodyPart in child)
+                {
+                    if (bodyPart.GetComponent<SpriteRenderer>() != null)
+                    {
+                        bodyPart.GetComponent<SpriteRenderer>().material.color = Color.red;
+                    }
+
+                }
                 child.GetComponent<SpriteRenderer>().material.color = Color.red;
             }
         }
@@ -98,11 +117,19 @@ public class Enemy : MonoBehaviour
 
         foreach (Transform child in sprites.transform)
         {
-            if(child.GetComponent<SpriteRenderer>() != null)
+            if (child.GetComponent<SpriteRenderer>() != null)
             {
+                foreach (Transform bodyPart in child)
+                {
+                    if (bodyPart.GetComponent<SpriteRenderer>() != null)
+                    {
+                        bodyPart.GetComponent<SpriteRenderer>().material.color = Color.white;
+                    }
+
+                }
                 child.GetComponent<SpriteRenderer>().material.color = Color.white;
             }
-            
+
         }
     }
 
