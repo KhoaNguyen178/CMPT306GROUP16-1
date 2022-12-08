@@ -65,11 +65,12 @@ public class PlayerController : MonoBehaviour
         rigidbody2D = GetComponent<Rigidbody2D>();
         moveSpeed = 5f;
 
-        healthSystem_SC = GameObject.Find("TinyHealthSystem").GetComponent<HealthSystem>();
+        //healthSystem_SC = GameObject.Find("TinyHealthSystem").GetComponent<HealthSystem>();
         resetDefaults();
         SetHP();
         SetMana();
         StartCoroutine(manaRegen());
+        
     }
     void Update()
     {
@@ -141,7 +142,7 @@ public class PlayerController : MonoBehaviour
     {
         PlayerHP -= damage;
         SetHP();
-        HealthSystem.Instance.TakeDamage(damage);
+        //HealthSystem.Instance.TakeDamage(damage);
         if (PlayerHP <= 0)
         {
             DieAudio.Play();
@@ -219,6 +220,12 @@ public class PlayerController : MonoBehaviour
             healthSystem_SC.HealDamage(30);
             Destroy(collision.gameObject);
         }
+        /*else if(collision.gameObject.tag == "Diamond" 
+         * {
+         *      GameManager.instance.AddCoins(5);
+         *      Destroy(collision.gameObject);
+         * }
+        */
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -226,8 +233,8 @@ public class PlayerController : MonoBehaviour
         {
             Hurt(collision);
             //Prevent enemy from being pushed by player
-            var temp = collision.gameObject.GetComponent<Rigidbody2D>();
-            temp.constraints = RigidbodyConstraints2D.FreezeAll;
+            //var temp = collision.gameObject.GetComponent<Rigidbody2D>();
+            //temp.constraints = RigidbodyConstraints2D.FreezeAll;
         }
     }
 

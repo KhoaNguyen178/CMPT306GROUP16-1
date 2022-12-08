@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  target: {fileID: 0}
+  target: {fileID: 8251789344929202879, guid: 223211321c4342b428aff95625429579, type: 3}
 --- !u!114 &6559302083160762162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,8 +148,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 423a64e548541c145b9a133a1aecdd0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
-  moveSpeed: 9
+  health: 60
+  moveSpeed: 4
   damageRate: 0.2
   damageTime: 0
   damageToSelf: 10
