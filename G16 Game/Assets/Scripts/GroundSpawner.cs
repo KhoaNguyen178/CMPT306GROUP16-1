@@ -42,7 +42,7 @@ public class GroundSpawner : MonoBehaviour
             {
                 
                 Instantiate(groundEnemy[2], new Vector3(transform.position.x + 8, -3.061435f, 0), Quaternion.identity);
-                Instantiate(groundEnemy[2], new Vector3(transform.position.x + 10, -3.747474f, 0), Quaternion.identity);
+                Instantiate(groundEnemy[1], new Vector3(transform.position.x + 10, -3.747474f, 0), Quaternion.identity);
             }
             else
             {
@@ -181,7 +181,12 @@ public class GroundSpawner : MonoBehaviour
         {
             Instantiate(ground[9], new Vector3(transform.position.x + 19, 7.74f, 0), Quaternion.identity);
             Instantiate(groundEnemy[2], new Vector3(transform.position.x + 39, -3.066727f, 0), Quaternion.identity);
-            Instantiate(groundEnemy[randomEnemy], new Vector3(transform.position.x + 21, -4.007451f, 0), Quaternion.identity);
+
+            if(randomEnemy != 2 && randomEnemy != 3 )
+            {
+                Instantiate(groundEnemy[randomEnemy], new Vector3(transform.position.x + 21, -4.007451f, 0), Quaternion.identity);
+            }
+            
 
 
             Instantiate(flyEnemy[randomFlyEnemy], new Vector3(transform.position.x + 21, 10f, 0), Quaternion.identity);

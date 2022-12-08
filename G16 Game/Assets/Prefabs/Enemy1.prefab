@@ -399,7 +399,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bc4c441b4c21f948a7d6a693f6e6d63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
+  moveSpeed: 3.5
   castPos: {fileID: 4209770309544991218}
   baseCastDistance: 0.5
   isChasing: 0

@@ -33,38 +33,17 @@ public class EnemyPatrolMoving : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector2.Distance(transform.position, playerTransform.position) < chaseDistance)
-        {
-            isChasing = true;
-            Debug.Log(" CHASING");
-        }
+        //if (Vector2.Distance(transform.position, playerTransform.position) < chaseDistance)
+        //{
+        //    isChasing = true;
+        //    Debug.Log(" CHASING");
+        //}
 
-        if (Vector2.Distance(transform.position, playerTransform.position) > chaseDistance)
-        {
-            isChasing = false;
-            Debug.Log("NOT CHASING");
-        }
-
-
-        if (isChasing)
-        {
-            if (transform.position.x < playerTransform.position.x)
-            {
-                if (facingDirection == LEFT)
-                {
-                    EnemyFlip(RIGHT);
-                }
-            }
-
-            if (transform.position.x > playerTransform.position.x)
-            {
-                if (facingDirection == RIGHT)
-                {
-                    EnemyFlip(LEFT);
-                }
-            }
-        }
-
+        //if (Vector2.Distance(transform.position, playerTransform.position) > chaseDistance)
+        //{
+        //    isChasing = false;
+        //    Debug.Log("NOT CHASING");
+        //}
        
     }
 
@@ -82,10 +61,7 @@ public class EnemyPatrolMoving : MonoBehaviour
         rb.velocity = new Vector2(vX, rb.velocity.y);
 
 
-        if (Vector2.Distance(transform.position, playerTransform.position) > chaseDistance && IsHittingWall() || IsNearEdge())
-        {
-            isChasing = false;
-        }
+ 
 
         if (IsHittingWall() || IsNearEdge())
         {
@@ -98,6 +74,41 @@ public class EnemyPatrolMoving : MonoBehaviour
                 EnemyFlip(LEFT);
             }
         }
+
+        //if (isChasing )
+        //{
+        //    if (IsHittingWall() || IsNearEdge())
+        //    {
+        //        if (facingDirection == LEFT)
+        //        {
+        //            EnemyFlip(RIGHT);
+        //        }
+        //        else if (facingDirection == RIGHT)
+        //        {
+        //            EnemyFlip(LEFT);
+        //        }
+        //    }
+        //}
+
+        //if (isChasing)
+        //{
+        //    if (transform.position.x < playerTransform.position.x)
+        //    {
+        //        if (facingDirection == LEFT)
+        //        {
+        //            EnemyFlip(RIGHT);
+        //        }
+        //    }
+
+        //    if (transform.position.x > playerTransform.position.x)
+        //    {
+        //        if (facingDirection == RIGHT)
+        //        {
+        //            EnemyFlip(LEFT);
+        //        }
+        //    }
+        //}
+
 
         //if (IsHittingWall() || IsNearEdge())
         //{
