@@ -47,6 +47,7 @@ public class PlayerAttack : MonoBehaviour
             Invoke("PlayAttackAudio", 0.55f);
         }
     }
+
     IEnumerator EnableHitBox() //Start to make damage.
     {
         yield return new WaitForSeconds(startTime);

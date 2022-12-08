@@ -53,6 +53,7 @@ public class HealthSystem : MonoBehaviour
 	{
 		UpdateGraphics();
 		timeleft = regenUpdateInterval; 
+		gameObject.SetActive(false);
 	}
 
 	//==============================================================
