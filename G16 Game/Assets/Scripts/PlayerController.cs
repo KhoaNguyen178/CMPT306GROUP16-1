@@ -67,13 +67,28 @@ public class PlayerController : MonoBehaviour
         }
 
         // Tam add on
-        dirX = Input.GetAxisRaw("Horizontal") * moveSpeed;
-        if (ClimbingAllowed)
+        if (Anime.GetBool("Attacking"))
         {
-            dirY = Input.GetAxisRaw("Vertical") * moveSpeed;
-            if (Input.GetButtonDown("Vertical"))
+            dirX = Input.GetAxisRaw("Horizontal") * moveSpeed/3;
+            if (ClimbingAllowed)
             {
-                Anime.SetBool("Climbing", true);
+                dirY = Input.GetAxisRaw("Vertical") * moveSpeed/3;
+                if (Input.GetButtonDown("Vertical"))
+                {
+                    Anime.SetBool("Climbing", true);
+                }
+            }
+        }
+        else
+        {
+            dirX = Input.GetAxisRaw("Horizontal") * moveSpeed;
+            if (ClimbingAllowed)
+            {
+                dirY = Input.GetAxisRaw("Vertical") * moveSpeed;
+                if (Input.GetButtonDown("Vertical"))
+                {
+                    Anime.SetBool("Climbing", true);
+                }
             }
         }
     }
@@ -166,8 +181,8 @@ public class PlayerController : MonoBehaviour
         {
             PlayerTakeDamage(collision.gameObject.GetComponent<EnemyAttribute>().damageToPlayer);
             AccordingDirectionFlip(collision);
-            rb.velocity = Vector2.up * 7f;
-            rb.velocity = new Vector2(face * -7, rb.velocity.y);
+            rb.velocity = Vector2.up * 4f;
+            rb.velocity = new Vector2(face * -4, rb.velocity.y);
         }
     }
 
@@ -220,7 +235,7 @@ public class PlayerController : MonoBehaviour
     // Tam add on
     private void FixedUpdate()
     {
-        if (Anime.GetBool("Alive") && !onHurt && !Anime.GetBool("Attacking"))
+        if (Anime.GetBool("Alive") && !onHurt)
         {
             if (ClimbingAllowed)
             {
