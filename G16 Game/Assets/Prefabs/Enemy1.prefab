@@ -404,7 +404,7 @@ MonoBehaviour:
   baseCastDistance: 0.5
   isChasing: 0
   chaseDistance: 4
-  playerTransform: {fileID: 842962337226128324, guid: 223211321c4342b428aff95625429579, type: 3}
+  playerTransform: {fileID: 8251789344929202879, guid: 223211321c4342b428aff95625429579, type: 3}
 --- !u!1 &4703320719347647064
 GameObject:
   m_ObjectHideFlags: 0

@@ -1923,7 +1923,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -100}
-  m_SizeDelta: {x: 500, y: 100}
+  m_SizeDelta: {x: 581.5071, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1028548306
 MonoBehaviour:
@@ -1958,7 +1958,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Hero Runner
+  m_Text: JUNGLE SURVIVOR
 --- !u!222 &1028548307
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3075,7 +3075,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: quit
+  m_Text: QUIT
 --- !u!222 &1742147380
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3385,7 +3385,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: settings
+  m_Text: SETTINGS
 --- !u!222 &1841961689
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4095,7 +4095,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: play
+  m_Text: PLAY
 --- !u!222 &2132516811
 CanvasRenderer:
   m_ObjectHideFlags: 0

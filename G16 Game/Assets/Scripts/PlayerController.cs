@@ -220,12 +220,7 @@ public class PlayerController : MonoBehaviour
             healthSystem_SC.HealDamage(30);
             Destroy(collision.gameObject);
         }
-        /*else if(collision.gameObject.tag == "Diamond" 
-         * {
-         *      GameManager.instance.AddCoins(5);
-         *      Destroy(collision.gameObject);
-         * }
-        */
+       
     }
     void OnCollisionEnter2D(Collision2D collision)
     {

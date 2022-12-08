@@ -628,7 +628,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18b68d2e96860794d9a1f9f7540af8d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 8251789344929202850, guid: 223211321c4342b428aff95625429579, type: 3}
   bullet: {fileID: 0}
   trapBullet: {fileID: 0}
 --- !u!1 &1420740323306189212
@@ -782,7 +782,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18b68d2e96860794d9a1f9f7540af8d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 8251789344929202850, guid: 223211321c4342b428aff95625429579, type: 3}
   bullet: {fileID: 0}
   trapBullet: {fileID: 0}
 --- !u!1 &1462279984396676287
@@ -3940,9 +3940,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18b68d2e96860794d9a1f9f7540af8d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  bullet: {fileID: 0}
-  trapBullet: {fileID: 0}
+  player: {fileID: 8251789344929202850, guid: 223211321c4342b428aff95625429579, type: 3}
+  bullet: {fileID: 9036368376401009004, guid: a1e0877483e227442b827d2e322f4c06, type: 3}
+  trapBullet: {fileID: 1306759248813716154, guid: 4d7e499afa34650448d612c58c640d8e, type: 3}
 --- !u!1 &7613043671586966713
 GameObject:
   m_ObjectHideFlags: 0

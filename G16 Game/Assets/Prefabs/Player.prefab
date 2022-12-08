@@ -177,9 +177,9 @@ MonoBehaviour:
   poly2D: {fileID: 2643494668379542353}
   AttackAudio1: {fileID: 2828877895132536945}
   AttackAudio2: {fileID: 9173900023433584776}
-  Shooter: {fileID: 0}
-  Fireball: {fileID: 0}
-  TrapBullet: {fileID: 0}
+  Shooter: {fileID: 6975932528406403127}
+  Fireball: {fileID: 9036368376401009004, guid: a1e0877483e227442b827d2e322f4c06, type: 3}
+  TrapBullet: {fileID: 1306759248813716154, guid: 4d7e499afa34650448d612c58c640d8e, type: 3}
 --- !u!82 &9173900023433584776
 AudioSource:
   m_ObjectHideFlags: 0
@@ -991,7 +991,7 @@ MonoBehaviour:
   recTransform: {fileID: 6701335786884539371}
   BulletNumber: 1
   moveSpeed: 0
-  coinMagnet: {fileID: 2761623221174202002, guid: f2d7044db04ce1643845f68c7e56e56c, type: 3}
+  coinMagnet: {fileID: 0}
   bullet: {fileID: 9036368376401009004, guid: a1e0877483e227442b827d2e322f4c06, type: 3}
   trapBullet: {fileID: 1306759248813716154, guid: 4d7e499afa34650448d612c58c640d8e, type: 3}
   hpBarFillMask: {fileID: 0}

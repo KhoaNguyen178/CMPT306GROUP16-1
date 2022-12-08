@@ -89,11 +89,6 @@ public class Enemy : MonoBehaviour
         */
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        var temp = this.GetComponent<Rigidbody2D>();
-        temp.constraints = RigidbodyConstraints2D.None;
-    }
     public IEnumerator FlashRed()
     {
         foreach (Transform child in sprites.transform)
