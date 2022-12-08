@@ -58,14 +58,9 @@ public class GroundSpawner : MonoBehaviour
         if (randomNum == 1)
         {
             Instantiate(ground[1], new Vector3(transform.position.x + 8, -2.52f, 0), Quaternion.identity); //-1.68
-            if (randomEnemy == 2)
-            {
-                Instantiate(groundEnemy[2], new Vector3(transform.position.x + 8, -1.685995f, 0), Quaternion.identity);
-            }
-            else
-            {
-                Instantiate(groundEnemy[1], new Vector3(transform.position.x + 8, -1.94f, 0), Quaternion.identity);
-            }
+          
+            Instantiate(groundEnemy[1], new Vector3(transform.position.x + 8, -1.94f, 0), Quaternion.identity);
+           
 
             Instantiate(reward[randomReward], new Vector3(transform.position.x + 8, 0, 0), Quaternion.identity);
             Instantiate(reward[randomReward], new Vector3(transform.position.x + 10, 0, 0), Quaternion.identity);
