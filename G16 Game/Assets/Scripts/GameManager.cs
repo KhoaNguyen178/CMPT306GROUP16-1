@@ -45,6 +45,14 @@ public class GameManager : MonoBehaviour
     public Button buttonAttackUpgrade;
     public Button buttonSpellUpgrade;
 
+    public Text textSpeedLevel, textSpeedCost;
+    public Text textAttackLevel, textAttackCost;
+    public Text textRockSteadyLevel, textRockSteadyCost;
+    public Text textMultiplierLevel, textMultiplierCost;
+    public Text textSpellLevel, textSpellCost;
+    public Text textJumpLevel, textJumpCost;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -129,79 +137,121 @@ public class GameManager : MonoBehaviour
             {
                 buttonSpeedUpgrade.interactable = false;
             }
+            checkButtons();
             SetCoinText();
             return true;
         }
         else
         {
             coinsText.color = Color.red;
+            shopCoinsText.color = Color.white;
             return false;
         }
     }
 
-    public void spendOnAttack()
+    public bool spendOnAttack()
     {
         if ((coins - currentAttackCost) >= 0)
         {
-            coins -= currentSpeedCost;
+            coins -= currentAttackCost;
             currentAttackCost = ((int)(currentAttackCost * 2.5));
+            currentAttackLevel += 1;
+            //can infinitely upgrade attack damage
+            checkButtons();
             SetCoinText();
+            return true;
         }
         else
         {
             coinsText.color = Color.red;
+            shopCoinsText.color = Color.white;
+            return false;
         }
     }
-    public void spendOnJump()
+    public bool spendOnJump()
     {
         if ((coins - currentJumpCost) >= 0)
         {
             coins -= currentJumpCost;
             currentJumpCost = ((int)(currentJumpCost * 2.5));
+            currentJumpLevel += 1;
+            if (currentJumpLevel >= maxJumpUpgrade)
+            {
+                buttonJumpUpgrade.interactable = false;
+            }
+            checkButtons();
             SetCoinText();
+            return true;
         }
         else
         {
             coinsText.color = Color.red;
+            shopCoinsText.color = Color.white;
+            return false;
         }
     }
 
-    public void spendOnSpell()
+    public bool spendOnSpell()
     {
         if ((coins - currentSpellCost) >= 0)
         {
             coins -= currentSpellCost;
-            currentSpellCost = ((int)(currentSpellCost * 2.5));
+            currentJumpCost = ((int)(currentSpellCost * 2.5));
+            currentSpellLevel += 1;
+            //can infinitely upgrade spell damage
+            checkButtons();
             SetCoinText();
+            return true;
         }
         else
         {
             coinsText.color = Color.red;
+            shopCoinsText.color = Color.white;
+            return false;
         }
     }
-    public void spenOnMultiplier()
+    public bool spendOnMultiplier()
     {
         if ((coins - currentMultiplierCost) >= 0)
         {
             coins -= currentMultiplierCost;
-            GameManager.instance.spendCoins(GameManager.instance.currentMultiplierCost);
+            currentMultiplierCost = ((int)(currentMultiplierCost * 2.5));
+            currentMultiplierLevel += 1;
+            if (currentMultiplierLevel >= maxMultiplierUpgrade)
+            {
+                buttonMultiplierUpgrade.interactable = false;
+            }
+            checkButtons();
             SetCoinText();
+            return true;
         }
         else
         {
             coinsText.color = Color.red;
+            shopCoinsText.color = Color.white;
+            return false;
         }
     }
-    public void spendOnRockSteady()
+    public bool spendOnRockSteady()
     {
         if ((coins - currentRockSteadyCost) >= 0)
         {
             coins -= currentRockSteadyCost;
+            currentRockSteadyCost = ((int)(currentRockSteadyCost * 2.5));
+            currentRockSteadyLevel += 1;
+            if (currentRockSteadyLevel >= maxRockSteadyUpgrade)
+            {
+                buttonRockSteadyUpgrade.interactable = false;
+            }
+            checkButtons();
             SetCoinText();
+            return true;
         }
         else
         {
             coinsText.color = Color.red;
+            shopCoinsText.color = Color.white;
+            return false;
         }
     }
 
@@ -216,11 +266,15 @@ public class GameManager : MonoBehaviour
         kills = 0;
     }
 
-    public void resetProgress()
+    public void resetButtons()
     {
-        progressTracker = 0;
         coinsText.color = Color.white;
-        setProgresss();
+        buttonSpeedUpgrade.interactable = true;
+        buttonJumpUpgrade.interactable = true;
+        buttonMultiplierUpgrade.interactable = true;
+        buttonRockSteadyUpgrade.interactable = true;
+        buttonAttackUpgrade.interactable = true;
+        buttonSpellUpgrade.interactable = true;
     }
 
     void SetCoinText()
@@ -249,5 +303,45 @@ public class GameManager : MonoBehaviour
     public bool isRockSteady()
     {
         return (currentRockSteadyLevel < maxRockSteadyUpgrade);
+    }
+
+    public void checkButtons()
+    {
+        if(coins < currentSpeedCost)
+        {
+            buttonSpeedUpgrade.interactable = false;
+        }
+        if (coins < currentJumpCost)
+        {
+            buttonJumpUpgrade.interactable = false;
+        }
+        if (coins < currentMultiplierCost)
+        {
+            buttonMultiplierUpgrade.interactable = false;
+        }
+        if (coins < currentRockSteadyCost)
+        {
+            buttonRockSteadyUpgrade.interactable = false;
+        }
+        if (coins < currentAttackCost)
+        {
+            buttonAttackUpgrade.interactable = false;
+        }
+        if (coins < currentSpellCost)
+        {
+            buttonSpellUpgrade.interactable = false;
+        }
+        textSpeedLevel.text = "Level: " + currentSpeedLevel.ToString() + "/" + maxSpeedUpgrade.ToString();
+        textSpeedCost.text = "$" + currentSpeedCost.ToString();
+        textAttackLevel.text = "Level: " + currentAttackLevel.ToString();
+        textAttackCost.text = "$" + currentAttackCost.ToString();
+        textRockSteadyLevel.text = "Level: " + currentRockSteadyLevel.ToString() + "/" + maxRockSteadyUpgrade.ToString();
+        textRockSteadyCost.text = "$" + currentRockSteadyCost.ToString();
+        textMultiplierLevel.text = "Level: " + currentMultiplierLevel.ToString() + "/" + maxMultiplierUpgrade.ToString();
+        textMultiplierCost.text = "$" + currentMultiplierCost.ToString();
+        textSpellLevel.text = "Level: " + currentSpellLevel.ToString();
+        textSpellCost.text = "$" + currentSpellCost.ToString();
+        textJumpLevel.text = "Level: " + currentJumpLevel.ToString() + "/" + maxJumpUpgrade.ToString();
+        textJumpCost.text = "$" + currentJumpCost.ToString();
     }
 }

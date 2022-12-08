@@ -21,6 +21,6 @@ public class OpenShopMenu : MonoBehaviour
     {
         upgradeMenu.SetActive(true);
         Time.timeScale = 0;
-        GameManager.instance.resetProgress();
+        GameManager.instance.checkButtons();
     }
 }

@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     public Animator Anime;
 
     public LayerMask Groud;
-    public float Jumpforce = 12.5f;
+    public float Jumpforce = 10f;
     public Transform GroundCheck;
     public bool isGround;
     public int extraJumpTimes = 1;
@@ -32,12 +32,15 @@ public class PlayerController : MonoBehaviour
 
     //Tam Add on
     private Rigidbody2D rigidbody2D;
-    private float moveSpeed, dirX, dirY;
+    public float moveSpeed;
+    private float dirX, dirY;
     public bool ClimbingAllowed { get; set; }
 
     private HealthSystem healthSystem_SC;
 
     public GameObject coinMagnet;
+    public GameObject bullet;
+    public GameObject trapBullet;
 
     //Additional variables for upgrades
     float coinMultiplier = 1;
@@ -63,6 +66,7 @@ public class PlayerController : MonoBehaviour
         moveSpeed = 5f;
 
         healthSystem_SC = GameObject.Find("TinyHealthSystem").GetComponent<HealthSystem>();
+        resetDefaults();
         SetHP();
         SetMana();
         StartCoroutine(manaRegen());
@@ -188,10 +192,15 @@ public class PlayerController : MonoBehaviour
         if (Anime.GetBool("Alive"))
         {
             PlayerTakeDamage(collision.gameObject.GetComponent<EnemyAttribute>().damageToPlayer);
-            AccordingDirectionFlip(collision);
-            rb.velocity = Vector2.up * 7f;
-            rb.velocity = new Vector2(face * -7, rb.velocity.y);
+            if (!isRockSteady)
+            {
+                AccordingDirectionFlip(collision);
+                rb.velocity = Vector2.up * 7f;
+                rb.velocity = new Vector2(face * -7, rb.velocity.y);
+            }
+
         }
+
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -308,24 +317,24 @@ public class PlayerController : MonoBehaviour
 
     public void upgradePlayerSpeed(float i)
     {
-        speed += i;
+        moveSpeed += i;
     }
 
     //Need to pull player to adjust this upgrade - I think Shuhao separated spell and normal attack
     public void upgradeAtkDamage(float i)
     {
-
+        //located in upgrade controller
     }
 
     public void upgradeJump(float i)
     {
-
+        Jumpforce += i;
     }
 
     //Need to modify bullet prefab for spell damage
     public void upgradeSpellDamage(float i)
     {
-
+        //located in upgrade controller
     }
 
     public void upgradeMultiplier()
@@ -342,8 +351,10 @@ public class PlayerController : MonoBehaviour
     {
         isRockSteady = false;
         speed = 10f;
-        Jumpforce = 12.5f;
+        Jumpforce = 10f;
         coinMultiplier = 1;
+        bullet.GetComponent<Bullet>().resetBulletDamage();
+        trapBullet.GetComponent<TrapBullet>().resetBulletDamage();
     }
 }
 

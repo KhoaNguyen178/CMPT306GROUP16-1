@@ -5,6 +5,8 @@ using UnityEngine;
 public class UpgradeController : MonoBehaviour
 {
     public GameObject player;
+    public GameObject bullet; //regular attack
+    public GameObject trapBullet; //spell attack
 
     // Start is called before the first frame update
     void Start()
@@ -22,35 +24,43 @@ public class UpgradeController : MonoBehaviour
     {
         if (GameManager.instance.spendOnSpeed())
         {
-            player.GetComponent<PlayerController>().upgradePlayerSpeed(0.2f);
+            player.GetComponent<PlayerController>().upgradePlayerSpeed(0.5f);
         }
     }
     public void onAttackUpgradeClick()
     {
-        GameManager.instance.spendCoins(GameManager.instance.currentAttackCost);
-        //currentAttackCost = ((int)(currentAttackCost * 2.5));
+        if (GameManager.instance.spendOnAttack())
+        {
+            bullet.GetComponent<Bullet>().upgradeBulletDamage();
+        }
     }
     public void onJumpUpgradeClick()
     {
-        GameManager.instance.spendCoins(GameManager.instance.currentJumpCost);
-        //currentJumpCost = ((int)(currentJumpCost * 2.5));
+        if (GameManager.instance.spendOnJump())
+        {
+            player.GetComponent<PlayerController>().upgradeJump(0.5f);
+        }
     }
     public void onSpellUpgradeClick()
     {
-        GameManager.instance.spendCoins(GameManager.instance.currentSpellCost);
-        //currentSpellCost = ((int)(currentSpellCost * 2.5));
+        if (GameManager.instance.spendOnSpell())
+        {
+            trapBullet.GetComponent<TrapBullet>().upgradeBulletDamage();
+        }
     }
     public void onMultiplierUpgradeClick()
     {
-        GameManager.instance.spendCoins(GameManager.instance.currentMultiplierCost);
-        //currentMultiplierCost = ((int)(currentMultiplierCost * 2.5));
+        if (GameManager.instance.spendOnMultiplier())
+        {
+            player.GetComponent<PlayerController>().upgradeMultiplier();
+        }
     }
 
     public void onRockSteadyUpgradeClick()
     {
-        if (GameManager.instance.isRockSteady())
+        if (GameManager.instance.spendOnRockSteady())
         {
-            GameManager.instance.spendCoins(GameManager.instance.currentRockSteadyCost);
+            player.GetComponent<PlayerController>().enableRockSteady();
         }
     }
 }

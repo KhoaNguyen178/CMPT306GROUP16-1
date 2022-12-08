@@ -5,7 +5,7 @@ using UnityEngine;
 public class TrapBullet : MonoBehaviour
 {
     public float BulletSpeed = 5.0f;
-    public float BulletDamage = 20.0f;
+    [SerializeField] private float BulletDamage = 20.0f;
     public Rigidbody2D rb;
     private float ExistTime;
     public float DestroyTime = 2f;
@@ -84,5 +84,14 @@ public class TrapBullet : MonoBehaviour
             }
         }
 
+    }
+
+    public void upgradeBulletDamage()
+    {
+        BulletDamage += 5.0f;
+    }
+    public void resetBulletDamage()
+    {
+        BulletDamage = 25;
     }
 }
