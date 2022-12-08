@@ -1,3 +1,4 @@
+using Packages.Rider.Editor.UnitTesting;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -52,7 +53,7 @@ public class GameManager : MonoBehaviour
     public Text textSpellLevel, textSpellCost;
     public Text textJumpLevel, textJumpCost;
 
-
+    public Transform pfDamagePopup;
     // Start is called before the first frame update
     void Start()
     {

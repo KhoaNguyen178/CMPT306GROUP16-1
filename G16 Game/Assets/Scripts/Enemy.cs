@@ -43,8 +43,8 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= damage;
-        //slider.value = health;
         //HPCanvas.SetActive(true);
+        DamagePopup.Create(this.transform.position, damage);
         StartCoroutine(FlashRed());
 
         if (health <= 0)
