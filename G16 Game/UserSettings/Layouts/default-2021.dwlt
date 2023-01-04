@@ -47,7 +47,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 141
+  controlID: 16
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -72,7 +72,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 142
+  controlID: 17
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -247,7 +247,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 61
+  controlID: 18
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -272,7 +272,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 62
+  controlID: 19
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -457,23 +457,23 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Fonts
+    - Assets/Warrior free set/Sprite Sheet
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Fonts
+  - Assets/Warrior free set/Sprite Sheet
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\trinh\OneDrive\Documents\GitHub\CMPT306GROUP16\G16
     Game
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 119}
-    m_SelectedIDs: 1a740000
-    m_LastClickedID: 29722
-    m_ExpandedIDs: 00000000ce730000d0730000d2730000d4730000d6730000d8730000da7300001a74000000ca9a3b
+    scrollPos: {x: 0, y: 338}
+    m_SelectedIDs: 26980000
+    m_LastClickedID: 38950
+    m_ExpandedIDs: 000000001463000016630000186300001a6300001c6300001e63000020630000446300007e63000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -501,7 +501,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000ce730000d0730000d2730000d4730000d6730000d8730000da730000
+    m_ExpandedIDs: 000000001463000016630000186300001a6300001c6300001e63000020630000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -628,10 +628,10 @@ MonoBehaviour:
     m_SaveData: []
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: a6750000
+      scrollPos: {x: 0, y: 6}
+      m_SelectedIDs: 28980000
       m_LastClickedID: 0
-      m_ExpandedIDs: 82f3ffff32fbffff0a750000
+      m_ExpandedIDs: a4f9ffff32faffff32fbffffa2630000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -880,9 +880,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 38.62451, y: 4.2140293, z: 2.8787923}
+    m_Target: {x: 21.271173, y: -0.14257154, z: 3.309708}
     speed: 2
-    m_Value: {x: 36.594696, y: 3.9863076, z: 2.8856802}
+    m_Value: {x: 21.271173, y: -0.14257154, z: 3.309708}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -933,9 +933,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 15.995177
+    m_Target: 11.0027685
     speed: 2
-    m_Value: 15.30639
+    m_Value: 11.0027685
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1051,7 +1051,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
+    m_EnableMouseInput: 0
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
