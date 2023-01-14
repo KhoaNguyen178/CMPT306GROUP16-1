@@ -1228,11 +1228,7 @@ MonoBehaviour:
   groundEnemy:
   - {fileID: 470995172658638259, guid: 84a683ff18bf55a4086cffc7a99e3609, type: 3}
   - {fileID: 7768667213989220873, guid: d9501729e45e57b41a14f3a9aac95626, type: 3}
-  flyEnemy:
-  - {fileID: 6559302083160762165, guid: 1e2ca83e232314ecca50c0a964def98c, type: 3}
-  - {fileID: 2041799819812606984, guid: 1bee794b517014b768d5c6d17dab9d00, type: 3}
-  - {fileID: 5306363759573346250, guid: 0a2748470ad65470a90f567171a52de8, type: 3}
-  - {fileID: 2702388820419165283, guid: 176198e884f8f48c6aea00bfc19272a8, type: 3}
+  flyEnemy: []
   reward:
   - {fileID: 5942041476492789443, guid: 214b8f25ab97137408c9581013cf0e07, type: 3}
   - {fileID: 336687807291617334, guid: dcaa7434767177b45907c8e41bcd94ad, type: 3}

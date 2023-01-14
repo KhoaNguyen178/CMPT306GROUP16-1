@@ -33,7 +33,7 @@ public class GroundSpawner : MonoBehaviour
     {
        
         int randomNum = Random.Range(0, ground.Length);
-        //int randomEnemy = Random.Range(0, groundEnemy.Length);
+        int randomEnemy = Random.Range(0, groundEnemy.Length);
         //int randomFlyEnemy = Random.Range(0, flyEnemy.Length);
         int randomReward = Random.Range(0, reward.Length);
 
@@ -59,7 +59,7 @@ public class GroundSpawner : MonoBehaviour
         {
             Instantiate(ground[1], new Vector3(transform.position.x + 8, -2.52f, 0), Quaternion.identity); //-1.68
 
-            //Instantiate(groundEnemy[randomEnemy], new Vector3(transform.position.x + 8, -1.94f, 0), Quaternion.identity);
+            Instantiate(groundEnemy[randomEnemy], new Vector3(transform.position.x + 8, -1.94f, 0), Quaternion.identity);
 
 
             Instantiate(reward[randomReward], new Vector3(transform.position.x + 8, 0, 0), Quaternion.identity);
@@ -110,7 +110,7 @@ public class GroundSpawner : MonoBehaviour
             //Instantiate(flyEnemy[2], new Vector3(transform.position.x + 21, 3f, 0), Quaternion.identity);
             //Instantiate(flyEnemy[2], new Vector3(transform.position.x + 19, 4f, 0), Quaternion.identity);
 
-            //Instantiate(groundEnemy[randomEnemy], new Vector3(transform.position.x + 20, -3.97611f, 0), Quaternion.identity);
+            Instantiate(groundEnemy[randomEnemy], new Vector3(transform.position.x + 20, -3.97611f, 0), Quaternion.identity);
 
             Instantiate(reward[randomReward], new Vector3(transform.position.x + 25, -2, 0), Quaternion.identity);
             Instantiate(reward[randomReward], new Vector3(transform.position.x + 29, -1, 0), Quaternion.identity);
@@ -132,7 +132,7 @@ public class GroundSpawner : MonoBehaviour
             //Instantiate(flyEnemy[3], new Vector3(transform.position.x + 29, 9f, 0), Quaternion.identity); 
           
             
-            //Instantiate(groundEnemy[randomEnemy], new Vector3(transform.position.x + 25, -3.85f, 0), Quaternion.identity);
+            Instantiate(groundEnemy[randomEnemy], new Vector3(transform.position.x + 25, -3.85f, 0), Quaternion.identity);
             
 
 
@@ -159,7 +159,7 @@ public class GroundSpawner : MonoBehaviour
             //Instantiate(flyEnemy[randomFlyEnemy], new Vector3(transform.position.x + 23, 3f, 0), Quaternion.identity);
             
  
-            //Instantiate(groundEnemy[randomEnemy], new Vector3(transform.position.x + 18, -3.85f, 0), Quaternion.identity);
+            Instantiate(groundEnemy[randomEnemy], new Vector3(transform.position.x + 18, -3.85f, 0), Quaternion.identity);
            
                 
 
@@ -177,7 +177,7 @@ public class GroundSpawner : MonoBehaviour
             Instantiate(ground[8], new Vector3(transform.position.x + 14, -3.279542f, 0), Quaternion.identity); //11
             //Instantiate(flyEnemy[randomFlyEnemy], new Vector3(transform.position.x + 21, -1f, 0), Quaternion.identity);
        
-            //Instantiate(groundEnemy[randomEnemy], new Vector3(transform.position.x + 18, -3.97611f, 0), Quaternion.identity);
+            Instantiate(groundEnemy[randomEnemy], new Vector3(transform.position.x + 18, -3.97611f, 0), Quaternion.identity);
 
                 
          
@@ -199,7 +199,7 @@ public class GroundSpawner : MonoBehaviour
         {
             Instantiate(ground[9], new Vector3(transform.position.x + 19, 7.74f, 0), Quaternion.identity);
 
-            //Instantiate(groundEnemy[randomEnemy], new Vector3(transform.position.x + 21, -4.007451f, 0), Quaternion.identity);
+            Instantiate(groundEnemy[randomEnemy], new Vector3(transform.position.x + 21, -4.007451f, 0), Quaternion.identity);
 
             //Instantiate(flyEnemy[randomFlyEnemy], new Vector3(transform.position.x + 21, 10f, 0), Quaternion.identity);
             //Instantiate(flyEnemy[1], new Vector3(transform.position.x + 27, 11f, 0), Quaternion.identity);
